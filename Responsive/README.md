@@ -1,1 +1,5 @@
-# xiangyingshi
+本站是一个响应式的网站
+主要技术：
+	导航条指定位置跳转用的是锚点
+	css3
+	bootstrap
