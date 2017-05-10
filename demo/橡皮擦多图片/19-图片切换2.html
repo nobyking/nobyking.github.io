@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 800px;
+				height: 450px;
+				margin:50px auto;
+				border:1px solid #000;
+				position: relative;
+			}
+			#box div{
+				width: 80px;
+				height: 45px;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script>
+			var box = document.getElementById('box');
+			var arr = ['img/1.jpg','img/2.jpg','img/3.jpg'];
+			var n = 0;
+			var str = '';
+			for(var i=0;i<100;i++){
+				str += '<div style="left:'+i%10*80+'px;top:'+Math.floor(i/10)*45+'px;background-image:url('+arr[n]+');background-position:'+-i%10*80+'px '+-Math.floor(i/10)*45+'px;"></div>'
+			}
+			box.innerHTML = str;
+			var divs = box.getElementsByTagName('div');
+			for(var i=0;i<divs.length;i++){
+				divs[i].num = 0;
+				divs[i].onmouseover = function(){
+				if(this.num == n){
+					this.num++;
+					if(this.num > arr.length-1){
+						this.num = 0;
+					}
+					this.style.backgroundImage = 'url('+arr[this.num]+')';
+					var m = 0;
+					for(var i=0;i<divs.length;i++){
+						if(divs[i].num!=n){
+							m++;
+						}
+					}
+					if(m == divs.length){
+						n++;
+						if(n > arr.length-1){
+							n=0;
+						}
+					}
+				}
+			}			
+	}
+		</script>
+	</body>
+</html>

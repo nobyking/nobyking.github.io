@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li class="a b c"></li>
+			<li class="a"></li>
+			<li></li>
+		</ul>
+		<ul>
+			<li class="a"></li>
+			<li class='a b'></li>
+			<li></li>
+		</ul>
+		<script type="text/javascript">	
+		console.log(getTag('.a'));
+		function getTag(name){
+			var t = name.charAt(0);
+			var tag = name.substring(1);
+			if(t == '#'){
+				return document.getElementById(tag);
+			}else if(t == '.'){
+				var arr = [];
+				//获取所有标签 
+				var eles = document.getElementsByTagName('*');
+				//循环所有标签的class，这种方法兼容IE;
+				for(var i=0;i<eles.lenght;i++){
+					var s = eles[i].className.split(' ');//将所有有className的标签找出，并且以空格为分界线变为数组；
+					for(var j=0;j<s.length;j++){
+						if(s[j]==tag){
+							arr.push(eles[i]);
+						}
+					}
+				}
+				return arr;
+			}
+			else{
+				return document.getElementsByTagName(name);
+			}
+		}
+		</script>
+	</body>
+</html>

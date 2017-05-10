@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body,
+			ul,
+			li {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="price.css" />
+	</head>
+
+	<body onselectstart="return false;">
+		<div class="wrap">
+			<div class="box">
+				<ul class="list">
+					<li>
+						<i></i>
+						<em>0</em>
+						<i></i>
+						<div>
+							单价：<span>12.5元 </span> 小计：<strong>0元</strong>
+						</div>
+					</li>
+					<li>
+						<i></i>
+						<em>0</em>
+						<i></i>
+						<div>
+							单价：<span>10.5元 </span> 小计：<strong>0元</strong>
+						</div>
+					</li>
+					<li>
+						<i></i>
+						<em>0</em>
+						<i></i>
+						<div>
+							单价：<span>8.5元 </span> 小计：<strong>0元</strong>
+						</div>
+					</li>
+					<li>
+						<i></i>
+						<em>0</em>
+						<i></i>
+						<div>
+							单价：<span>8元 </span> 小计：<strong>0元</strong>
+						</div>
+					</li>
+					<li>
+						<i></i>
+						<em>0</em>
+						<i></i>
+						<div>
+							单价：<span>14.5元 </span> 小计：<strong>0元</strong>
+						</div>
+					</li>
+				</ul>
+				<div class="info">
+					<span>商品公合计：<em>0</em>件</span>
+					<span>共花费了：<em>0</em>元</span>
+					<br />
+					<br />
+					<span>其中最贵的商品单价是：<em>0</em>元</span>
+				</div>
+			</div>
+		</div>
+		<script>
+			var list = document.getElementsByClassName('list')[0];
+			var info = document.getElementsByClassName('info')[0];
+			var lis = list.getElementsByTagName('li');
+			var ems = list.getElementsByTagName('em');//所有的数量
+			var spans = list.getElementsByTagName('span');//所有的单价
+			var sums = info.getElementsByTagName('em');
+			//总数
+			var  total = 0;
+			//总价
+			var money = 0;
+			//最贵
+			var max = 0;
+			for(var i=0;i<lis.length;i++){
+				single(i);
+			}
+			function single(n){
+				var em = lis[n].getElementsByTagName('em')[0];//数量
+				var span = lis[n].getElementsByTagName('span')[0];//单价
+				var strong = lis[n].getElementsByTagName('strong')[0];//单价
+				var num = Number(em.innerHTML);//控制数量
+				var price = parseFloat(span.innerHTML);//单价（数字）
+				var btns = lis[n].getElementsByTagName('i');//+-按钮
+				//-按钮
+				btns[0].onclick = function(){
+					//num<=0,终止下面代码执行
+//					if(num<=0){
+//						return;
+//					}
+					if(num > 0){
+						num--;
+						total--;
+						money -= price;
+						em.innerHTML = num;
+						strong.innerHTML = num*price + '元';
+						sums[0].innerHTML = total;
+						sums[1].innerHTML = money;
+						//-的时候，只有在数量为0时，需要重新判断一下最大值
+						if(num == 0){
+							max = 0;
+							for(var i=0;i<ems.length;i++){
+								if(ems[i].innerHTML !=0 && parseFloat(spans[i].innerHTML) >max){
+									max = parseFloat(spans[i].innerHTML);
+								}
+							}
+							sums[2].innerHTML = max;
+						}
+						
+					}
+				}
+				//+按钮
+				btns[1].onclick = function(){
+					num++;
+					total++;
+					money += price;
+					if(price > max){
+						max = price;
+					}
+					sums[0].innerHTML = total;
+					sums[1].innerHTML = money;
+					sums[2].innerHTML = max;
+					em.innerHTML = num;
+					strong.innerHTML = num*price + '元';	
+				}
+			}
+			
+		</script>
+	</body>
+
+</html>

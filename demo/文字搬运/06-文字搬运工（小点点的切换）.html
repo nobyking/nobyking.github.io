@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文字搬运工</title>
+<style type="text/css">
+	#box{
+		width:700px;
+		border: 5px solid #ccc;
+		margin: 0 auto;
+		font-size: 12px;
+	}
+	#box:after{
+		content: '';
+		display: block;
+		clear: both;
+	}
+	textarea,p{
+		width: 280px;
+		height: 200px;
+		border: 1px dotted black;
+		resize: none;
+		margin: 10px;
+		float: left;
+	}
+	#box div{
+		float: left;
+		width: 90px;
+	}
+	a,span{
+		text-decoration: none;
+		display: block;
+		line-height: 40px;
+		width:90px;
+		background-color: #F76300;
+		color: white;
+		margin-top: 10px;
+		text-align: center;
+	}
+	a:hover{
+		background-color: #C65218;
+	}
+	span{
+		background-color: white;
+		color:black;
+		font-weight: bold;
+	}
+	p{
+		float: right;
+		background-color: #63EFF7;
+	}
+	ul{
+		margin: 0;
+		padding: 0;
+		opacity: 0;
+	}
+	li{
+		width: 9px;
+		height: 9px;
+		list-style-type: none;
+		margin: 0 1px;
+		background-color:gray;
+		float: left;
+	}
+	.active{
+		background-color: red;
+	}
+</style>
+</head>
+<body>
+	<div id="box">
+		<textarea id="text1">妙味课堂妙味课堂妙味课堂</textarea>
+		<div>
+			<a href="javascript:;" id="btn">把文字右移</a>
+			<span id="len">0/0</span>
+			<ul id="list">
+				<li class="active"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<p id="p1"></p>
+	</div>
+	<script>
+		var btn = document.getElementById("btn");
+		var text1 = document.getElementById("text1");
+		var p1 = document.getElementById("p1");
+		var len = document.getElementById("len");
+		var list = document.getElementById("list");
+		var lis = list.getElementsByTagName("li");
+		var timer = null;
+		
+//		多次点击的时候会有问题
+//			只要还在搬运文字,点击的时候是无效果的
+//				申明变量isGoing代表当前是否有文字在搬运(true代表在搬,false代表没有搬运)
+		var isGoing = false;
+		var num = 0;
+		btn.onclick = function(){
+			if( isGoing == true ){//在搬运
+				return
+			}
+			p1.innerHTML = "";
+			var maxNum = text1.value.length;
+//			在搬运文字的是偶textarea是不可以输入内容的
+			text1.disabled = true;
+			
+			isGoing = true;
+			timer = setInterval(function(){
+				//有文字在搬运的时候把list的透明度设为1
+				list.style.opacity = 1;
+				
+				//先去class
+				lis[num].className = "";
+				num++;
+				num%=lis.length;
+				lis[num].className = "active";
+				
+				var v = text1.value;
+				text1.value = v.substring( 1 );
+				p1.innerHTML += v.charAt( 0 );
+				len.innerHTML = p1.innerHTML.length+"/"+maxNum;
+				if( text1.value == "" ){
+					clearInterval( timer );
+					isGoing = false;
+					text1.disabled = false;
+					list.style.opacity = 0;
+				}
+			},30)
+			
+		}
+	</script>
+</body>
+</html>

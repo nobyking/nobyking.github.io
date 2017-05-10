@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 400px;
+				height: 500px;
+				margin:50px auto;
+				border: 1px solid #000;
+				position: relative;
+			}
+			img{
+				width: 400px;
+				height: 500px;
+				border:none;
+				vertical-align: top;
+			}
+			a{
+				text-decoration: none;
+				color: #000;
+				font-size:60px;
+				font-weight: bold;
+				position: absolute;
+				top:200px;
+			}
+			#left{
+				left:-50px;
+			}
+			#right{
+				right:-50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<img src="" alt="" id="img"/>
+			<a href="javascript:;" id="left"><</a>
+				<a href="javascript:;" id="right">></a>
+		</div>
+		<script>
+			/*
+			 	需求：
+			 		点击上一张，下一张，切换图片
+			 	步骤：
+			 		1.下一张：
+			 			n=1 ->n+1
+			 * */
+			var img = document.getElementById('img');
+			var left = document.getElementById('left');
+			var right = document.getElementById('right');
+			//用数组存储图片
+			var arr = ['1.png','2.png','3.png','4.png'];
+			var n = 0;
+			//图片初始化
+			img.src = 'img/'+arr[n];
+			right.onclick = function(){
+				n++;
+				//顺序
+//				if(n>arr.length-1){
+//					n = arr.length-1;
+//				}
+				//循环
+				if(n>arr.length-1){
+					n = 0;
+				}
+				img.src = 'img/'+arr[n];
+				//n++,左侧变量n，自增+1
+			}
+		</script>
+	</body>
+</html>

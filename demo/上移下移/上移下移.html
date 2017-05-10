@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		li{position: relative;top: 0;}
+	</style>
+</head>
+<body>
+	<ul id="list">
+		<li>1111   <input type="button" value="上移" /><input type="button" value="下移" /></li>
+		<li>2222   <input type="button" value="上移" /><input type="button" value="下移" /></li>
+		<li>3333   <input type="button" value="上移" /><input type="button" value="下移" /></li>
+		<li>4444   <input type="button" value="上移" /><input type="button" value="下移" /></li>
+	</ul>
+	<script type="text/javascript">
+//	eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('2 a=q.m("l");2 b=a.h(\'o\');n(2 c=0;c<b.k;c++){d(c)};5 d(e){2 f=b[e].h(\'j\');f[0].7=5(){2 g=4.3.p;6(g){a.8(4.3,g)}i{9(\'t\')}};f[1].7=5(){2 g=4.3.r;6(g){a.8(g,4.3)}i{9(\'s\')}}}',30,30,'||var|parentNode|this|function|if|onclick|insertBefore|alert||||||||getElementsByTagName|else|input|length|list|getElementById|for|li|previousElementSibling|document|nextElementSibling|已经是最后一个了|已经是第一个了'.split('|'),0,{}))
+
+//点击上移的时候， 让此节点插入上一个节点之前；
+//点击下移的时候，让后一个节点插入本节点之前；
+//	var list =document.getElementById('list');
+//	var lis = list.getElementsByTagName('li');
+//	var tops =document.querySelectorAll('ul input:nth-of-type(2n-1)');
+//	var bottoms =document.querySelectorAll('ul input:nth-of-type(2n)')
+//	for(var i=0;i<tops.length;i++){
+//		tops[i].onclick=function(){
+//			if(this.parentNode.previousElementSibling){
+//				list.insertBefore(this.parentNode,this.parentNode.previousElementSibling)
+//			}else{
+//				alert('已经是第一个')
+//			}
+//		}
+//		bottoms[i].onclick=function(){
+//			if(this.parentNode.nextElementSibling){
+//				list.insertBefore(this.parentNode.nextElementSibling,this.parentNode)
+//			}else{
+//				alert('已经是最后一个')
+//			}
+//		}
+//	}
+	
+	var list =document.getElementById('list');
+	var lis = list.getElementsByTagName('li');
+	for(var i=0;i<lis.length;i++){
+		fn(i);
+	}
+	function fn(n){
+		var inps = lis[n].getElementsByTagName('input');
+//		var tops = lis[n].getElementsByTagName('input')[0];
+//		var bottoms = lis[n].getElementsByTagName('input')[1];
+		inps[0].onclick=function(){
+			if(this.parentNode.previousElementSibling){
+				list.insertBefore(this.parentNode,this.parentNode.previousElementSibling)
+			}else{
+				alert('已经是第一个')
+			}
+		}
+		inps[1].onclick=function(){
+			if(this.parentNode.nextElementSibling){
+				list.insertBefore(this.parentNode.nextElementSibling,this.parentNode)
+			}else{
+				alert('已经是最后一个')
+			}
+		}
+	}
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+

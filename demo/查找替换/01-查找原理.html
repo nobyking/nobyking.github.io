@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			span{
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">这是一段话段话段话段话段话段话</div>
+		<script>
+//		    //把“这是”高亮
+//		    	使用"<span>这是</span>"替换元素中所有的"这是"
+			var box = document.getElementById("box");
+			var str = box.innerHTML;
+//			console.log( str );
+//			console.log( str.split( "这是" ) );
+//			console.log( str.split( "这是" ).join("<span>这是</span>") );
+
+			box.innerHTML = str.split( "这是" ).join("<span>这是</span>");
+			
+		</script>
+	</body>
+</html>

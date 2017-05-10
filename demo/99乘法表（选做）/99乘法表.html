@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>1*1=1</div>
+		<div>1*2=1&nbsp2*2=4</div>
+		<script>
+			/*
+			 	99乘法表
+			 		1*1=1
+			 		1*2=2  2*2=4
+			 		.
+			 		.
+			 		.
+			 		1*9=9 2*9=18 ...9*9=81
+			 	
+			 	&nbsp空格
+			 ** */
+			var str = '';
+			//外边的for循环，控制生成9行，控制i变化，1-9
+			for(var i=1;i<10;i++){
+				str = str +'<div>';
+				//里边的for循环，控制div里的列数，控制j变化，j<=i
+				for(var j=1;j<=i;j++){
+					str += j+'*'+i+'='+i*j+'&nbsp';
+				}
+				str = str +'</div>';
+			}
+			document.body.innerHTML = str;
+		</script>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str = "2017../年8../月10../日"
+        	var s = str.replace(/(\d+)\D+(\d+)\D+(\d+)\D+/,function($0,$1,$2,$3){
+                   // 如果正则中有子项：replace中的函数：
+//                   从函数的第一个参数之后就是匹配到的对应子项集
+//                   当参数的个数等于子项个数+1的时候，之后都为正常模式下的参数了（参考replace中函数的一般情况，索引、整个字符、undefined）
+                   return $1 + '年' +$2 + '月' +$3 + '日'; 
+           })
+            console.log(s)
+		</script>
+	</body>
+</html>

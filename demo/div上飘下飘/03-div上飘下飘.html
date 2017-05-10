@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		div{
+			width:100px;
+			height:100px;
+			background-color:red;
+			float: left;
+			margin-right: 10px;
+			position: relative;
+			transition: .5s;
+			top:0px;
+		}
+		div:nth-of-type(1){
+			/*top: 200px;*/
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<script>
+//		点击谁,谁就往下掉
+//			然后,点击的左侧的div开始一个接一个往下掉
+//				所以我需要知道我点的是第几个（为所有的div添加自定义属性），他的前一个就是他的索引值-1
+	
+//			div是一个接一个往下落的(在此处用定时器,不用for循环,使用循环的话,所有点都会同时掉落)
+		var divs = document.getElementsByTagName("div");
+		var num = 0;
+//			console.log( divs.length );
+		for (var i = 0; i < divs.length; i++) {
+			divs[i].index = i;//为div添加自定义属性，当点击的时候我就知道我点的是第几个了
+			divs[i].onclick = function(){
+//					alert(1)
+//					this(在此处this是的就是我点击的那个div)
+				this.style.top = "200px";
+				num = this.index;
+				setInterval(function(){
+					num -- ;//修改num值
+					num = num==-1 ? 0 : num;//限制num的值在一定范围
+					console.log( num ); //然后再去使用num值
+					divs[ num ].style.top = "200px";
+				},500)
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style>
+body { background:#f1f1f1; }
+#box { width:640px; height:320px; position:relative; top:100px; margin:0 auto;overflow:hidden; box-shadow:0 0 20px rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.5); }
+#box a { width:28px; height:100px; line-height:100px; text-align:center; background:rgba(0,0,0,0.2); color:#fff; font-size:26px; text-decoration:none; position:absolute; top:110px; z-index:2; transition:0.3s; }
+#box a:hover { background:rgba(0,0,0,0.6); transform:scale(1.1); font-size:32px; }
+#box .prev { left:-1px; border-radius:0 8px 8px 0; }
+#box .next { right:-1px; border-radius:8px 0 0 8px; }
+#box ul { padding:0; margin:0; width:1280px; position:absolute; top:0; left:0; }
+#box li { list-style:none; float:left; width:640px; }
+#box img { width:640px; height:320px; }
+</style>
+</head>
+
+<body>
+
+<div id="box">
+	<a class="prev" href="javascript:;"><</a>
+	<a class="next" href="javascript:;">></a>
+	<ul>
+		<li><img src="img/img14.jpg" /></li>
+		<li><img src="img/img14.jpg" /></li>
+	</ul>
+</div>
+<script src="move.js"></script>
+<script>
+var box = document.getElementById('box');
+var as = box.getElementsByTagName('a');
+var ul = box.getElementsByTagName('ul')[0];
+var imgs = box.getElementsByTagName('img');
+var arr = ['img/img14.jpg', 'img/img22.jpg', 'img/img24.jpg' ,'img/img25.jpg','img/img32.jpg','img/img33.jpg','img/img36.jpg','img/img42.jpg','img/img43.jpg'];
+var n = 0;
+var onOff = true;
+	/*
+		点击按钮的时候：
+		
+			1.将第二张图片换成下一张图片
+			
+			7.将Ul的left值设置为0；
+			
+			2.给个transition
+			
+			3.改变UL的left值
+			
+			4.把 第二步、第三部包到一个定时器里面
+			（为了下一次点击的时候，left值不被下面设置的值覆盖）
+			
+			5.当运动完之后（1秒钟之后），把transition清空
+			
+			6.把第一张图片换成第一步中的图片。
+	*/
+as[0].onclick = function(){
+	if(onOff){
+		onOff = !onOff;
+		n++;
+		if(n > arr.length-1){
+			n = 0;
+		}
+		ul.style.left = '';
+		imgs[1].src = arr[n];
+		move(ul,'left',1000,-640,function(){
+			imgs[0].src = arr[n];
+			onOff = !onOff;
+		})
+	}	
+}
+as[1].onclick = function(){
+	if(onOff){
+		onOff = !onOff;
+		imgs[1].src = arr[n];
+		n--;
+		if(n < 0){
+			n = arr.length-1;
+		}
+		ul.style.left = '-640px';
+		imgs[0].src = arr[n];
+		move(ul,'left',1000,0,function(){			
+			imgs[0].src = arr[n];
+			onOff = !onOff;
+		})
+	}	
+}
+
+</script>
+
+</body>
+</html>

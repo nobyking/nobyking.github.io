@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="list">
+			<li class="a"></li>
+			<li class="a b"></li>
+			<li></li>
+		</ul>
+		<ul>
+			<li class="a"></li>
+			<li class="a b"></li>
+			<li></li>
+		</ul>
+		<script>
+			/*
+			 	id:'#box',class:'.box',tag:'div'
+			 * */
+			function getTag(name,obj){
+				obj = obj || document;
+				var t = name.charAt(0);
+				var tag = name.substring(1);
+				if(t == '#'){
+					return document.getElementById(tag);
+				}else if(t == '.'){
+					var arr = [];
+					var eles = obj.getElementsByTagName('*');
+					for(var i=0;i<eles.length;i++){
+						var s = eles[i].className.split(' ');
+						for(var j=0;j<s.length;j++){
+							if(s[j] == tag){
+								arr.push(eles[i]);
+							}
+						}
+					}
+					return arr;
+				}else{
+					return obj.getElementsByTagName(name);
+				}
+			}
+			//console.log(getTag('#list'))
+			var list = getTag('#list');
+			//console.log(getTag('.a',list))
+			console.log(getTag('li'))
+		</script>
+	</body>
+</html>

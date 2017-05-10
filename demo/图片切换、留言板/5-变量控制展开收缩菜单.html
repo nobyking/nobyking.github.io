@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			ul{
+				border:1px solid #000;
+				width:100px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			需求：
+				点击按钮，菜单是收缩就展开，是展开就收缩
+			步骤：
+				1.点击按钮
+				2.判断
+					如果菜单的display:none,变成display:block
+					如果菜单的display:block,变成display:none
+		-->
+		<input type="button" value="按钮" id="btn"/>
+		<ul id="list" style="display: none;">
+			<li>菜单</li>
+			<li>菜单</li>
+			<li>菜单</li>
+			<li>菜单</li>
+			<li>菜单</li>
+			<li>菜单</li>
+		</ul>
+		<script>
+			var list = document.getElementById('list');
+			var btn = document.getElementById('btn');
+			/*
+			 	注意：开关和显示状态必须一一对应
+			 * */
+			var onOff = true;
+			btn.onclick = function(){
+				if(onOff){
+					list.style.display = 'block';
+					onOff = false;
+				}else{
+					list.style.display = 'none';
+					onOff = true;
+				}
+			}
+		</script>
+	</body>
+</html>

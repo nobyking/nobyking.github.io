@@ -1,0 +1,47 @@
+/*reset css*/
+body{
+	margin: 0;
+	font-size: 0;
+	background-color: #f6f6f6;
+}
+
+h1,h3,h4,dl,dd,p,dt{
+	margin: 0;
+}
+a,s{
+	text-decoration: none;
+}
+b{
+	font-weight: normal;
+}
+i,dfn,address{
+	font-style: normal;	
+}
+img{
+	outline: none;
+	border: none;
+}
+ul,ol,input{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;
+}
+input{
+	margin: 0;
+}
+.claerfix{
+	*zoom: 1;
+}
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:100px;
+				height:100px;
+				background-color:red;
+				float: left;
+				margin-right: 30px;
+				position: relative;
+				transition: .5s;
+				top:0px;
+			}
+			div:nth-of-type(1){
+				/*top: 200px;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<script>
+			//如何让一个div下移或者上移
+//				让这个div的top值变成200px(下移)
+			var divs = document.getElementsByTagName("div");
+			document.onclick = function(){
+				divs[0].style.top = "200px";
+			}
+		</script>
+	</body>
+</html>

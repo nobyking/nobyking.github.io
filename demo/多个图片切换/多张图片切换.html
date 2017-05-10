@@ -1,0 +1,140 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	#box{
+		width: 875px;
+		height: 553px;
+		background: url(img/bg.png) no-repeat;
+		margin: 0 auto;
+		position: relative;
+	}
+	img{
+		position: absolute;
+		top: 114px;
+		height: 245px;
+		cursor: pointer;
+	}
+	#box img:nth-of-type(1){
+		width:448px;
+		left: 49px;
+	}
+	#box img:nth-of-type(2){
+		width: 248px;
+		left:559px;
+	}
+	i{
+		position: absolute;
+		bottom: 143px;
+		font-weight: bold;
+	}
+	#box i:nth-of-type(1){
+		left: 49px;
+	}
+	#box i:nth-of-type(2){
+		right: 297px;
+	}
+	a{
+		position: absolute;
+		top:54px;
+		width: 60px;
+		height: 20px;
+	}
+	#box a:nth-of-type(1){
+		left:23px;
+	}
+	#box a:nth-of-type(2){
+		left: 100px;
+	}
+	p{
+		height: 20px;
+		width: 200px;
+		position: absolute;
+		bottom: 150px;
+		text-align: center;
+	}
+	#box p:nth-of-type(1){
+		left: 136px;
+	}	
+	#box p:nth-of-type(2){
+		width: 130px;
+		left: 634px;
+	}
+</style>
+</head>
+
+<body>
+	<div id="box">
+		<a href="javascript:;" class="left"></a>
+		<a href="javascript:;" class="right"></a>
+		<img src="" alt="" class="left"/>
+		<img src="" alt="" class="right"/>
+		<i class="left"></i>
+		<i class="right"></i>
+		<p class="left"></p>
+		<p class="right"></p>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	var lefts = document.getElementsByClassName('left');
+	var rights = document.getElementsByClassName('right');
+	var arrLeft = ['img/0.jpg','img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg'];
+	var arrRight = ['img/2.jpg','img/3.jpg','img/4.jpg'];
+	var arrTxt1 = ['左一','左二','左三','左四','左五'];
+	var arrTxt2 = ['右一','右二','右三'];
+	var n = 0;//控制左边图片切换
+	var m = 0;//控制右边图片切换
+	//左边图片切换函数
+	function leftTab(){
+		if(n<0){
+			n = arrLeft.length-1;
+		}
+		if(n>arrLeft.length-1){
+			n = 0;
+		}
+		lefts[1].src = arrLeft[n];
+		lefts[2].innerHTML = n+1+'/'+arrLeft.length;
+		lefts[3].innerHTML = arrTxt1[n];
+	}
+	//右边图片切换函数
+	function rightTab(){
+		if(m<0){
+			m = arrRight.length-1;
+		}
+		if(m>arrRight.length-1){
+			m = 0;
+		}
+		rights[1].src = arrRight[m];
+		rights[2].innerHTML = m+1+'/'+arrRight.length;
+		rights[3].innerHTML = arrTxt2[m];
+	}
+	//初始化
+	leftTab();
+	rightTab();
+	//左侧图片点击
+	lefts[1].onclick = function(){
+		n++;
+		leftTab();
+	}
+	//右侧图片点击
+	rights[1].onclick = function(){
+		m++;
+		rightTab();
+	}
+	//上一组
+	lefts[0].onclick = function(){
+		n--;
+		m--;
+		leftTab();
+		rightTab();	
+	}
+	rights[0].onclick = function(){
+		n++;
+		m++;
+		leftTab();
+		rightTab();	
+	}
+</script>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<style type="text/css">
+* {margin:0; padding:0; list-style:none;}
+#div1{
+	width: 210px;
+	border: 1px solid #000;
+	position: relative;
+	margin:40px auto;
+}
+#prev{
+	position: absolute;
+	left: 0;
+	top:2px;
+}
+#next{
+	position: absolute;
+	right: 0;
+	top:2px;
+}
+#oSpan{
+	display: inline-block;
+	text-align: center;
+	width:100%;
+	color: blueviolet;
+}
+ol{
+	overflow: hidden;
+	border-bottom:1px solid #ccc;
+}
+a{
+	text-decoration: none;
+}
+ol li{
+	float:left;
+	padding:7px;
+	/*border-left:1px solid #000;*/
+}
+ul{
+	overflow: hidden;
+}
+#oul li{
+	width: 30px;
+	height: 30px;
+	float: left;
+	text-align:center;
+	line-height: 30px;
+	
+}
+.red{
+	color:red;
+}
+.gray{
+	color:gray;
+}
+li.active{
+	border: 1px solid blue;
+	box-sizing: border-box;
+}
+
+</style>
+<body>
+	<div id="div1">
+		<a href="javascript:;" id="prev">←</a>
+		<span id="oSpan">xxxx年xx月</span>
+		<a href="javascript:;" id="next">→</a>
+		<ol>
+	    	<li>一</li>
+	        <li>二</li>
+	        <li>三</li>
+	        <li>四</li>
+	        <li>五</li>
+	        <li class="red">六</li>
+	        <li class="red">日</li>
+    	</ol>
+		<ul id="oul"></ul>
+	</div>
+</body>
+<script type="text/javascript">
+	/*
+	 	本月第一天星期几
+	 	本月有多少天
+	 	今天是几号
+	 * */
+	var prev = document.getElementById('prev');
+	var next = document.getElementById('next');
+	var oSpan = document.getElementById('oSpan');
+	var oUl = document.getElementById('oul');
+	var str = '';
+	//月份
+	var n = 0 ;
+	//年份
+	var m = 0 ;
+	function show(){
+		oUl.innerHTML='';
+		//获取本月第一天是周几
+		var date = new Date();
+		date.setDate(1);
+		date.setMonth(date.getMonth()+n);
+		var n1 = date.getDay();
+		if(n1==0){
+			n1=7;
+		}
+		oSpan.innerHTML=date.getFullYear()+'年'+(date.getMonth()+1)+'月';
+		//console.log(n1)
+		//获取本月有多少天
+		var date = new Date();
+		date.setMonth(date.getMonth()+n+1);
+		date.setDate(1);
+		date.setDate(0);
+		var n2 = date.getDate();
+		// console.log(n2);
+		//今天是几号
+		var date = new Date();
+		var n3 = date.getDate();
+		//console.log(n3);
+		//生成前边的空li
+		for (var i=0;i<n1-1;i++){
+			oUl.innerHTML+='<li></li>';
+		}
+		for (var i=0;i<n2;i++){
+			oUl.innerHTML+='<li>'+(i+1)+'</li>';
+		}
+		var lis = oUl.getElementsByTagName('li');
+		//获取当日的li的下标
+		var n4 = n1+n3-2;
+		lis[n4].className = 'active';
+		var date = new Date();
+	}
+
+		// var date = new Date();
+		// date.setMonth(date.getMonth())
+		// var n = date.getMonth()+1;
+		// var m = date.getFullYear();
+		show();
+		prev.onclick=function(){	
+			n--;
+			show();
+		}
+		next.onclick=function(){		
+			n++;
+			show()
+		}
+
+	</script>
+</html>

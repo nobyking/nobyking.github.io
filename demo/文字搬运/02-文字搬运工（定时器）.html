@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文字搬运工</title>
+<style type="text/css">
+	#box{
+		width:700px;
+		border: 5px solid #ccc;
+		margin: 0 auto;
+		font-size: 12px;
+	}
+	#box:after{
+		content: '';
+		display: block;
+		clear: both;
+	}
+	textarea,p{
+		width: 280px;
+		height: 200px;
+		border: 1px dotted black;
+		resize: none;
+		margin: 10px;
+		float: left;
+	}
+	#box div{
+		float: left;
+		width: 90px;
+	}
+	a,span{
+		text-decoration: none;
+		display: block;
+		line-height: 40px;
+		width:90px;
+		background-color: #F76300;
+		color: white;
+		margin-top: 10px;
+		text-align: center;
+	}
+	a:hover{
+		background-color: #C65218;
+	}
+	span{
+		background-color: white;
+		color:black;
+		font-weight: bold;
+	}
+	p{
+		float: right;
+		background-color: #63EFF7;
+	}
+	ul{
+		margin: 0;
+		padding: 0;
+		opacity: 0;
+	}
+	li{
+		width: 9px;
+		height: 9px;
+		list-style-type: none;
+		margin: 0 1px;
+		background-color:gray;
+		float: left;
+	}
+	.active{
+		background-color: red;
+	}
+</style>
+</head>
+<body>
+	<div id="box">
+		<textarea id="text1">妙味课堂妙味课堂妙味课堂</textarea>
+		<div>
+			<a href="javascript:;" id="btn">把文字右移</a>
+			<span id="len">0/0</span>
+			<ul id="list">
+				<li class="active"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<p id="p1"></p>
+	</div>
+	<script>
+		var btn = document.getElementById("btn");
+		var text1 = document.getElementById("text1");
+		var p1 = document.getElementById("p1");
+		var len = document.getElementById("len");
+		
+		btn.onclick = function(){
+//			点击的时候获取一次左侧的字数
+			var maxNum = text1.value.length;
+			
+//			开启定时器,进行文字搬运
+			setInterval(function(){
+				var v = text1.value;
+	//			alert(value)
+				text1.value = v.substring( 1 );//把左侧的内容从第1位开始截取到最后一位，放到左侧部分
+				
+				p1.innerHTML += v.charAt( 0 );//往右侧添一个字
+				
+				len.innerHTML = p1.innerHTML.length+"/"+maxNum;
+			},500)
+			
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.red{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="text"/>
+		<input type="button" value="提交" id="btn"/>
+		<ul id="list">
+			
+		</ul>
+		<script>
+			/*
+			 	需求：点击按钮，把输入的内容添加到列表里
+			 	步骤：
+			 		1.获取元素
+			 		2.按钮点击
+			 		3.获取输入内容
+			 		4.添加列表		
+			 * */
+			var text = document.getElementById('text');
+			var btn = document.getElementById('btn');
+			var list = document.getElementById('list');
+			btn.onclick = function(){
+				var val = text.value;
+				//console.log(val);
+				//list.innerHTML = list.innerHTML + '<li class="red">'+val+'</li>';
+				list.innerHTML += '<li class="red">'+val+'</li>';
+				/*
+				 	a = a+b
+				 	a += b
+				 * */
+			}
+		</script>
+	</body>
+</html>

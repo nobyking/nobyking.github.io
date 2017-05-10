@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	div{
+		width:100px;
+		height:100px;
+		background-color:red;
+		float: left;
+		margin-right: 10px;
+		position: relative;
+		transition: .5s;
+		top:0px;
+	}
+	div:nth-of-type(1){
+		/*top: 200px;*/
+	}
+</style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<script>
+	var divs = document.getElementsByTagName("div");
+	var num = 0;
+	var num2 = 0;
+	var timer1 = null;
+	var timer2 = null;
+	var isMoving = false;
+	
+	var tar = "200px";
+	for (var i = 0; i < divs.length; i++) {
+		divs[i].index = i;
+		divs[i].onclick = function(){
+//			alert( tar )
+//			判断是不是有div在动，如果有div在动，就直接return
+			if(isMoving==true){//有div在动
+				return//终止下面的代码执行
+			}
+			isMoving=true;
+			this.style.top = tar;
+			num = this.index;
+			num2 = this.index;
+			timer1 = setInterval(function(){
+				num -- ;
+				num = num<=-1? 0 : num;
+				divs[ num ].style.top = tar;
+				if(num == 0){
+					clearInterval( timer1 );
+				}
+				if( num==0&&num2==divs.length-1 ){//num==0说明左侧掉完了，num2==divs.length-1说明右侧掉完了
+					isMoving = false;//页面中没有div在动，又可以点击了
+					if(tar == "200px"){
+//						alert(1)
+						tar = "0px";//改变目标点
+					}else{
+						tar = "200px";//改变目标点
+					}
+				}
+			},80)
+			timer2 = setInterval(function(){
+				num2 ++ ;
+				num2 = num2>=divs.length ? divs.length-1 : num2
+				divs[ num2 ].style.top = tar;
+				if( num2 >= divs.length-1 ){
+					clearInterval( timer2 );
+				}
+				if( num==0&&num2==divs.length-1 ){
+					isMoving = false;//页面中没有div在动，又可以点击了
+					if(tar == "200px"){
+						tar = "0px";//改变目标点
+					}else{
+						tar = "200px";//改变目标点
+					}
+				}
+			},80)
+		}
+	}
+	
+</script>
+</body>
+</html>

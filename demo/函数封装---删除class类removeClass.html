@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="a c"></div>
+		<script>
+			var div = document.getElementsByTagName('div')[0];
+			function removeClass(obj,name){
+				var arr = obj.className.split(' ');
+				for(var i=0;i<arr.length;i++){
+					if(arr[i] == name){
+						arr.splice(i,1)
+					}
+				}
+				return obj.className = arr.join(' ')
+			}
+			removeClass(div,'b')
+			console.log(div.className)
+		</script>
+	</body>
+</html>

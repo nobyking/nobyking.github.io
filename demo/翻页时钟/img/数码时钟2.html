@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+ul{
+	position:relative;
+	margin-top:100px;
+	overflow: hidden;
+	height:70px;
+}
+li{
+	position: relative;
+	top: 0;
+	left: 0;
+	float: left;
+}
+img{
+	display: block;
+	border:none;
+	vertical-align: top;
+}
+
+</style>
+<body>
+	<ul id="oUl">
+		<li>
+			<img src="img/0.jpg"/>
+			<img src="img/0.jpg"/>
+		</li>
+		<li>
+			<img src="img/0.jpg"/>
+			<img src="img/0.jpg"/>
+		</li>
+		
+		<li>
+			<img src="img/c.jpg"/>
+		</li>
+		
+		<li>
+			<img src="img/0.jpg"/>
+			<img src="img/0.jpg"/>
+		</li>
+		<li>
+			<img src="img/0.jpg"/>
+			<img src="img/0.jpg"/>
+		</li>
+		<li>
+			<img src="img/c.jpg"/>
+		</li>
+		<li>
+			<img src="img/0.jpg"/>
+			<img src="img/0.jpg"/>
+		</li>
+		<li>
+			<img src="img/0.jpg"/>
+			<img src="img/0.jpg"/>
+		</li>
+	</ul>
+</body>
+<script type="text/javascript">
+	var oUl = document.getElementById('oUl');
+	var aLi = oUl.getElementsByTagName('li');
+	var old = '';
+	var onOnff = true;
+	
+	 setInterval(fn1,1000);
+	 fn1();
+	 
+	 function fn1(){
+		var iMyTime = new Date();
+		var iH = iMyTime.getHours();
+		var iMin = iMyTime.getMinutes();
+		var iSe = iMyTime.getSeconds();
+		var aLi2 = aLi[2].getElementsByTagName('img')[0];
+		var aLi5 = aLi[5].getElementsByTagName('img')[0];
+		var str = toDou(iH)+':'+toDou(iMin)+':'+toDou(iSe);
+		//console.log(str);
+		
+		for(var i=0;i<aLi.length;i++){
+			/*
+				如果old里面没有值，就把IMG第0个图片换成当前的时间。 
+			*/
+			if(old){
+				if(i!=2 && i!=5 && str.charAt(i)!=old.charAt(i)){
+					//console.log(str.charAt(7))
+					slide(i,str.charAt(i));
+				}
+			}else{
+				if(i!=2 && i!=5){
+					aLi[i].getElementsByTagName('img')[0].src = 'img/'+str.charAt(i)+'.jpg';
+				}
+			}
+		}
+		aLi2.src = aLi5.src = 'img/c.jpg';
+		setTimeout(function(){
+			aLi2.src = aLi5.src = 'img/b.jpg';
+		},500)
+		onOnff = !onOnff;
+		old = str;
+	}
+	function toDou(n){
+		return n<10?'0'+n:''+n;
+	}
+	function slide(index,num){
+		var oLi = aLi[index];
+		var aImg = oLi.getElementsByTagName('img');
+		oLi.style.top = '0';
+		setTimeout(function(){
+			aImg[1].src = 'img/'+num+'.jpg';
+			oLi.style.transition = '.5s top';
+			oLi.style.top = '-70px';
+			setTimeout(function(){
+				oLi.style.transition = '';
+				aImg[0].src = 'img/'+num+'.jpg';
+			},500);
+		},2);
+	}
+	
+	
+</script>
+</html>

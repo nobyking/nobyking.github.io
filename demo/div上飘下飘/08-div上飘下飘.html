@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	div{
+		width:100px;
+		height:100px;
+		background-color:red;
+		float: left;
+		margin-right: 10px;
+		position: relative;
+		transition: .5s;
+		top:0px;
+	}
+	div:nth-of-type(1){
+		/*top: 200px;*/
+	}
+</style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<script>
+	var divs = document.getElementsByTagName("div");
+	var num2 = 0;
+	var num2 = 0;
+	var timer1 = null;
+	var timer2 = null;
+	var isMoving = false;
+	
+	var isdongguole = 0;
+	var tar = "200px";
+	
+	for (var i = 0; i < divs.length; i++) {
+		divs[i].index = i;
+		divs[i].onclick = function(){
+			console.log( isdongguole,isMoving,tar)
+			if(isMoving==true){//有div在动
+				return//终止下面的代码执行
+			}
+			isdongguole++;
+			isMoving=true;
+			this.style.top = tar;
+			num = this.index;//左边
+			num2 = this.index;//右边
+			timer1 = setInterval(function(){//左边
+				num--;
+				if( num>=0 ){//
+					divs[num].style.top = tar;
+					isdongguole ++;//只有当num>=0的时候才能让div移动，并且isdongguole++
+				}else{
+					clearInterval( timer1 );
+				}
+				if(isdongguole == divs.length){//代表所有的div都移动结束了
+					isMoving = false;//表示页面中所有div都没有在动，可以下次点了
+					isdongguole = 0;
+					if( tar == "200px" ){//转变方向
+						tar = "0px";
+					}else{
+						tar = "200px";
+					}
+				}
+			},400)
+			timer2 = setInterval(function(){
+				num2++;
+				if( num2 <= divs.length-1 ){//
+					divs[num2].style.top = tar;
+					isdongguole ++;
+				}else{
+					clearInterval( timer2 );
+				}
+				if(isdongguole == divs.length){
+					isMoving = false;
+					isdongguole = 0;
+					if( tar == "200px" ){
+						tar = "0px";
+					}else{
+						tar = "200px";
+					}
+				}
+			},400)
+		}
+	}
+	
+</script>
+</body>
+</html>

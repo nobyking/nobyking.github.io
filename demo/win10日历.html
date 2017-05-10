@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 260px;
+			    margin: 0 auto;
+			    background: #6277ce;
+			    padding: 10px;
+			    overflow: hidden;
+			}
+			#box h3{
+				padding: 5px;
+				font-size: 40px;
+				color: #fff;
+			}
+			#box h4{
+				padding: 5px;
+				color: #c7f97e;
+				font-size: 22px;
+			}
+			.sel{
+				padding: 5px;
+				color: #fff;
+			}
+			.sel select{
+				margin-right:10px ;
+			}
+			
+			.sel select:nth-of-type(2){
+				margin-left: 20px;
+			}
+			
+			
+			#date{
+				width: 210px;
+			}
+			#date li{
+				width: 30px;
+				height: 30px;
+				float: left;
+				color: #a2cbf3;
+				text-align: center;
+				line-height: 30px;
+				list-style: none;
+			}
+			#date span{
+				float: left;
+				width: 30px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+				color: #fff;
+			}
+			#date span.active{
+				background: #ce709d;
+				color: #fff;
+				font-weight: bold;
+				border-radius: 50%;
+			}
+		</style>	
+	</head>
+	<body>
+		<div id="box">
+			<h3></h3>
+			<h4></h4>
+			<div class="sel">
+				<select></select>年
+				<select></select>月
+			</div>
+			<div id="date">
+				<ul>
+					<li>日</li>
+					<li>一</li>
+					<li>二</li>
+					<li>三</li>
+					<li>四</li>
+					<li>五</li>
+					<li>六</li>
+				</ul>
+				<div></div>
+			</div>
+		</div>
+		<script>
+		
+			var oSel = document.getElementsByClassName("sel")[0];
+			var aSel = oSel.getElementsByTagName("select");
+			
+			aSel[1].innerHTML = '<option value="0"> 1月</option><option value="1"> 2月</option><option value="2"> 3月</option><option value="3"> 4月</option><option value="4"> 5月</option><option value="5"> 6月</option><option value="6"> 7月</option><option value="7"> 8月</option><option value="8"> 9月</option><option value="9">10月</option><option value="10">11月</option><option value="11">12月</option>';
+			aSel[0].innerHTML = '<option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option>';
+		
+//		var date = new Date();
+//			date.getFullYear();
+//			date.getMonth();
+			
+		fn(2014,1);
+			
+		aSel[0].onchange = function(){
+			fn(aSel[0].value,aSel[1].value);
+		};
+		aSel[1].onchange = function(){
+			fn(aSel[0].value,aSel[1].value);
+		};
+		
+		
+		
+		
+		function fn(years,months){
+			
+			var oDate = document.getElementById("date"),
+				oBox = oDate.getElementsByTagName("div")[0],
+				str = '';
+
+			//第一天星期几n1;
+			var date = new Date();
+			
+			date.setFullYear(years);
+			date.setMonth(months);
+			
+			date.setDate(1);
+			var n1 = date.getDay();
+//			if(n1 == 0){
+//				n1 = 7;
+//			}
+//			console.log(n1)
+			//本月有多少天n2
+			var date = new Date();
+			
+			date.setFullYear(years);
+			date.setMonth(months+1);
+			
+			date.setDate(0);
+			var n2 = date.getDate();
+//			console.log(n2)
+			//今天几号n3
+			var date = new Date();
+			var n3 = date.getDate();
+			console.log(n3);
+			
+			for (var i = 0; i < n1; i++) {
+				str +='<span></span>';
+			}
+			for (var i = 0; i < n2; i++) {
+				str +='<span>'+(i+1)+'</span>';
+			}
+			oBox.innerHTML = str;
+			//当日加框
+			var aSpan = document.getElementsByTagName("span");
+			for (var i = 0; i < aSpan.length; i++) {
+				if(i == n1+n3-1){
+					aSpan[i].className = 'active';
+				}
+//				if(aSel[0].value != 2016 && aSel[1].value != 11){
+//					aSpan[i].className = '';
+//				} 
+			}
+
+		}
+	
+		</script>
+	</body>
+</html>

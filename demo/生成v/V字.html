@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #btn{
+            width: 60px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background: deepskyblue;
+            color: black;
+            font-size: 17px;
+            margin-left: 12px;
+        }
+        #box{
+            width: 320px;
+            height: 320px;
+            position: absolute;
+            background: papayawhip;
+            top: 70px;
+            left: 20px;
+        }
+        #box div{
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            position: absolute;
+        }
+        #box div{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="按钮" id="btn"/>
+<div id="box">
+
+</div>
+<script>
+    /*
+       步骤：
+       1、获取按钮及div元素；
+       2、声明变量
+       3、为按钮元素添加点击事件；
+       4、通过if设置点击第一次出现向上的V字形，点击第二次出现向右的V字形，点击第三次出现向下的V字形，点击第四次出现向左的V字形，点击第五次恢复原样，然后重复。*/
+//  获取元素
+    var btn = document.getElementById("btn");
+    var box = document.getElementById("box");
+//  声明变量
+    var nmb = 5;
+    var num = 0;
+    var str = "";
+    var arr = ["red","limegreen","yellow"];
+//  添加点击事件
+    btn.onclick = function(){
+//  清空点击与新行为之间的状态
+        
+        str="";
+//  通过if设置点击后出现的效果
+        num++;
+        if(num > 4){
+        	num = 1;
+        }
+        console.log(num);
+        for(var i=0;i<nmb;i++){
+        	if(i<nmb/2){
+                n = i*65;
+            }else{
+                n = (5-i-1)*65;
+            }
+        	if(num==1){
+//  向上的V字形效果    
+                str +='<div style="background:'+arr[n%arr.length]+';left:'+(i*65)+'px;top:'+n+'px;">'+(i+1)+'</div>';
+            }else if(num==2){    
+//  向右的V字形效果
+                str +='<div style="background:'+arr[n%arr.length]+';top:'+(i*65)+'px;right:'+n+'px;">'+(i+1)+'</div>';
+           	}else if(num==3){
+        
+//  向下的V字形效果
+                str +='<div style="background:'+arr[n%arr.length]+';left:'+(i*65)+'px;bottom:'+n+'px;">'+(i+1)+'</div>';
+            
+            }else if(num==4){
+//  向左的V字形效果
+                str +='<div style="background:'+arr[n%arr.length]+';top:'+(i*65)+'px;left:'+n+'px;">'+(i+1)+'</div>';
+            }
+        }
+        box.innerHTML = str;
+    };
+
+</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			form{
+				width:300px;
+				height:200px;
+				background:ghostwhite;
+				padding-top:20px;
+				box-sizing: border-box;
+				margin:100px auto;
+			}
+			form p{
+				margin:0;
+				width:90px;
+				height:23px;
+				text-align: right;
+			}
+			form div{
+				float: left;
+			}
+			#submit{
+				margin-top:20px;
+				width:80px;
+			}
+			form input{
+				outline: none;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="">
+			<div>
+				<p>QQ号码：</p>
+				<p>手机号码：</p>
+				<p>Email：</p>
+				<p>生日：</p>
+			</div>
+			<div>
+				<input type="text" /><br />
+				<input type="text" /><br />
+				<input type="text" /><br />
+				<input type="text" /><br />
+			<div>
+			<input type="submit" name="submit" id="submit" value="提交" />
+		</form>
+		<script type="text/javascript">
+			var inps = document.getElementsByTagName('input');
+			//QQ验证
+			var fn = () => {
+				var txt = inps[0].value;
+				if(/^[1-9]\d{4,10}$/.test(txt)){
+					inps[0].style.borderColor = '';
+				}else{
+					inps[0].style.borderColor = 'red';
+				}
+			}
+			//手机号码验证
+			var fn1 = () => {
+				var txt = inps[1].value;
+				if(/^1[3578]\d{9}$/.test(txt)){
+					inps[1].style.borderColor = '';
+				}else{
+					inps[1].style.borderColor = 'red';
+				}
+			}
+			//Email验证
+			var fn2 = () => {
+				var txt = inps[2].value;
+				if(/^[^_]\w{4,16}[^_]@(163|126|qq|sina)\.(com|cn)$/.test(txt)){
+					inps[2].style.borderColor = '';
+				}else{
+					inps[2].style.borderColor = 'red';
+				}
+			}
+			var fn3 = () => {
+				var txt = inps[3].value;
+				//获取时间
+				if(/^([12]\d{3})[年/\.-](1[0-2]|[1-9])[月/\.-]([1-2][0-9]|[0-9]|3[01])[日/\.-]$/.test(txt)){
+//					txt.replace(/^([12]\d{3})[年/.-](1[0-2]|[0-9])[月/.-]([1-2][0-9]|[0-9]|3[01])[日/.-]$/,function($0,$1,$2,$3){
+//						var newDate = new Date();
+//						var newYear = newDate.getFullYear();
+//						var newMonth = newDate.getMonth();
+//						var newDay = newDate.getDate();
+//						//判断输入的该月有多少天;
+//						var date = new Date();
+//						date.setFullYear($1);
+//						date.setMonth($2);
+//						date.setDate(0);
+//						date.setMonth($2-1);
+//						var setDay = date.getDate(); 
+//						if($3<=setDay){
+//							date.setDate = $3;
+//							if(date-mewDate>0){
+//								inps[3].style.borderColor = 'red';
+//							}else{
+								inps[3].style.borderColor = '';
+//							}
+//						}
+//					})
+				}else{
+					inps[3].style.borderColor = 'red';
+				}
+			}
+			inps[0].addEventListener('keyup',fn)
+			inps[1].addEventListener('keyup',fn1)
+			inps[2].addEventListener('keyup',fn2)
+			inps[3].addEventListener('keyup',fn3)
+		</script>
+	</body>
+</html>

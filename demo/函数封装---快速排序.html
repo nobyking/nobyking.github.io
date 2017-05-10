@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">		
+			var arr = [3,1,5,2,7,8,6,4];
+			function quickSort(arr){
+				if(arr.length<=1){
+					return arr;
+				}
+				var c = arr.shift();
+				var left = new Array;
+				var right = new Array;
+				for(var i=0;i<arr.length;i++){
+					if(arr[0]>c){
+						right.push(arr.shift())//no:arr[0]
+						i--;
+					}else{
+						left.push(arr.shift())//no:arr[0]
+						i--;
+					}
+					console.log(left,c,right)
+				}
+				return quickSort(left).concat(c,quickSort(right));
+			}
+			arr = quickSort(arr)
+			console.log(arr)
+		</script>
+	</body>
+</html> 

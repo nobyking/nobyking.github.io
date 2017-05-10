@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:100px;
+				height:100px;
+				background-color:red;
+				float: left;
+				margin-right: 10px;
+				position: relative;
+				transition: .5s;
+				top:0px;
+			}
+			div:nth-of-type(1){
+				/*top: 200px;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<script>
+//		点击的那个div往下掉
+//			点击所有的div都会往下掉
+//			所以说点击事件是加给所有div的（for）
+		
+//		点击谁,谁就往下掉
+		
+			var divs = document.getElementsByTagName("div");
+//			console.log( divs.length );
+			for (var i = 0; i < divs.length; i++) {
+				divs[i].onclick = function(){
+//					alert(1)
+//					this(在此处this是的就是我点击的那个div)
+					this.style.top = "200px";
+				}
+			}
+		</script>
+	</body>
+</html>

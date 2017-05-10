@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            width: 300px;
+            list-style: none;
+        }
+        li {
+            margin: 10px 0;
+            height: 30px;
+            background: #CCCCCC;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+
+           //eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('4 a=k.e(\'f\');6(4 b=0;b<a.5;b++){a[b].g=h(){6(4 c=0;c<a.5;c++){a[c].2.3=\'#j\'};1.2.3=\'i\';8(1.9){1.9.2.3=\'7\'};8(1.d){1.d.2.3=\'7\'}}}',21,21,'|this|style|background|var|length|for|green|if|previousElementSibling||||nextElementSibling|querySelectorAll|li|onmouseover|function|orange|CCCCCC|document'.split('|'),0,{}))
+			/*
+			 * 分析：
+			 	鼠标移入
+			 		自身变绿
+			 		上一个li变黄
+			 		下一个li变黄
+			 	鼠标移出
+			 		所有还原
+			 * */
+			var lis = document.getElementsByTagName('li');
+			for(var i=0;i<lis.length;i++){
+				lis[i].onmouseover = function(){
+					this.style.background = 'green';
+					var prev = this.previousElementSibling;
+					var next = this.nextElementSibling;
+					if(prev){
+						prev.style.background = 'yellow';
+					}
+					if(next){
+						next.style.background = 'yellow';
+					}		
+				}
+				lis[i].onmouseout = function(){
+					for(var i=0;i<lis.length;i++){
+						lis[i].style.background = '';
+					}
+				}
+			}
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str = 'miao-wei-ke-tang';
+			function fn(stri){
+				var arr = stri.split('-');
+				for(var i=1;i<arr.length;i++){
+					arr[i]='-'+arr[i].slice(0,1).toUpperCase()+arr[i].slice(1);
+				}
+				stri = arr.join('');
+				return stri;
+			}		
+			fn(str)
+			console.log(fn(str))
+		</script>
+	</body>
+</html>

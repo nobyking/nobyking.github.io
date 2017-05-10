@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	div{
+		width:100px;
+		height:100px;
+		background-color:red;
+		float: left;
+		margin-right: 10px;
+		position: relative;
+		transition: .5s;
+		top:0px;
+	}
+	div:nth-of-type(1){
+		/*top: 200px;*/
+	}
+</style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<script>
+//	当前定时器都在开着
+		
+	var divs = document.getElementsByTagName("div");
+	var num = 0;
+	var num2 = 0;
+	var timer1 = null;
+	var timer2 = null;
+	for (var i = 0; i < divs.length; i++) {
+		divs[i].index = i;
+		divs[i].onclick = function(){
+			this.style.top = "200px";
+			num = this.index;
+			num2 = this.index;
+			timer1 = setInterval(function(){
+//				console.log(1);//打印1就说明定时器还开着
+				num -- ;
+//				num = num==-1 ? 0 : num;//当num等于0的时候定时器被清除了，所以下一次的num--变成-1，就不会执行了，也就是说num不可能变成-1，也就不用做判断了
+				
+				divs[ num ].style.top = "200px";
+				if(num == 0){
+					clearInterval( timer1 );
+				}
+			},500)
+			timer2 = setInterval(function(){
+				console.log(2);
+				num2 ++ ;
+//				num2 = num2 == divs.length ? divs.length-1:num2;
+				divs[ num2 ].style.top = "200px";
+				if( num2 == divs.length-1 ){
+					clearInterval( timer2 );
+				}
+				
+			},500)
+			
+		}
+	}
+</script>
+</body>
+</html>

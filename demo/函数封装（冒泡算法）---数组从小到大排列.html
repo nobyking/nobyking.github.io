@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var arr = [3,1,4,8,5,7,6,2];
+			function bubbleSort(array){
+				//如果是8个数据，只需要比七次就可以了；
+				for(var i=0;i<array.length-1;i++){
+					var onOff = true;
+					//第一个循环的时候需要比七次，第二个循环的时候因为最大的已经在最后了，所以只需要六次，以此类推，循环可以用array.length-i次来循环
+					for(var j=0;j<array.length-i-1;j++){
+						var a = array[j];
+						var b = array[j+1];
+						if(a>b){
+							array[j]=b;
+							array[j+1]=a;
+							onOff = false;//当执行位置互换的时候把开关关上，当没有替换的时候，说明排序已经完成，可以停止循环；减少性能消耗；
+						}
+					}
+					if(onOff){
+						break;
+					}
+				}
+				return array;
+			}
+			console.log(bubbleSort(arr))
+		</script>
+	</body>
+</html>

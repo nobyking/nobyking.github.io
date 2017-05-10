@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				left:0;
+				top:100px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="按钮" id="btn"/>
+		<div id="box"></div>
+		<script src="函数封装---多属性运动.js"></script>
+		<script>
+			var box = document.getElementById('box');
+			var btn = document.getElementById('btn');
+			btn.onclick = function(){
+				move(box,{left:400,top:500},2000,'elasticIn')
+			
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	div{
+		width:100px;
+		height:100px;
+		background-color:red;
+		float: left;
+		margin-right: 10px;
+		position: relative;
+		transition: .5s;
+		top:0px;
+	}
+	div:nth-of-type(1){
+		/*top: 200px;*/
+	}
+</style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<script>
+//		右侧也需要一个一个掉下	
+//			左侧使用num来控制那个div掉落,那么右侧使用num2来控制
+	var divs = document.getElementsByTagName("div");
+	var num = 0;
+	var num2 = 0;
+	for (var i = 0; i < divs.length; i++) {
+		divs[i].index = i;
+		divs[i].onclick = function(){
+			this.style.top = "200px";
+			num = this.index;
+			num2 = this.index;
+			setInterval(function(){
+				num -- ;
+				num = num==-1 ? 0 : num;
+				divs[ num ].style.top = "200px";
+			},500)
+			setInterval(function(){
+				num2 ++ ;
+				num2 = num2 == divs.length ? divs.length-1:num2;
+				divs[ num2 ].style.top = "200px";
+			},500)
+			
+		}
+	}
+</script>
+</body>
+</html>

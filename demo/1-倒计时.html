@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		小时：
+		<input type="text" />
+		分钟：
+		<input type="text" />
+		秒：
+		<input type="text" />
+		<input type="button" value="按钮"/>
+		<br />
+		<br />
+		<br />
+		<img src="img/0.jpg" alt="" />
+		<img src="img/0.jpg" alt="" />
+		<img src="img/c.jpg" alt="" />
+		<img src="img/0.jpg" alt="" />
+		<img src="img/0.jpg" alt="" />
+		<img src="img/c.jpg" alt="" />
+		<img src="img/0.jpg" alt="" />
+		<img src="img/0.jpg" alt="" />
+		<script>
+			/*
+			 	分析
+			 		计时开始时间，目标时间
+			 		10：0         10：5
+			 		10：1
+			 		10：2
+			 		
+			 		1min = 60s
+			 		1h = 3600s
+			 		1d = 86400
+			 		2小时30分
+			 		2*3600 + 30*60 +3 = 7200+1800，9000
+			 		剩余天：Math.floor(shyTime/86400);
+			 		剩余小时：Math.floor(shyTime%86400/3600);
+					剩余分钟：Math.floor(shyTime%86400%3600/60);
+					剩余秒:Math.floor(shyTime%60);
+			 * */
+			var inps = document.getElementsByTagName('input');
+			var imgs = document.getElementsByTagName('img');
+			var timer = null;
+			inps[3].onclick = function(){
+				//设置目标时间
+				var date = new Date();
+				var h = inps[0].value;
+				var m = inps[1].value;
+				var s = inps[2].value;
+				date.setHours(h);
+				date.setMinutes(m);
+				date.setSeconds(s);
+				timer = setInterval(function(){
+					//目标时间-当前时间=剩余时间
+					var date2 = new Date();
+					var shyTime = (date - date2)/1000;
+					//根据剩余时间计算出要显示的小时，分钟，秒
+					var sH = Math.floor(shyTime%86400/3600);
+					var sM = Math.floor(shyTime%86400%3600/60);
+					var sS = Math.floor(shyTime%60);
+					var str = '';
+					//把要显示的时间拼成字符串，再逐位调整对应图片显示的数字
+					str = two(sH)+':'+two(sM)+':'+two(sS);
+					
+					console.log(shyTime)
+					//剩余时间大于0证明时间还没到，反之时间到了
+					if(shyTime > 0){
+						for(var i=0;i<imgs.length;i++){
+							if(i == 2 || i == 5){
+								continue;
+							}
+							imgs[i].src = 'img/'+str.charAt(i)+'.jpg';
+						}
+					}else{
+						//时间到了
+						console.log('时间到了')
+						clearTimeout(timer)
+					}
+				},1000)
+			}
+			function two(n){
+				return n<10?'0'+n:''+n;
+			}
+		</script>
+	</body>
+</html>

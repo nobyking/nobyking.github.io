@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+ul , p { width:300px; padding:0; margin:0; margin:0 auto; }
+p { padding-top:20px; }
+li { list-style:none; border-bottom:1px solid #333; height:30px; line-height:30px; }
+.yellow{
+	background-color: yellow;
+}
+.red{
+	background-color: red;
+}
+.hover{
+	background-color: black;
+	color: #fff;
+}
+.checked{
+	background-color: green;
+}
+
+</style>
+</head>
+
+<body>
+
+<ul>
+	<li><input type="checkbox" />信乐团 - 海阔天空</li>
+	<li><input type="checkbox" />五月天 - 倔强</li>
+	<li><input type="checkbox" />薛之谦 - 演员</li>
+	<li><input type="checkbox" />杨宗纬 - 一次就好</li>
+	<li><input type="checkbox" />周杰伦 - 安静</li>
+</ul>
+<p><input type="checkbox" id="all"/> 全选</p>
+<p><input type="button" id="onOff"/ value="反选"> </p>
+
+<script>
+	//eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('3 a=p.v(\'s\');3 b=p.i(\'w\')[0];3 c=b.i(\'x\');3 d=b.i(\'y\');j(3 e=0;e<d.m;e++){7(e%2){d[e].6=\'A\'}l{d[e].6=\'z\'};d[e].o=d[e].6;d[e].t=5(){1.6=\'u\'};d[e].D=5(){1.6=1.o};c[e].k=e;c[e].n=5(){7(1.4){d[1.k].9.8=\'r\'}l{d[1.k].9.8=\'\';};a.4=f(c)}};5 f(g){j(3 h=0;h<g.m;h++){7(!g[h].4){q B}};q C};a.n=5(){j(3 g=0;g<c.m;g++){c[g].4=1.4;7(1.4){d[g].9.8=\'r\'}l{d[g].9.8=\'\'}}}',40,40,'|this||var|checked|function|className|if|background|style|||||||||getElementsByTagName|for|index|else|length|onchange|color|document|return|green|all|onmouseover|hover|getElementById|ul|input|li|red|yellow|false|true|onmouseout'.split('|'),0,{}))
+	/*
+	 	1.初始化
+	 		隔行变色
+	 * 	2.移入li
+	 * 		未选中：背景色变黑，字变白
+	 * 		选中：背景色绿色不变，字变白
+	 * 	3.移出li
+	 * 		未选中：恢复颜色
+	 * 		选中：背景色绿色不变，字变黑
+	 * 	4.点击checkbox
+	 * 		选中：背景色变绿
+	 * 		未选中：背景色变黑
+	 * 		判断是否全选
+	 * 			全选：全选就选中
+	 *			未全选：全选就取消
+	 * 	5.全选
+	 * 		选中：上边所有的checkbox都选中
+	 * 		未选中：上边所有的checkbox都取消
+	 * 
+	 * */
+	var ul = document.getElementsByTagName('ul')[0];
+	var lis = ul.getElementsByTagName('li');
+	var inps = ul.getElementsByTagName('input');
+	var all = document.getElementById('all');
+	var onOff = document.getElementById('onOff');
+	
+	for(var i=0;i<lis.length;i++){
+		//初始化隔行变色
+		if(i%2){
+			lis[i].className = 'yellow';
+		}else{
+			lis[i].className = 'red';
+		}
+		//索引值：移入Li找到对应的input来判断是否选中
+		lis[i].index = i;
+		lis[i].onmouseover = function(){
+			//如果对应的input未选中，才变黑
+			//选中，还是绿色不需要变色，不需要写
+			if(!inps[this.index].checked){
+				this.className = 'hover';
+			}
+		}
+		lis[i].onmouseout = function(){
+			//如果未选中，才需要变回原来的颜色
+			//选中，不需要变色，不需要写
+			if(!inps[this.index].checked){
+				//和下面三目效果一样
+				if(this.index%2){
+					this.className = 'yellow';
+				}else{
+					this.className = 'red';
+				}	
+			}
+		}
+		//索引值：点击input找到对应的li变色
+		inps[i].index = i;
+		inps[i].onclick = function(){
+			//选中：变绿
+			//未选中：变黑
+			if(this.checked){
+				lis[this.index].className = 'checked';
+			}else{
+				lis[this.index].className = 'hover';
+			}
+			//点击的时候需要判断全选
+			checkAll()
+		}
+	}
+	all.onclick = function(){
+		//全选
+		if(this.checked){
+			for(var i=0;i<inps.length;i++){
+				inps[i].checked = true;
+				lis[i].className = 'checked';
+			}
+		}else{
+			for(var i=0;i<inps.length;i++){
+				inps[i].checked = false;
+				//和上面效果一样，三目简化了代码，判断i恢复原来的颜色
+				lis[i].className = i%2?'yellow':'red';
+			}
+		}
+	}
+	//反选
+	onOff.onclick = function(){
+		for(var i=0;i<inps.length;i++){
+			//循环每个input，如果选中就变成未选中，未选中就变成选中，对应的li颜色也要变
+			if(inps[i].checked){
+				inps[i].checked = false;
+				lis[i].className = i%2?'yellow':'red';
+			}else{
+				inps[i].checked = true;
+				lis[i].className = 'checked';
+			}
+		}
+		checkAll();
+	}
+	//判断是否都选中
+	function checkAll(){
+		//每次都重新判断每个input是否是选中状态，所以var n=0放在这里
+		//用n记录有几个是选中的
+		var n = 0;
+		for(var i=0;i<inps.length;i++){
+			//console.log(inps[i].checked)
+			//如果哪个input是选中状态，n+1
+			if(inps[i].checked){
+				n++;
+			}	
+		}
+		//如果上面循环判断完每个input的选中状态后，n等于input的个数，就代表全都选中了，反之不等于就是没都选中
+		if(n == inps.length){
+			all.checked = true;
+		}else{
+			all.checked = false;
+		}
+	}
+</script>
+
+</body>
+</html>

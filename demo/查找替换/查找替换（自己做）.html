@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+a{
+    text-decoration: none;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+input{
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+
+    #box{
+        width: 500px;
+        height: 500px;
+        background-color: blue;
+        position: relative;
+    }
+    #content{
+        position: absolute;
+        top:50px;
+        left: 30px;
+        background-color: white;
+        width: 400px;
+        color:black;
+        font-weight: bold;
+    }
+    #open{
+        position: absolute;
+        top:35px;
+        right: 10px;
+        text-align: center;
+    }
+    #open a{
+        display: block;
+        width: 50px;
+        line-height: 30px;
+    }
+    #open>a{
+        background-color: #ccc;   
+        color: white; 
+    }
+    #open li a{
+
+        background-color: #C0C0C0;
+        color:black;
+    }
+    #open li a:hover{
+        background-color: #E76308;
+        color: white;
+    }
+    #fun{
+        position: absolute;
+        bottom: 20px;
+        left: 28px;
+        border: 5px solid #E71063;
+        width: 400px;
+        background-color: #E7E7B5;
+
+    }
+    #fun .btns{
+        width: 370px;
+        margin: 0 auto;
+        height: 50px;
+        border-bottom: 2px solid #E73100;
+
+    }
+    #fun .btns a{
+        float: left;
+        width: 70px;
+        line-height: 30px;
+        text-align: center;
+        background-color: #E7E7B5;
+        color: black;
+        margin-top: 20px;
+    }
+    #fun .btns .active{
+        background-color: #E73100;
+        color: white;
+    }
+    #search,#replace{
+        height: 30px;
+        padding: 20px;
+        display: none;
+    }
+    #fun input{
+        height: 25px;
+        width: 140px;
+    }
+    #fun input:focus{
+        outline-color: #E73100; 
+    } 
+    #fun input[type="button"]{
+        width: 50px;
+        height: 30px;
+    }
+    span{
+        background-color: #FFFF00;
+    }
+</style>
+</head>
+<body>
+<div id="box">
+    <div id="content">
+        目前主要针对的是javascript培训，同时还提供了css教程、javascript视频、js特效等，最新推出了外地学员们喜欢的javascript网络课程服务，同时还为处于javascript入门阶段的朋友录制了大量javascript视频，其中涉及了大量javascript基础知识，希望妙味课堂推出的javascript网络培训课程能带给大家更多惊喜。目前主要针对的是javascript培训，同时还提供了css教程、javascript视频、js特效等，最新推出了外地学员们喜欢的javascript网络课程服务，同时还为处于javascript入门阶段的朋友录制了大量javascript视频，其中涉及了大量javascript基础知识，希望妙味课堂推出的javascript网络培训课程能带给大家更多惊喜。目前主要针对的是javascript培训，
+    </div>
+    <div id="open">
+        <a href="javascript:;">展开</a>
+        <ul style="display: none;">
+            <li><a href="javascript:;">查找</a></li>
+            <li><a href="javascript:;">替换</a></li>
+        </ul>
+    </div>
+    <div id="fun" style="display: none;">
+        <div class="btns">
+            <a href="javascript:;" class="active">查找</a>
+            <a href="javascript:;">替换</a>
+        </div>
+
+        <div id="search" style="display: block;" >
+            <input type="text"/>
+            <input type="button" value="查找"/>
+        </div>
+        <div id="replace">
+            <input type="text"/>
+            <input type="text"/>
+            <input type="button" value="替换"/>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
+<script type="text/javascript">
+//eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('3 a=8.p(\'L\');3 b=a.5(\'a\')[0];3 c=a.5(\'K\')[0];3 d=c.5(\'P\');3 e=8.p(\'Q\');3 f=e.5(\'a\');3 g=e.5(\'O\');3 h=8.p(\'J\');3 i=h.5(\'E\');3 j=8.p(\'N\');3 k=8.p(\'M\');3 l=k.5(\'E\');3 m=j.t;b.4=9(){6(!7.B){c.q.r=\'z\';}A{c.q.r=\'I\';};7.B=!7.B};D(3 n=0;n<d.C;n++){d[n].v=n;d[n].4=9(){e.q.r=\'z\';f[7.v].4();b.4()};f[n].v=n;f[n].4=9(){D(3 o=0;o<f.C;o++){f[o].H=\'\';g[o+1].q.r=\'I\'};7.H=\'X\';g[7.v+1].q.r=\'z\'}};i[1].4=9(){3 o=i[0].w;6(o==\'\'){u(\'T\');s};6(m.G(o)==-1){u("U");s};j.t=m.y(o).x(\'<F>\'+o+\'</F>\')};l[2].4=9(){3 o=l[0].w;6(o==\'\'){u(\'S\');s};6(m.G(o)==-1){u(\'V\');s};6(l[1].w==\'\'){6(W(\'R\'+o)){j.t=m.y(o).x(\'\')}A{s}}A{j.t=m.y(o).x(l[1].w)};m=j.t}',60,60,'|||var|onclick|getElementsByTagName|if|this|document|function||||||||||||||||getElementById|style|display|return|innerHTML|alert|index|value|join|split|block|else|onOff|length|for|input|span|indexOf|className|none|search|ul|open|replace|content|div|li|fun|确定要删除|请输入要进行替换或者删除的内容|请输入要查找的内容|你要查找的内容不存在|你要替换或删除的内容不存在|confirm|active'.split('|'),0,{}))
+	var content = document.getElementById('content');
+	var contentVal = content.innerHTML;
+	var open = document.getElementById('open');
+	var opening = open.getElementsByTagName('a')[0];
+	var opened = open.getElementsByTagName('ul')[0];
+	var searchIcon = opened.getElementsByTagName('a')[0];
+	var replaceIcon =  opened.getElementsByTagName('a')[1];
+	var fun = document.getElementById('fun');
+	var search = document.getElementById('search');
+	var replace = document.getElementById('replace');
+	var btns = document.getElementsByClassName('btns')[0];
+	var check = btns.getElementsByTagName('a');
+	var searchBtn = search.getElementsByTagName('input')[1];
+	var replaceBtn =  replace.getElementsByTagName('input')[2];
+	opening.onclick=function(){
+		if(opened.style.display=='none'){
+			opened.style.display='block';
+		}else{
+			opened.style.display='none';
+		}
+	}
+	check[0].onclick=searchIcon.onclick=function(){
+		check[1].className='';
+		check[0].className='active';
+		fun.style.display='block';
+		search.style.display='block';
+		replace.style.display='none';
+		opened.style.display='none';
+	}
+	check[1].onclick=replaceIcon.onclick=function(){
+		check[1].className='active';
+		check[0].className='';
+		fun.style.display='block';
+		search.style.display='none';
+		replace.style.display='block';
+		opened.style.display='none';
+	}
+	searchBtn.onclick=function(){
+		var searchVal = search.getElementsByTagName('input')[0].value;
+		var n = 0;
+		for(var i=0;contentVal.indexOf(searchVal,i)!=-1;i=contentVal.indexOf(searchVal,i)+searchVal.length){
+			n++;
+		}
+		if(n==0){
+			alert('没有找到您要查找的内容');
+		}
+		if(searchVal==''){
+			alert('请输入您要查找的内容');
+		}else{
+			content.innerHTML=contentVal.split(searchVal).join('<span>'+searchVal+'</span>');
+		}
+	}
+	replaceBtn.onclick=function(){
+		var replaceValFind = replace.getElementsByTagName('input')[0].value;
+		var replaceVal = replace.getElementsByTagName('input')[1].value;
+		var n = 0;
+		for(var i=0;content.innerHTML.indexOf(replaceValFind,i)!=-1;i=content.innerHTML.indexOf(replaceValFind,i)+replaceValFind.length){
+				n++;
+		}
+		if(n==0){
+			alert('没有找到您要查找的内容');	
+		}
+		if(replaceValFind==''){
+			alert('请输入您要替换的内容')
+			return
+		}else if(replaceVal==''){
+			//confirm('确定要删除此内容吗')
+			if(confirm('确定要删除此内容吗')){
+				contentVal=contentVal.split(replaceValFind).join(replaceVal);
+				content.innerHTML=contentVal;
+			}
+		}else{
+			contentVal=contentVal.split(replaceValFind).join(replaceVal);
+			content.innerHTML=contentVal;
+		}
+		
+	}
+	
+	
+   
+</script>

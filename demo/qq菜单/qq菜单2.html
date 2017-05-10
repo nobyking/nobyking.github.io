@@ -1,0 +1,116 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	ul,ol{
+		margin: 0;
+		padding: 0;
+	}
+	li{
+		list-style: none;
+	}
+	a{
+		text-decoration: none;
+		color:black;
+		width: 100%;
+		text-align: center;
+	}
+	h2{
+		margin: 0;
+		background:url(img/right.gif) no-repeat  10px center #63F7FF;	
+		padding-left: 20px; 
+		line-height: 30px;
+	}
+	ul{
+		border: 1px solid black;
+		width: 150px;
+	}
+	ol{
+		display: none;
+	}
+	ol li{
+		line-height: 20px;
+		border-top: 1px solid black;
+		text-align: center;
+		display: block;
+		cursor:pointer;
+	}
+	ol li:nth-child(1){
+		border: none;
+	}
+	ol li.active{
+		background-color: #63F7FF;
+	}
+	h2.active{
+		background:url(img/down.gif) no-repeat  8px center #F7F794;
+	}
+	h2.active+ol{
+		display: block;
+	}
+</style>
+</head>
+
+<body>
+	<ul id="list">
+		<li>
+			<h2><a href="javascript:;">我的好友</a></h2>
+			<ol>
+				<li>张三</li>
+				<li>张三</li>
+				<li>张三</li>
+				<li>张三</li>
+			</ol>
+		</li>
+		<li>
+			<h2><a href="javascript:;">企业好友</a></h2>
+			<ol>
+				<li>李四</li>
+				<li>李四</li>
+				<li>李四</li>
+				<li>李四</li>
+				<li>李四</li>
+			</ol>
+		</li>
+		<li>
+			<h2><a href="javascript:;">黑名单</a></h2>
+			<ol>
+				<li>钟毅</li>
+				<li>钟毅</li>
+				<li>钟毅</li>
+			</ol>
+		</li>
+	</ul>
+</body>
+</html>
+<script type="text/javascript">
+	var h2s = document.getElementsByTagName('h2');
+	var prev = null;//记录上一次点击的H2
+	for(var i=0;i<h2s.length;i++){
+		h2s[i].onOff = true;//true对应收缩，false对应展开
+		h2s[i].onclick = function(){
+			//上一次点击和这一次点击的是否相同
+			//相同时，展开收缩
+			//不同时，展开当前，收缩上一个
+			//!=两边不等，返回真，相等返回假
+			if(prev != this){
+				if(prev){
+					prev.className = '';
+					prev.onOff = true;
+				}
+				this.className = 'active';
+				this.onOff = false;
+			}else{
+				if(this.onOff){
+					this.className = 'active';
+					this.onOff = false;
+				}else{
+					this.className = '';
+					this.onOff = true;
+				}
+			}
+			prev = this;
+		}
+	}
+</script>

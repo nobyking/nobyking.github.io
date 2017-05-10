@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var arr = [ '100px', 'abc'-6, [], -98765, 34, -2, 0, '300', , function(){alert(1);}, null, document, [], true, '200px'-30,'23.45元', 5, Number('abc'), function(){ alert(3); }, 'xyz'-90,false ];
+
+	
+    /*
+     1、找到arr里所有的数字：-98765, 34, -2, 0, 5
+     2、找到可以转成数字的：'100px', -98765, 34, -2, 0, '300', '23.45元',  5
+     3、把转成数字以后，最大值判断出来：300
+     4、把 NaN 所在的位置找出来：1 14 17  19*/
+
+	var arr1 = [];
+	var arr2 = [];
+	var arr3 = [];
+	
+	//var max = parseFloat(arr[0]);
+	var max = -Infinity;
+	for(var i=0;i<arr.length;i++){
+		//数据类型是number,排除NaN
+		if(typeof arr[i] == 'number' && !isNaN(arr[i])){
+			arr1.push(arr[i]);
+		}
+		//parseFloat只能转字符串，转不成数字返回NaN，NaN的布尔值是false，不进判断，0的布尔值是false,需要补上0
+		if(parseFloat(arr[i]) || parseFloat(arr[i]) == 0){
+			arr2.push(arr[i]);
+		}
+		//逐个比较，比max大的，就替换max，最后得到最大值
+		if(parseFloat(arr[i]) > max){
+			max = parseFloat(arr[i]);
+		}
+		//NaN自己不等于自己
+//		if(arr[i] != arr[i]){
+//			arr3.push(i);
+//		}
+		//先判断数据类型是数字类型，再判断是NaN
+		if(typeof arr[i] == 'number' && isNaN(arr[i])){
+			arr3.push(i)
+		}
+	}
+	console.log(arr1)
+	console.log(arr2)
+	console.log(max)
+	console.log(arr3)
+</script>

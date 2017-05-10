@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box {
+            margin: 100px auto 0;
+            width: 520px;
+            height: 280px;
+            border: 1px solid #000000;
+            position: relative;
+            overflow: hidden;
+        }
+        #list {
+            list-style: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        li {
+            float: left;
+        }
+        img {
+            display: block;
+        }
+
+        #prev, #next {
+            position: absolute;
+            width: 30px;
+            height: 60px;
+            background: #000000;
+            color: white;
+            font-weight: bold;
+            font-size: 30px;
+            line-height: 60px;
+            text-align: center;
+            top: 110px;
+            cursor: pointer;
+        }
+        #prev {
+            left: 0;
+        }
+        #next {
+            right: 0;
+        }
+        #text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding:10px;
+            height: 50px;
+            background: rgba(0,0,0,.8);
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul id="list">
+            <li><img src="images1/1.jpg" ></li>
+            <li><img src="images1/2.jpg" ></li>
+            <li><img src="images1/3.jpg" ></li>
+            <li><img src="images1/4.jpg" ></li>
+            <li><img src="images1/5.jpg" ></li>
+        </ul>
+        <span id="prev"> < </span>
+        <span id="next"> > </span>
+        <div id="text">
+            <h3>标题一</h3>
+            <p>内容一</p>
+        </div>
+    </div>
+    <script src="move4.js"></script>
+    <script>
+        /*
+         	分析
+         		每一次运动
+         			1.文字下去
+         			2.图片切换
+         			3.文字换好了上来
+         			
+         * */
+        var box = document.getElementById('box');
+        var list = document.getElementById('list');
+        var lis = list.getElementsByTagName('li');
+        var prev = document.getElementById('prev');
+        var next = document.getElementById('next');
+        var text = document.getElementById('text');
+        var h3 = text.getElementsByTagName('h3')[0];
+        var p = text.getElementsByTagName('p')[0];
+        var n = 0;
+        var timer = null;
+        var onOff = true;
+        var arr = [
+        {
+        	title:'标题一',
+        	content:'内容一',
+        },
+        {
+        	title:'标题二',
+        	content:'内容二',
+        },
+        {
+        	title:'标题三',
+        	content:'内容三',
+        },
+        {
+        	title:'标题四',
+        	content:'内容四',
+        },
+        {
+        	title:'标题五',
+        	content:'内容五',
+        }
+        ];
+       // list.style.width = 100*lis.length+'%';
+       list.style.width = 520*lis.length+'px';
+        //上一张
+        prev.onclick = function(){
+        	if(onOff){
+        		onOff = false;
+        		n++;
+        		if(n > arr.length-1){
+        			n = 0;
+        		}
+        		play();
+        	}
+        }
+        next.onclick = function(){
+        	if(onOff){
+        		onOff = false;
+        		n--;
+        		if(n < 0 ){
+        			n = arr.length-1;
+        		}
+        		play();
+        	}
+        }
+        function play(){
+        	move(text,{bottom:-70},500,'linear',function(){
+        			h3.innerHTML = arr[n].title;
+        			p.innerHTML = arr[n].content;
+        			move(list,{left:-520*n},800,'linear',function(){
+        				move(text,{bottom:0},500,'linear',function(){
+        					onOff = true;
+        				})
+        			})
+        		})
+        }
+        timer = setInterval(prev.onclick,2000);
+        box.onmouseover = function(){
+        	clearInterval(timer);
+        }
+        box.onmouseout = function(){
+        	 timer = setInterval(prev.onclick,2000);
+        }
+    </script>
+</body>
+</html>

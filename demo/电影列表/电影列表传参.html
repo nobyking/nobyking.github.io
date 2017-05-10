@@ -1,0 +1,432 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	ul{
+		margin: 0;
+		padding:0;
+	}
+	li{
+		list-style: none;
+	}
+	a{
+		text-decoration: none;
+	}
+	i{
+		font-style: normal;
+	}
+	p{
+		margin: 0;
+	}
+	#list{
+		width: 300px;
+		height: 400px;
+		background-color: #DEE7E7;
+	}
+	h4{
+		margin: 0;
+		color: #B78A5D;
+		line-height: 30px;
+		padding-left: 10px;
+		padding-right: 20px;
+		border-bottom: 1px solid #B4CFDD;
+		width:100px;
+		float: left;
+	}
+	#tabNav{
+		float: left;
+		margin-top: 9px; 
+	}
+	#tabNav li{
+		float: left;
+		width: 40px;
+		text-align: center;
+		line-height: 20px;
+		border: 1px solid #B4CFDD;
+		margin-left: -1px;
+		cursor: pointer;
+	}
+	#tabNav .selected{
+		background-color: white;
+		border-bottom-color:white; 
+	}
+	#content{
+		clear: both;
+	}
+	#content ul{
+		display: none;
+	}
+	#content .show{
+		display: block;
+	}
+	#content li{
+		position: relative;
+		border-bottom: 1px dashed white;
+		cursor: pointer;
+	}
+	#content i{
+		position: absolute;
+		left: 5px;
+		top:5px;
+		width: 20px;
+		height: 20px;
+		background-color: #1A68A2;
+		text-align: center;
+		font-weight: bold;
+		color: white;
+	}
+	#content li>p{
+		margin-left: 40px;
+		line-height: 30px;
+		font-size: 14px;
+	}
+	#content div{
+		background-color: white;
+		padding: 4px 0 4px 40px;
+		height: 67px; 
+		font-size: 14px;
+		display: none;
+	}
+	#content img{
+		float: left;
+	}
+	#content a{
+		position: absolute;
+		right: 20px;
+		bottom: 4px;
+		width: 40px;
+		line-height: 30px;
+		text-align: center;
+		color: white;
+		background-color: #1A68A2;
+	}
+	#content .hover>p{
+		display: none;
+	}
+	#content .hover div{
+		display: block;
+	}
+</style>
+</head>
+<script type="text/javascript">
+	window.onload = function(){
+		var tabNav = document.getElementById('tabNav');
+		var content =document.getElementById('content');
+		var navLi = tabNav.getElementsByTagName('li');
+		var uls = content.getElementsByTagName('ul');
+		for(var i=0;i<navLi.length;i++){
+			navLi[i].index = i;
+			navLi[i].onclick = function(){
+				for(var i=0;i<navLi.length;i++){
+					navLi[i].className = '';
+					uls[i].className = '';
+				}
+				this.className = 'selected';
+				uls[this.index].className = 'show';
+			}
+			hover(i);
+		}
+		function hover(n){
+			var lis = uls[n].getElementsByTagName('li');
+			for(var i=0;i<lis.length;i++){
+				lis[i].onmouseover = function(){
+					for(var i=0;i<lis.length;i++){
+						lis[i].className = '';
+					}
+					this.className = 'hover';
+				}
+			}
+		}
+	}	
+</script>
+<body>
+	<div id="list">
+		<h4>观看电影榜</h4>
+		<ul id="tabNav">
+			<li class="selected">每日</li>
+			<li>每周</li>
+			<li>全部</li>
+		</ul>
+		<div id="content">
+			<ul class="show">
+				<li class="hover">
+					<i>1</i>
+					<p>解密：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>2</i>
+					<p>解密：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>3</i>
+					<p>解密：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>4</i>
+					<p>解密：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>5</i>
+					<p>解密：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>6</i>
+					<p>解密：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>7</i>
+					<p>解密：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>8</i>
+					<p>解密：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>9</i>
+					<p>解密：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>10</i>
+					<p>解密：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+			</ul>
+			<ul>
+				<li class="hover">
+					<i>1</i>
+					<p>每周：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>2</i>
+					<p>每周：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>3</i>
+					<p>每周：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>4</i>
+					<p>每周：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>5</i>
+					<p>每周：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>6</i>
+					<p>每周：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>7</i>
+					<p>每周：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>8</i>
+					<p>每周：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>9</i>
+					<p>每周：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>10</i>
+					<p>每周：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+			</ul>
+			<ul>
+				<li class="hover">
+					<i>1</i>
+					<p>每月：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>2</i>
+					<p>每月：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>3</i>
+					<p>每月：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>4</i>
+					<p>每月：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>5</i>
+					<p>每月：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>6</i>
+					<p>每月：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>7</i>
+					<p>每月：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>8</i>
+					<p>每月：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>9</i>
+					<p>每月：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+				<li>
+					<i>10</i>
+					<p>每月：关于地球与人类的一千零一问</p>
+					<div>
+						<img src="images/img.png" alt="">
+						<p>解密：关于地球与人类的一千零一问</p>
+						<a href="#">播放</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

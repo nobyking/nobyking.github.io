@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#content {
+				padding: 20px;
+			}
+			#content div{
+				width: 59px;
+				height: 51px;
+				padding: 20px;
+				margin-bottom: 10px;
+				background: url(img/folder.png) no-repeat center;
+				position: relative;
+				float: left;
+			}
+			#content div.active{
+				background: url(img/folder.png) #e0f0f0 no-repeat center;
+			}
+			#content div input{
+				position: absolute;
+				left: 0;
+				top: 0;
+				display: none;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+//				eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('2 a=4.7("i");2 b=4.w("k");a[0].e=3(){2 c=4.j(\'6\');2 d=4.j("i");d.p(\'r\',\'o\');c.8(d);b.8(c);c.q=3(){f.5=\'n\';d.9.h=\'m\'};c.l=3(){g(d.x){y};f.5=\'\';d.9.h=\'v\'}};a[1].e=3(){2 c=b.7(\'6\');s(2 d=0;d<c.t;d++){g(c[d].5){b.u(c[d])}}}',35,35,'||var|function|document|className|div|querySelectorAll|appendChild|style|||||onclick|this|if|display|input|createElement|content|onmouseout|block|active|checkbox|setAttribute|onmouseover|type|for|length|removeChild|none|getElementById|checked|return'.split('|'),0,{}))
+				var content = document.getElementById('content');
+				var add = document.getElementsByTagName('input')[0];
+				var remove = document.getElementsByTagName('input')[1];
+				var divs = content.getElementsByTagName('div');
+				add.onclick=function(){
+					div = document.createElement('div')
+					div.innerHTML = '<input type="checkbox" style="display:none">'
+					if(content.children){
+						content.insertBefore(div,divs[0]);
+					}else{
+						content.appendChild(div);
+					}
+					for(var i=0;i<divs.length;i++){
+						if(divs[i]){
+							divs[i].onOff=true;
+							divs[i].onmouseover=function(){
+								this.className='active';
+								this.firstElementChild.style.display='block';
+							}
+							divs[i].onmouseout=function(){
+								if(this.onOff){									
+									this.className='';
+									this.firstElementChild.style.display='';
+								}
+							}
+							divs[i].onclick=function(){
+								if(this.onOff){
+									this.firstElementChild.checked='checked';
+									this.onOff=false;
+								}else{
+									this.firstElementChild.checked='';
+									this.onOff=true;
+								}
+							}
+						}
+					}
+					remove.onclick=function(){
+						for(var j=0;j<divs.length;){
+							if(divs[j].onOff==false){
+								content.removeChild(divs[j])
+								j=0;
+							}
+							else{
+								j++;
+							}
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" id="" value="新建文件夹" />
+		<input type="button" id="" value="删除选中文件夹" />
+		<div id="content">
+		</div>
+	</body>
+</html>

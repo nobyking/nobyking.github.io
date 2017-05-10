@@ -1,0 +1,169 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	#box{
+		width: 500px;
+		height: 500px;
+		margin: 0 auto;
+		position: relative;
+	}
+	#box img{
+		width: 100%;
+		height: 100%;
+	}
+	a{
+		text-decoration: none;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		top:50%;
+		margin-top: -25px;
+		background-color: #ccc;
+		border-radius: 50%;
+		line-height: 50px;
+		text-align: center;
+		color:white;
+		font-size: 40px;
+	}
+	#prev{
+		left:20px;
+	}
+	#next{
+		right:20px;
+	}
+	#list{
+		padding: 0;
+		margin: 0;
+		position: absolute;
+		bottom: 20px;
+		left:50%;
+		margin-left: -75px;
+		width: 150px;
+	}
+	#list li{
+		list-style: none;
+		background-color: yellow;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		float: left;
+		margin: 0 5px;
+		cursor:pointer;
+		position: relative;
+	}
+	#list li.active{
+		background-color: #ccc;
+	}
+	#list li img{
+		display: none;
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		bottom: 30px;
+		left: 50%;
+		margin-left: -50px;
+	}
+	#list li div{
+		border: 10px solid transparent;
+		border-top-color:#ccc;
+		position: absolute;
+		top:-10px; 
+		display: none;
+	}
+	#list li.active div,#list li.active img{
+		display: block;
+	}
+</style>
+</head>
+
+<body>
+
+	<div id="box">
+		<img src="img/0.jpg" alt="" id="img">
+		<a href="javascript:;" id="prev"><</a>
+		<a href="javascript:;" id="next">></a>
+		<ul id ="list">
+			<li style="background:red;">
+				<img src="img/0.jpg" alt="">
+				<div></div>
+			</li>
+			<li>
+				<img src="img/1.jpg" alt="">
+				<div></div>
+			</li>
+			<li>
+				<img src="img/2.jpg" alt="">
+				<div></div>
+			</li>
+			<li>
+				<img src="img/3.jpg" alt="">
+				<div></div>
+			</li>
+			<li>
+				<img src="img/4.jpg" alt="">
+				<div></div>
+			</li>
+		</ul>		
+	</div>
+
+	<p style="text-align: center;">文字描述</p>
+</body>
+</html>
+<script type="text/javascript">
+	/*
+	 	思路：
+	 	用n控制图片的切换
+	 		上一张：
+	 			n--;
+	 		下一张：
+	 			n++;
+	 		点击小勋勋：
+	 			知道点的是第几个小勋勋，n = 第几个
+	 			
+	 * 
+	 * */
+	var prev = document.getElementById('prev');
+	var next = document.getElementById('next');
+	var img = document.getElementById('img');
+	var lis = document.getElementsByTagName('li');
+	var n = 0;
+	var arr = ['img/0.jpg','img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg']
+	function tab(){
+		img.src = arr[n];
+		//点
+		for(var i=0;i<lis.length;i++){
+			lis[i].style.background = '';
+		}
+		lis[n].style.background = 'red';
+	}
+	prev.onclick = function(){
+		n--;
+		if(n<0){
+			n = arr.length-1;
+		}
+		tab();
+	}
+	next.onclick = function(){
+		n++;
+		if(n>arr.length-1){
+			n = 0;
+		}
+		tab();
+	}
+	for(var i=0;i<lis.length;i++){
+		lis[i].index = i;
+		lis[i].onclick = function(){
+			n = this.index;
+			tab();
+		}
+		lis[i].onmouseover = function(){
+			this.className = 'active';
+		}
+		lis[i].onmouseout = function(){
+			this.className = '';
+		}
+	}
+</script>

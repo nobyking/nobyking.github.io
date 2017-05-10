@@ -1,0 +1,47 @@
+/*golbal seting*/
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	text-align: center;
+}
+#map{
+	width: 800px;
+	height: 500px;
+	margin: 50px auto;
+}
+#map td{
+	background: orange;
+}
+#map img{
+	box-shadow: 4px 4px 4px black;
+	border-radius: 5px;
+}
+#map img:hover{
+	border: 2px solid red;
+}
+.but{
+	width: 200px;
+	height: 100px;
+	background: purple;
+	border-radius: 8px;
+	box-shadow: 5px 5px 5px black;
+	font-size: 50px;
+	white-space: pre;
+	color: white;
+	font-weight: bold;
+	border: none;
+	margin-top: 20px;
+}
+.but:hover{
+	box-shadow: 8px 8px 8px black;
+}
+h1{
+	color: red;
+}
+p{
+	font-size: 20px;
+	color: teal;
+	margin-top: 10px;
+}

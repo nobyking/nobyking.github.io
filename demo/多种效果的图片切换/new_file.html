@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			a{
+				color:black;
+				text-decoration: none;
+			}
+			#box{
+				width:1000px;
+				height: 600px;
+				position:relative;
+				margin:50px auto;
+			}
+			#box a:nth-child(1){
+				width:50px;
+				height:50px;
+				font-size: 50px;
+				position:absolute;
+				left:0;
+				top:202px;
+				text-align: center;
+				line-height: 50px;
+			}
+			#box ul:nth-child(2){
+				width: 800px;
+				height: 450px;
+				margin:0 auto;
+				padding:0;	
+				position:relative;
+				overflow: hidden;
+				border:10px solid red;
+			}
+			li{
+				list-style: none;
+				position:absolute;				
+			}
+			#box a:nth-of-type(2){
+				width:50px;
+				height:50px;
+				font-size: 50px;
+				position:absolute;
+				right:0;
+				text-align: center;
+				line-height: 50px;
+				top:202px;
+			}
+			p{
+				padding-left:45%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id = "box">
+			<a href="javascript:;"><</a>
+			<ul>
+			</ul>
+			<a href="javascript:;">></a>
+			<p>
+				<input type="button" value="交叉"/>
+				<input type="button" value="下雨"/>
+				<input type="button" value="百叶窗"/>
+				<input type="button" value="随机"/>
+			</p>
+		</div>
+		<script src="move3.js"></script>
+		<script>
+			var lis = document.getElementsByTagName('li');
+			var imgArr = ['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg','img/5.jpg','img/6.jpg','img/7.jpg']
+			var ul = document.getElementsByTagName('ul');
+			var btns = document.getElementsByTagName('a');
+			var str = '';
+			var n = 0;
+			var onOff = true;
+			var playStyle = document.getElementsByTagName('input');
+			for(var i=0;i<50;i++){
+				str+='<li style="width:10%;height:20%;background-position:'+(-(i%10)*80)+'px '+Math.floor(i/10)*-90+'px;top:'+Math.floor(i/10)*90+'px;left:'+(i%10)*80+'px"></li>'
+			}
+			ul[0].innerHTML=str;
+			ul[0].style.backgroundImage='url('+imgArr[0]+')';
+			var t = 0;
+			function leftRIght(){//左右插入效果
+				for(var i=0;i<lis.length;i++){
+					lis[i].style.backgroundImage='url('+imgArr[n]+')';
+					if(Math.floor(i/10)%2==0){
+						lis[i].style.left=(i%10)*80-800+'px';
+					}else{
+						lis[i].style.left=(i%10)*80+800+'px';
+					}
+				}
+				for(var i=0;i<lis.length;i++){
+					move(lis[i],'left',(i%10)*80,1000,function(){
+						onOff=true;
+					});
+				}
+			}
+			function windows(){//百叶窗效果
+				for(var i=0;i<lis.length;i++){
+					lis[i].style.backgroundImage='url('+imgArr[n]+')';
+					lis[i].style.width='0px';
+				}
+				for(var i=0;i<lis.length;i++){
+					move(lis[i],'width',80,1000,function(){
+						onOff=true;
+					});
+				}
+			}
+			function above(){//下雨效果
+				for(var i=0;i<lis.length;i++){
+					lis[i].style.backgroundImage='url('+imgArr[n]+')';
+					lis[i].style.top=Math.floor(i/10)*90-450+'px';
+				}
+				for(var i=0;i<lis.length;i++){
+					timeOut(i)
+				}
+			}	
+			function timeOut(t){
+				setTimeout(function(){					
+						move(lis[t],'top',Math.floor(t/10)*90,1000,function(){
+							if(t==lis.length-1){
+								onOff=true;
+							}
+						});
+				},t%10*100)
+			}
+			function next(){
+				ul[0].style.backgroundImage='url('+imgArr[n]+')';
+					if(n>imgArr.length-2){
+						n=-1;
+					}
+					n++;
+				if(playOnOff==0){
+					above();
+				}else if(playOnOff==1){					
+					leftRIght();
+				}else if(playOnOff==2){
+					windows();
+				}else{
+					random();
+				}
+			}
+			function prev(){
+				ul[0].style.backgroundImage='url('+imgArr[n]+')';
+					if(n<1){
+						n=imgArr.length;
+					}
+					n--;
+				if(playOnOff==0){
+					above();
+				}else if(playOnOff==1){					
+					leftRIght();
+				}else if(playOnOff==2){
+					windows();
+				}else{
+					random();
+				}
+			}
+			var playOnOff = 0;
+			playStyle[0].onclick=function(){
+				clearInterval(timer)
+				playOnOff = 1;
+			}
+			playStyle[1].onclick=function(){
+				clearInterval(timer)
+				playOnOff = 0;
+			}
+			playStyle[2].onclick=function(){
+				clearInterval(timer)
+				playOnOff = 2;
+			}
+//			playStyle[3].onclick=function(){
+//				clearInterval(timer)
+//				playOnOff = 3;
+//			}
+			btns[1].onclick=function(){	
+				if(onOff){
+					onOff=false;
+					clearInterval(timer)
+					next();					
+				}	
+			}
+			btns[0].onclick=function(){	
+				if(onOff){
+					onOff=false;
+					clearInterval(timer)
+					prev();					
+				}
+			}
+			var timer = setInterval(function(){
+				if(Math.random()>0.75){
+					playOnOff=2;
+				}else if(Math.random()>0.50){
+					playOnOff=0;
+				}
+//				else if(Math.random()>0.25){
+//					playOnOff=3;
+//				}
+				else{
+					playOnOff=1;
+				}
+				next();	
+			},2000)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>样式操纵</title>
+		<link rel="stylesheet" href="style/style.css"/>
+				
+		</script>
+	</head>
+	<body>
+		<p>请为下面的DIV设置样式：<input type="button" value="点击设置" id="btn">
+		<div id="div1"></div>
+		<!--弹框s-->
+		<div class="maskbox" id="setStyle">
+			<div class="box-tips">
+				<div class="tips">
+					<p class="color-bg">请选择背景颜色：<span id="red">红</span><span id="green">绿</span><span id="blue">蓝</span></p>
+				   <p class="width">请选择宽(px):<span id="w200">200px</span><span id="w300">300px</span><span id="w400">400px</span></p>
+				<p class="height">请选择高(px):<span id="h200">200px</span><span id="h300">300px</span><span id="h400">400px</span></p>
+				
+				<p class="btn-submit">
+					<span id="cancel">恢复</span>  <span id="enter">确认</span>
+				</p>
+				</div>
+			</div>
+		</div>
+		<script>
+			var btn = document.getElementById('btn');
+			var div = document.getElementById('div1');
+			var setStyle = document.getElementById('setStyle');
+			var red = document.getElementById('red');
+			var blue = document.getElementById('blue');
+			var green = document.getElementById('green');
+			var w200 = document.getElementById('w200');
+			var w300 = document.getElementById('w300');
+			var w400 = document.getElementById('w400');
+			var h200 = document.getElementById('h200');
+			var h300 = document.getElementById('h300');
+			var h400 = document.getElementById('h400');
+			var cancel = document.getElementById('cancel');
+			var enter = document.getElementById('enter');
+			btn.onclick = function(){
+				setStyle.style.display = 'block';
+			}
+			red.onclick = function(){
+				div.style.background = 'red';
+			}
+			blue.onclick = function(){
+				div.style.background = 'blue';
+			}
+			green.onclick = function(){
+				div.style.background = 'green';
+			}
+			w200.onclick = function(){
+				div.style.width = '200px';
+			}
+			w300.onclick = function(){
+				div.style.width = '300px';
+			}
+			w400.onclick = function(){
+				div.style.width = '400px';
+			}
+			h200.onclick = function(){
+				div.style.height = '200px';
+			}
+			h300.onclick = function(){
+				div.style.height = '300px';
+			}
+			h400.onclick = function(){
+				div.style.height = '400px';
+			}
+			cancel.onclick = function(){
+				div.style.cssText = '';
+			}
+			enter.onclick = function(){
+				setStyle.style.display = 'none';
+			}
+		</script>
+		</body>
+</html>

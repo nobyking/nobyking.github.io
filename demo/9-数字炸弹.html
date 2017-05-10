@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" />
+		<input type="button" value="确认"/>
+		<input type="button" value="开始"/>
+		<input type="button" value="重置"/>
+		<script>
+		/*
+		 	步骤：
+		 		1.变量max,min
+		 		2.判断如果大就赋值
+		 		Math.round(Math.random()*100)
+		 * */
+			var inps = document.getElementsByTagName('input');
+			var a;//50 30
+			var max = 100;
+			var min = 0;
+			var onOff = false;
+			//确认
+			inps[1].onclick = function(){
+				if(onOff){
+					var val = Number(inps[0].value);
+					if(val > a){
+						max = val;
+					}
+					if(val < a){
+						min = val;
+					}
+					if(val == a){
+						alert('炸了');
+					}else{
+						alert(min + '~' + max);
+					}
+				}	
+			}
+			//开始
+			inps[2].onclick = function(){
+				onOff = true;
+				a = Math.round(Math.random()*100);
+			}
+			//重置
+			inps[3].onclick = function(){
+				onOff = false;
+				max = 100;
+				min = 0;
+			}
+		</script>
+	</body>
+</html>

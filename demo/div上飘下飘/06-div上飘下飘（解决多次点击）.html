@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	div{
+		width:100px;
+		height:100px;
+		background-color:red;
+		float: left;
+		margin-right: 10px;
+		position: relative;
+		transition: .5s;
+		top:0px;
+	}
+	div:nth-of-type(1){
+		/*top: 200px;*/
+	}
+</style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<script>
+
+//当页面中div全部掉下之后,让ismoving变成false
+//	申明一个全局变量 为0,代表着当前有多少个div移动过了,每当执行一次divs[ num ].style.top = "200px";
+//	说明有一个div移动,那我们就让变量++,每次移动之后都看一下这个变量是不是等于divs的长度
+	
+	var divs = document.getElementsByTagName("div");
+	var num = 0;
+	var num2 = 0;
+	var timer1 = null;
+	var timer2 = null;
+	var isMoving = false;
+	
+	var isdongguole = 0;
+	
+	for (var i = 0; i < divs.length; i++) {
+		divs[i].index = i;
+		divs[i].onclick = function(){
+			alert( isMoving )
+//			判断是不是有div在动，如果有div在动，就直接return
+			if(isMoving==true){//有div在动
+				return//终止下面的代码执行
+			}
+//			下面代码只要执行,就会让div移动
+
+			isdongguole = 1;
+			
+			isMoving=true;
+			this.style.top = "200px";
+			num = this.index;
+			num2 = this.index;
+			timer1 = setInterval(function(){
+				num -- ;
+				divs[ num ].style.top = "200px";
+				isdongguole ++;//有一个div移动,那我们就让变量++
+				if(num == 0){
+					clearInterval( timer1 );
+				}
+				if(isdongguole == divs.length){//等于divs的长度
+					isMoving = false;
+				}
+			},500)
+			timer2 = setInterval(function(){
+				console.log(2);
+				num2 ++ ;
+				divs[ num2 ].style.top = "200px";
+				isdongguole ++;//有一个div移动,那我们就让变量++
+				
+				if( num2 == divs.length-1 ){
+					clearInterval( timer2 );
+				}
+				if(isdongguole == divs.length){//等于divs的长度
+					isMoving = false;
+				}
+			},500)
+		}
+	}
+</script>
+</body>
+</html>

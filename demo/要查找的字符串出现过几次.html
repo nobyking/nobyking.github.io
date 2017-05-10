@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var str = 'miaovab12567fbabhj2456ab';
+			var n = 0;
+			var arr = [];
+			//如果返回值不是-1，证明找到了
+//			if(str.indexOf('miaov')!=-1){
+//				console.log('有')
+//			}
+			//console.log(str.indexOf('ab'))
+			for(var i=0;str.indexOf('ab',i)!=-1;i=str.indexOf('ab',i)+2){
+				arr.push(str.indexOf('ab',i))
+				//如果找到了，n++，
+				n++;
+			}
+			console.log(n)//找到了3次,n=3
+			console.log(arr)
+		</script>
+	</body>
+</html>

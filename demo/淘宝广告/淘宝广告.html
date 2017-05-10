@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#box{
+			width:500px;
+			border:1px solid black;
+			margin: 50px auto 0;
+			position: relative;
+		}
+		img{
+			width:350px;
+			margin: 10px 75px 20px;
+			height: 290px;
+		}
+		ul{
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			top:10px;
+		}
+		ul:nth-of-type(1){
+			left:5px;
+		}
+		ul:nth-of-type(2){
+			right:15px;
+		}
+		li{
+			list-style: none;
+			width:50px;
+			height: 30px;
+			margin: 5px 0;
+			border: 1px solid black;
+			line-height: 30px;
+			text-align: center;
+			cursor: pointer;
+		}
+		.active{
+			color:white;
+			background-color:black; 
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<ul>
+			<li class="active">连衣裙</li>
+			<li>雪纺</li>
+			<li>T恤</li>
+			<li>铅笔裤</li>
+			<li>婚纱</li>
+			<li>T恤</li>
+			<li>铅笔裤</li>
+			<li>婚纱</li>
+		</ul>
+		<ul>
+			<li>包包</li>
+			<li>凉鞋</li>
+			<li>单鞋</li>
+			<li>太阳镜</li>
+			<li>丝袜</li>
+			<li>T恤</li>
+			<li>铅笔裤</li>
+			<li>婚纱</li>
+		</ul>
+		<img src="img/0.jpg" alt="">
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+//eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('7 a=o.t(\'w\');7 b=o.p(\'v\');7 c=o.p(\'5\')[0];7 d=[\'5/0.6\',\'5/1.6\',\'5/2.6\',\'5/3.6\',\'5/4.6\',\'5/1.6\',\'5/0.6\',\'5/2.6\',\'5/3.6\',\'5/4.6\',\'5/0.6\',\'5/2.6\',\'5/1.6\',\'5/2.6\',\'5/4.6\',\'5/3.6\'];7 e=0,f=u,g=z.y(b.9/2);i();a.m=8(){x(f)};a.s=8(){i()};r(7 h=0;h<b.9;h++){b[h].n=h;b[h].m=8(){r(7 j=0;j<b.9;j++){b[j].q=\'\'};k.q=\'A\';c.F=d[k.n];e=k.n}};8 i(){f=C(8(){l(e<g){e++;l(e==g){e=b.9-1}}G{e--;l(e==g-1){E.D(e);e=0}};b[e].m()},B)}',43,43,'|||||img|jpg|var|function|length|||||||||||this|if|onmouseover|index|document|getElementsByTagName|className|for|onmouseout|getElementById|null|li|box|clearInterval|floor|Math|active|1000|setInterval|log|console|src|else'.split('|'),0,{}))
+var lis = document.getElementsByTagName('li');
+var img = document.getElementsByTagName('img')[0];
+var box = document.getElementById('box');
+var n = 0;
+var timer = null;
+var arr = ['img/0.jpg','img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg'];
+timer = setInterval(autoPlay,500);
+function autoPlay(){
+	if(n<lis.length/2){
+		n++;
+		tab();
+		if(n == lis.length/2-1){
+			n = lis.length;
+		}
+	}else{
+		n--;
+		tab();
+		if(n == lis.length/2){
+			n = -1;
+		}
+	}
+}
+function tab(){
+	for(var i=0;i<lis.length;i++){
+		lis[i].className = ''; 
+	}
+	lis[n].className = 'active';
+		img.src = arr[n%arr.length];
+	}
+box.onmouseover = function(){
+	clearInterval(timer);
+}
+box.onmouseout = function(){
+	timer = setInterval(autoPlay,500);
+}
+for(var i=0;i<lis.length;i++){
+	lis[i].index = i;
+	lis[i].onclick = function(){
+		n = this.index;
+		tab();
+	}
+}
+</script>

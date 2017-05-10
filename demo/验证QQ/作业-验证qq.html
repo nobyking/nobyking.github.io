@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		请输入QQ号码:
+		<input type="text" id="text" value="" />
+		<input type="button" id="btn" value="验证" />
+		<script>
+		/*
+		 * 1、有没有输入
+		 * 2、输入的是不是数字
+		 * 3、第一位不能是0
+		 * 4、不能是小数
+		 * 5、输入的数字必须在5位以上、10位以内
+		 */
+			var inps = document.getElementsByTagName('input');
+			
+			inps[1].onclick = function(){
+				var val = inps[0].value;
+				var onOff = true;
+				//字符串取某一位值，str[0],str.charAt(0),str.length
+				if(val == ''){
+					alert('没有输入');
+					onOff = false;
+				}
+				if(isNaN(val)){
+					alert('不是数字');
+					onOff = false;
+				}
+				if(val[0] == 0){
+					alert('第一位不能是0');
+					onOff = false;
+				}
+				if(parseInt(val) != parseFloat(val)){
+					alert('不能是小数');
+					onOff = false;
+				}
+				if(val.length<5 || val.length>10){
+					alert('不能小于5，大于10');
+					onOff = false;
+				}
+				if(onOff){
+					alert('合法');
+				}
+			}
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

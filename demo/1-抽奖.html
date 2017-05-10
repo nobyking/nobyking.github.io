@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 500px;
+				height: 500px;
+				border:1px solid #000;
+				margin:50px auto;
+				position: relative;
+			}
+			#text{
+				font-size:80px;
+				font-weight: bold;
+				height: 300px;
+				line-height: 300px;
+				margin:50px auto;
+				text-align: center;	
+			}
+			#btns{
+				width: 170px;
+				position: absolute;
+				left:50%;
+				margin-left:-85px;
+			}
+			input{
+				width: 50px;
+				height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="text">陈斌</div>
+			<div id="btns">
+				<input type="button" value="开始"/>
+				<input type="button" value="停止"/>
+				<input type="button" value="重置"/>
+			</div>
+		</div>
+		<script>
+			var text = document.getElementById('text');
+			var inps = document.getElementsByTagName('input');
+			var timer = null;
+			var onOff = true;
+			var arr = ['田威','姚念松','杨中旭','王皓','孙国庆','刘宇','宋治国','高秒','王小雨','朱微','孙原原','赵猛','黄瑞迪','王镇','徐颖昭','王悦辉','孙温博','钱学宇','赵圣杰','刘淑贤','张勋','张勋','张勋','余治国','辛子康','刘利斌','黄博','任永强','黄博','黄博','张勋','张勋','张勋','徐健','纪艳凤','黄少雄','冉启阳','王源','李常雨','刘春泽','余洋','高东','谢东乾','赖晴','金雨勋','贺武江','王婉芸','王文博','王建鹏','何晓鹏','陈晓峰','李瑞','廉朝杰','司永敏','郭荣','薛俊生','曾巧','唐静梅','彭程远','梁伟','丁伟','邓青竹','张勋'];
+			var len = arr.length;
+			var n = null;
+			inps[0].onclick = function(){
+				if(onOff){
+					onOff = false;
+					timer = setInterval(function(){
+						n = Math.floor(Math.random()*len);
+						text.innerHTML = arr[n];
+					},50)
+				}				
+			}
+			inps[1].onclick = function(){
+				clearInterval(timer);
+				arr.splice(n,1);//从第n个开始删除1个；
+				len = arr.length;
+				onOff = true;
+				console.log(arr.length)
+			}
+			inps[2].onclick = function(){
+				clearInterval(timer);
+				arr = ['田威','姚念松','杨中旭','王皓','孙国庆','刘宇','宋治国','高秒','王小雨','朱微','孙原原','赵猛','黄瑞迪','王镇','徐颖昭','王悦辉','孙温博','钱学宇','赵圣杰','刘淑贤','张勋','张勋','张勋','余治国','辛子康','刘利斌','黄博','任永强','黄博','黄博','张勋','张勋','张勋','徐健','纪艳凤','黄少雄','冉启阳','王源','李常雨','刘春泽','余洋','高东','谢东乾','赖晴','金雨勋','贺武江','王婉芸','王文博','王建鹏','何晓鹏','陈晓峰','李瑞','廉朝杰','司永敏','郭荣','薛俊生','曾巧','唐静梅','彭程远','梁伟','丁伟','邓青竹','张勋'];
+				console.log(arr.length)
+				onOff = true;
+			}
+		</script>
+	</body>
+</html>

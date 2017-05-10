@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="a b c"></div>
+		<script>
+			var div = document.getElementsByTagName('div')[0];
+			function addClass(obj,name){
+				var c = obj.className;
+				if(c == ''){
+					return obj.className = name;
+				}else{
+					var arr = c.split(' ');
+					for(var i=0;i<arr.length;i++){
+						if(arr[i]==name){
+							return;
+						}
+					}
+					return obj.className += ' '+name;
+				}
+			}
+			addClass(div,'a')
+			console.log(div.className)
+		</script>
+	</body>
+</html>
