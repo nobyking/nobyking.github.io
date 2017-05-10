@@ -1,0 +1,181 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, ol, div, h1, h2, h3, h4, p,li { margin: 0; padding: 0; border: 0 none; cursor:default;}
+a{ cursor:pointer; outline: none;}
+a:hover{ text-decoration: none;}
+html, body{ height: auto; min-width: 1330px;}
+.clear{ display: block; clear: both; height: 0; line-height: 0; font-size: 0; overflow: hidden; visibility: hidden;}
+.btn,.btn a{ display: inline-block; font-size: 0; line-height: 0; overflow: hidden;}
+
+body{ font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif; padding-top: 45px; background: #000;}
+
+
+
+
+/*弹出框样式*/
+.popBg{background: #000\9; opacity: 0.7\9; filter: alpha(opacity=70)\9; background-color: rgba(0,0,0,0.7); position: fixed;top:0;left:0;z-index: 10000 ;width: 100%;height: 100%;}
+.popMsg{display: block;position:fixed;top:50%;left:50%;z-index:10000; margin-top:-177px;margin-left: -250px;width: 430px;height: 280px;background: url('../images/pop-bg.png') no-repeat 50% 0; font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;}
+.popTop{height: 0; overflow: hidden;}
+.popWrap{padding: 30px;}
+.popBottom{height: 0; overflow: hidden;}
+.popClose{display: block;position: absolute;right: 30px;top: 30px;z-index: 10;width: 21px;height: 21px;font-size: 0;line-height: 0;overflow: hidden;cursor:pointer;background: url(../images/pop-close.png) no-repeat 50% 50%;transition: transform 1s ease-out;}
+.popClose:hover{transform: rotate(270deg);}
+.popContainer{font-size: 14px;color: #fff; height: 100%;text-align: center;}
+.popContTit{ display: none; position: absolute;background: none; top: -5px;left: -18px; z-index: 9;width: 643px;height: 42px;line-height: 42px; font-size: 16px;text-indent: 45px; text-align: left;color: #fff;}
+.popTips{ font-size: 18px; line-height: 36px; padding-top: 45px;}
+.popWarn .contentBox{ text-align: left; padding-top: 40px; padding-left: 170px; min-height: 80px;}
+.popWarn .popConCenter{ text-align:center; padding-left:0px;color: #fff;font-size: 18px;line-height: 30px;}
+.popWrap .txtCenter{ padding-top: 50px; height: 70px;}
+
+.P_btns{ padding-top: 30px; }
+.btn_downloadQB{ width: 178px; height: 50px; background: url(../images/btn-downloadQB.png) no-repeat 0 0;}
+.btn_pop{ width: 150px; height: 56px; background: url(../images/btn-ok.png) no-repeat 0 0;}
+.btn_toLucky{ width: 125px; height: 50px; background: url(../images/btn-getLucky2.png) no-repeat 0 0;}
+
+.hasMoney{ padding-top: 15px;}
+
+.giftsLists{ color: #fff; font-size: 14px; text-align: left; padding-left: 10px; padding-right: 10px;}
+.giftsTit{ font-size: 26px; line-height: 65px; border-bottom: 1px solid #fff;}
+#giftsCount{ margin-top: 15px; height: 144px; overflow-y: auto;}
+#giftsCount li{ line-height: 36px;}
+.giftsLists li a{ color: #fff; text-decoration: underline;}
+.giftsLists li a:hover{ color: #a4774f;}
+.giftsLists .noGifts{ font-size: 16px; text-align: center;}
+
+.pop-lucky{ width: 536px; height: 533px; background-image: url(../images/pop-bg3.png)}
+.pop-lucky .popClose{ top: 58px;}
+.pop-lucky .popContainer{ text-align: left;}
+.pop-lucky2{ width: 536px; height: 735px; background-image: url(../images/pop-bg2.png)}
+.pop-lucky2 .popClose{ top: 58px;}
+.pop-lucky2 .popContainer{ text-align: left;}
+
+.giftsCenter{ width: 420px; margin: 60px auto 0;}
+.gifts_cont{ overflow: hidden;margin-bottom: 35px; padding-bottom: 35px; border-bottom: 1px solid #666;}
+.gifts_cont h3{ font-size: 28px; line-height: 36px; color: #fff; margin-bottom: 30px;}
+.gifts_cdk p{ font-size: 16px;}
+.gifts_tips{ font-size: 14px; color: #888;}
+.gifts_tips h5{ padding-bottom: 8px; font-weight: normal;}
+.gifts_tips p{ line-height: 26px;}
+.gifts_code p{ text-align: center; font-size: 14px; color: #888;}
+.gifts_code .code{ padding-bottom: 8px;}
+
+
+
+/*主体*/
+.container{ font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;width: 1280px; height: 100%; margin: 0 auto; position: relative;}
+
+.middle_1{height: 990px;background: url(../images/middle-1.jpg) no-repeat center top;}
+.actor{ padding: 450px 0 0 18px; height: 540px;}
+.actor li{ float: left; width: 196px; height: 250px; position: relative; z-index: 5; margin-right: 14px; margin-bottom: 10px; cursor: pointer;}
+.actor .pic{ position: absolute; top: -20px; left: -20px; z-index: 1; width: 236px; height: 290px; background-position: 0 0; background-repeat: no-repeat; cursor: pointer;}
+.actor .name{ position: absolute; top: 9px; right: 11px; z-index: 2; width: 40px; height: 220px; background-position: 0 0; background-repeat: no-repeat; cursor: pointer;}
+.actor .hotNumber{ position: absolute; left: 30px; bottom: 10px; z-index: 3; height: 36px; color: #fcfcfc; cursor: default;}
+.icon-add{ position: absolute; left: 5px; top: -15px; line-height: 20px; font-weight: bold; font-size: 17px; color: #f3dd84; font-style: normal; display: none;}
+.icon-heart{ display: inline-block; width: 36px; height: 36px; background: url(../images/icon-heart.png) no-repeat 0 0; vertical-align: middle; margin-right: 8px;}
+.icon-heart:hover, .icon-heart.active{ background-position: 0 -37px;}
+.hotNumber strong{ text-shadow: 0 2px 2px #040000; font-weight: normal; font-size: 12px; padding-right: 10px; vertical-align: middle;}
+.hotNumber em{ text-shadow: 0 0 10px #fdfdfd; font-style: normal; font-size: 16px; vertical-align: middle;}
+.actor li:hover{ z-index: 6;}
+.actor li:hover .pic{ background-position: 0 -291px;}
+.actor-1 .pic{ background-image: url(../images/actor-1.png)}
+.actor-1 .name{ background-image: url(../images/actor-name-1.png)}
+.actor-2 .pic{ background-image: url(../images/actor-2.png)}
+.actor-2 .name{ background-image: url(../images/actor-name-2.png)}
+.actor-3 .pic{ background-image: url(../images/actor-3.png)}
+.actor-3 .name{ background-image: url(../images/actor-name-3.png)}
+.actor-4 .pic{ background-image: url(../images/actor-4.png)}
+.actor-4 .name{ background-image: url(../images/actor-name-4.png)}
+.actor-5 .pic{ background-image: url(../images/actor-5.png)}
+.actor-5 .name{ background-image: url(../images/actor-name-5.png)}
+.actor-6 .pic{ background-image: url(../images/actor-6.png)}
+.actor-6 .name{ background-image: url(../images/actor-name-6.png)}
+.actor-7 .pic{ background-image: url(../images/actor-7.png)}
+.actor-7 .name{ background-image: url(../images/actor-name-7.png)}
+.actor-8 .pic{ background-image: url(../images/actor-8.png)}
+.actor-8 .name{ background-image: url(../images/actor-name-8.png)}
+.actor-9 .pic{ background-image: url(../images/actor-9.png)}
+.actor-9 .name{ background-image: url(../images/actor-name-9.png)}
+.actor-10 .pic{ background-image: url(../images/actor-10.png)}
+.actor-10 .name{ background-image: url(../images/actor-name-10.png)}
+.actor-11 .pic{ background-image: url(../images/actor-11.png)}
+.actor-11 .name{ background-image: url(../images/actor-name-11.png)}
+.actor-12 .pic{ background-image: url(../images/actor-12.png)}
+.actor-12 .name{ background-image: url(../images/actor-name-12.png)}
+.actor li.nocur,
+.actor li.nocur .pic,
+.actor li.nocur .name,
+.actor li.nocur .hotNumber{ cursor: default;}
+.actor li.nocur .pic{ background-position: 0 0;}
+
+.masklayer2{ position:fixed; top:0; right:0; z-index: 101; bottom:0;  left:0; background-color: #000; opacity: .75; filter:alpha(opacity=75); }
+.pop-actor{ position: fixed; top: 50%; left: 50%; z-index: 102; width: 598px; height: 820px; margin-top: -410px; margin-left: -300px; display: none;}
+.actor-close{ position: absolute; top: -20px; right: -20px; width: 50px; height: 50px; background: url(../images/pop-close2.png) no-repeat 0 0;}
+.pop-actor img{ width: 598px; height: 820px;}
+
+.middle_2{height: 600px;background: url(../images/middle-2.jpg) no-repeat center top;}
+.schema{ height: 500px; background: url(../images/schema.png) no-repeat 50% 0;}
+
+
+.middle_3{height: 565px;background: url(../images/middle-3.jpg) no-repeat center top;}
+.skins{ padding-top: 167px; padding-left: 7px; height: 428px;}
+.skins li{ float: left; height: 200px; width: 396px; margin-right: 40px; position: relative;}
+.skin-3,.skin-6{ margin-right: 0 !important;}
+.skin-black{ position: absolute; top: 0; left: 0; z-index: 1; width: 396px; height: 122px; background-color: #000;}
+.skin-pic{ position: absolute; top: -30px; left: -30px; z-index: 2; width: 456px; height: 182px; background-position: 0 0; background-repeat: no-repeat; cursor: pointer; opacity: 1;}
+.skins li .skin-pic:hover{ background-position: 0 -183px; opacity: 1 !important; z-index: 3;}
+.skins li.nocur .skin-pic { opacity: 0.5;}
+.skins li.current .skin-pic { opacity: 1;}
+
+.skin-info{ position: absolute; top: 132px; left: 0; z-index: 3; width: 100%; height: 33px;}
+.skin-actors{ float: left; padding-left: 4px; line-height: 33px; font-size: 16px; color: #fff;}
+
+.skin-1 .skin-pic{ background: url(../images/skin-1.png);}
+.skin-2 .skin-pic{ background: url(../images/skin-2.png);}
+.skin-3 .skin-pic{ background: url(../images/skin-3.png);}
+.skin-4 .skin-pic{ background: url(../images/skin-4.png);}
+.skin-5 .skin-pic{ background: url(../images/skin-5.png);}
+.skin-6 .skin-pic{ background: url(../images/skin-6.png);}
+
+
+.middle_4{height: 490px;background: url(../images/middle-4.jpg) no-repeat center top;}
+.btn-getLucky{ position: absolute; top: 163px; left: 150px; width: 340px; height: 120px; background: url(../images/btn-getLucky.png) no-repeat 0 0;}
+.btn-getLucky:hover{ background-position: 0 -121px;}
+.btn-record{ position: absolute; top: 325px; left: 315px; z-index: 2; font-size: 14px; color: #a1a1a1; text-decoration: underline !important;}
+.btn-record:hover{ color: #fff;}
+.QRcode{ position: absolute; top: 183px; left: 525px; width: 159px; height: 190px; background: url(../images/QRcode.png) no-repeat 0 0;}
+.rule{ position: absolute; top: 314px; left: 163px; width: 420px; height: 150px; background: url(../images/rule.png) no-repeat 0 0;}
+#videoBox{ position: absolute; top: 172px; left: 720px; width: 385px; height: 240px; padding: 21px 22px 14px 21px; background: url(../images/video-bg.png) no-repeat 0 0;}
+
+
+.middle_5{height: 430px;background: url(../images/middle-5.jpg) no-repeat center top;}
+.gallery_box{position:absolute;left: 165px;top: 103px;width:960px;height:269px;}
+.gallery_box span{ position: absolute; overflow: hidden; border: 1px solid #35332d;}
+.gallery_box span img{cursor:pointer;-webkit-filter: brightness(0.5);-moz-filter: brightness(0.5);-ms-filter: brightness(0.5);-o-filter: brightness(0.5);filter: brightness(0.5);-webkit-transition: -webkit-filter .2s ease-out;-moz-transition: -webkit-filter .2s ease-out;-ms-transition: -webkit-filter .2s ease-out;-o-transition: -webkit-filter .2s ease-out;transition: -webkit-filter .2s ease-out;-webkit-transition: transform .2s ease-out;-moz-transition: transform .2s ease-out;-ms-transition: transform .2s ease-out;-o-transition: transform .2s ease-out;transition: transform .2s ease-out;}
+.gallery_box span:hover img{ -webkit-filter: brightness(1); -moz-filter: brightness(1); -ms-filter: brightness(1); -o-filter: brightness(1); filter: brightness(1);-webkit-transform: scale(1.05); -moz-transform: scale(1.05); -ms-transform: scale(1.05); -o-transform: scale(1.05); transform: scale(1.05); }
+.gallery01{ left:0; top:0; width: 266px; height:267px;}
+.gallery02{ left:273px; top:0; width: 133px; height:130px;}
+.gallery03{ left:273px; top:137px; width:133px; height: 130px;}
+.gallery04{ left:413px; top:0; width:133px; height:130px;}
+.gallery05{ left:413px; top:137px; width:133px; height:130px;}
+.gallery06{ left:552px; top:0; width:266px; height:267px;}
+.gallery07{ left:826px; top:0; width:132px; height:130px;}
+.gallery08{ left:826px; top:137px; width:132px; height:130px;}
+#photogallery{ position:fixed; top:50%; left:50%; margin-left: -335px; margin-top:-350px; width:670px; height:700px; z-index:102; display: none; }
+.kvfull{ position: relative; outline:none;height: 700px; width: 670px;}
+.kvfull .kvblock{ margin: 0 auto; height:100%; overflow: hidden; width: 670px;}
+.kvfull ul.kvlist{ white-space: nowrap; font-size: 0; height: 100%; }
+.kvfull ul.kvlist li{ text-align: center; display: inline-block; *display: inline; zoom:1; width:670px;}
+.kvfull ul.kvlist li .kvinfo{ display: none; }
+.kvbtn .prev_area{ position: absolute; width:50%; height:100%; left:0; top:0; cursor: pointer; outline: none;}
+.kvbtn .next_area{ position:absolute; width: 50%; height:100%; right:0; top:0;  cursor: pointer; outline:none; }
+.kvbtn .prev_area.disabled,.kvbtn .next_area.disabled{ cursor: default; }
+.kvbtn a{ display: block;width: 66px; height: 102px;outline:none; font-size:0;}
+.kvbtn a.prev{  position: absolute; left: 0px; top:50%; margin-top: -51px; background: url(../images/prev.png) no-repeat 0 0px;}
+.kvbtn a.next{  position: absolute; right: 0px; top:50%; margin-top: -51px; background: url(../images/next.png) no-repeat 0 0px; }
+.kvbtn a.prev:hover,.kvbtn a.next:hover{  background-position:0 -103px;}
+.kvbtn .disabled a{  background: none; cursor: default; }
+.masklayer{ position:fixed; top:0; right:0; z-index: 101; bottom:0;  left:0; background-color: #000; opacity: .75; filter:alpha(opacity=75); }
+
+
+
+.mod_copyright{ padding-bottom: 60px !important;}

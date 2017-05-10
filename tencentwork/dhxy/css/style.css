@@ -1,0 +1,137 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, ol, div, h1, h2, h3, h4, p,li { margin: 0; padding: 0; border: 0 none; cursor:default;}
+a{ cursor:pointer; outline: none;}
+a:hover{ text-decoration: none;}
+html, body{ height: auto; min-width: 1280px;}
+.clear{ display: block; clear: both; height: 0; line-height: 0; font-size: 0; overflow: hidden; visibility: hidden;}
+.btn,.btn a{ display: inline-block; font-size: 0; line-height: 0; overflow: hidden;}
+
+body{ font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif; padding-top: 45px; background: #360202;}
+
+/*弹出框样式*/
+.popBg{background: #000\9; opacity: 0.7\9; filter: alpha(opacity=70)\9; background-color: rgba(0,0,0,0.7); position: fixed;top:0;left:0;z-index: 10000 ;width: 100%;height: 100%;}
+.popMsg{display: block;position:fixed;top:50%;left:50%;z-index:10000; margin-top:-144px;margin-left: -240px;width: 480px;height: 288px;background: url(../images/pop-bg.png) no-repeat 50% 0; font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;}
+.popTop{height: 0; overflow: hidden;}
+.popWrap{padding: 32px 15px 0;}
+.popBottom{height: 0; overflow: hidden;}
+.popClose{display: block;position: absolute;right: 4px;top: 7px;z-index: 10;width: 30px;height: 30px;font-size: 0;line-height: 0;overflow: hidden;cursor:pointer;background: url(../images/pop-close.png) no-repeat 50% 50%;transition: transform 1s ease-out;}
+.popClose:hover{transform: rotate(270deg);}
+.popContainer{position: relative; font-size: 13px;color: #e0cea7; height: 100%; text-align: center; font-family: "SimSun";}
+.popContTit{ display: none; position: absolute;background: none; top: -5px;left: -18px; z-index: 9;width: 643px;height: 42px;line-height: 42px; font-size: 16px;text-indent: 45px; text-align: left;color: #fff;}
+.txtCenter{ font-size: 18px; line-height: 24px; min-height: 72px; padding-top: 65px; color: #e0cea7;}
+
+.popMsg2{ width: 1140px; height: 745px; margin-top: -372px; margin-left: -570px; background-image: url(../images/pop-bg2.png);}
+.popMsg2 .popContainer{ text-align: left;}
+.zc{ float: left; width: 775px;}
+.line{ background: url(../images/line.jpg) no-repeat 30px 100%;}
+.zcTit{ margin-bottom: 5px; padding-bottom: 18px;}
+.tit{ height: 105px; margin-bottom: -20px; background-repeat: no-repeat; background-position: 0 0;}
+.tit-1{background-image: url(../images/title-1.png);}
+.tit-2{background-image: url(../images/title-2.png);}
+.tit-3{background-image: url(../images/title-3.png);}
+.zcTit p{ padding-left: 100px; font-size: 15px; line-height: 24px; color: #fff;}
+.zcTit p strong{ font-size: 20px; font-weight: normal;}
+.jdBox{ padding-left: 30px; padding-bottom: 35px;}
+.sub-tit{ height: 75px; margin-left: -15px; margin-bottom: 20px; background-repeat: no-repeat; background-position: 0 0;}
+.sub-tit-1{ background-image: url(../images/gifts-title-1.png);}
+.sub-tit-2{ background-image: url(../images/gifts-title-2.png);}
+.excBox{ margin-bottom: 15px;}
+.btn_exchange3{ width: 152px; height: 50px; background: url(../images/btn-exchange3.png) no-repeat 0 0;}
+.btn_exchange3:hover{ background-position: 0 -51px;}
+.btn_exchange3.disabled{ cursor: default; background-position: 0 0;}
+.inp{ display: inline-block; width: 258px; height: 42px; line-height: 42px; text-indent: 10px; color: #e0cea7; font-size: 15px; border: 1px solid #994343; background-color: #2d0000; vertical-align: top; margin-left: 25px;}
+.giftTips{ font-size: 16px; color: #fff; line-height: 25px; margin-bottom: 15px;}
+.icon-188{ display: inline-block; font-size: 0; line-height: 0; overflow: hidden; width: 57px; height: 25px; background: url(../images/icon-188.png) no-repeat 50% 50%; vertical-align: top; margin: 0 6px;}
+.giftTips2{ font-size: 13px; line-height: 20px; color: #e0cea7;}
+
+.mfBox{ padding-left: 30px;}
+.sub-tit-2{ height: 75px; margin-left: -15px; margin-bottom: 20px; background: url(../images/gifts-title-2.png) no-repeat 0 0;}
+.btn_exchange4{ width: 152px; height: 50px; background: url(../images/btn-exchange4.png) no-repeat 0 0;}
+.btn_exchange4:hover{ background-position: 0 -51px;}
+.btn_exchange4.disabled{ cursor: default; background-position: 0 0;}
+
+.login{ float: right; width: 250px; padding-top: 25px; padding-right: 12px;}
+.step_1{ height: 30px; background: url(../images/step-1.png) no-repeat 0 0; margin-bottom: 15px;}
+.regBox{ height: 270px;}
+.step_2{ height: 30px; background: url(../images/step-2.png) no-repeat 0 0; margin-bottom: 15px;}
+.btn_downloadGame{ width: 250px; height: 106px; background: url(../images/btn-downloadGame.png) no-repeat 0 0;}
+.btn_downloadGame:hover{ background-position: 0 -107px;}
+
+.icon-gifts{ position: absolute; top: 283px; left: 600px; width: 200px; height: 220px; background: url(../images/pic.png) no-repeat 0 0;}
+
+.popMsg3{ width: 1140px; height: 671px; margin-top: -335px; margin-left: -570px; background-image: url(../images/pop-bg3.png);}
+.popMsg3 .popContainer{ text-align: left;}
+.mt25{ margin-top: 25px;}
+.tableGifts{ margin-top: 15px; font-size: 13px; color: #e0cea7;}
+.tableGifts td{ text-align: center; line-height: 30px; border: 1px solid #a7735d;}
+
+
+.P_btns{ padding-top: 30px; }
+.btn_downloadQB2{ width: 180px; height: 50px; background: url(../images/btn-downloadQB.png) no-repeat 0 0;}
+.btn_downloadQB2:hover{ background-position: 0 -51px;}
+.btn_pop{ width: 99px; height: 50px; background: url(../images/btn-ok.png) no-repeat 0 0;}
+.btn_pop:hover{ background-position: 0 -51px;}
+
+
+
+/*获奖记录*/
+.giftsLists{ text-align: center;}
+.noGifts{ line-height: 50px;}
+.giftsLists td,.giftsLists th{ border: 1px solid #ccc;}
+.giftsLists th{ background: #ddd; color: #333; line-height: 30px;}
+.giftsLists td{ padding: 5px 10px;}
+.giftsLists td a:hover{ color: #ea0000;}
+#pageContainer{ padding-top: 15px; text-align: center;}
+#pageContainer a, #pageContainer span{ padding: 0 10px;}
+#pageContainer a:hover{ text-decoration: underline;}
+
+
+/*主体*/
+
+.container{ width: 1280px; margin: 0 auto; position: relative; height: 100%;}
+
+.middle_1{ height: 750px; background: url(../images/middle-1.jpg) no-repeat 50% 0; position: relative;}
+.banner_btn{ position: absolute; top: 500px; left: 98px; width: 590px; height: 225px; background: url(../images/btn-banner.png) no-repeat 0 0;}
+.banner_btn a{ position: absolute; background: url(../images/btn-banner.png) no-repeat -1000px -1000px;}
+.btn_jd{  top: 54px; left: 18px; width: 245px; height: 73px;}
+.btn_jd:hover{ background-position: -18px -280px;}
+.btn_mf{ top: 130px; left: 18px; width: 245px; height: 73px;}
+.btn_mf:hover{ background-position: -18px -356px;}
+.btn_downloadQB{ top: 54px; left: 329px; width: 245px; height: 86px;}
+.btn_downloadQB:hover{ background-position: -329px -280px;}
+.banner_btn .btn_record{ top: 162px; left: 387px; width: 117px; height: 42px; background: url(../images/btn-cdkey.png) no-repeat 0 0;}
+.banner_btn .btn_record:hover{ background-position: 0 -43px;}
+
+
+
+.tips{ font-size: 18px; color: #fff; line-height: 24px; font-family: "SimSun";}
+
+
+.middle_2{ height: 560px; background: url(../images/middle-2.jpg) no-repeat 50% 0;}
+.middle_2 .tips{ padding-top: 63px; padding-left: 115px; height: 30px;}
+.middle_2 .exBtn{ text-align: left; padding-left: 235px; padding-top: 290px;}
+.btn_exchange{ width: 173px; height: 85px; background: url(../images/btn-exchange.png) no-repeat 0 0;}
+.btn_exchange:hover{ background-position: 0 -86px;}
+.middle_2 .exBtn .btn2{ margin-left: 458px;}
+
+
+.middle_3{ height: 410px; background: url(../images/middle-3.jpg) no-repeat 50% 0;}
+.btn_link_1{ position: absolute; top: 195px; left: 380px; width: 255px; height: 110px; background: url(../images/btn-link-1.png) no-repeat 0 0;}
+.btn_link_1:hover{ background-position: 0 -111px;}
+.btn_link_2{ position: absolute; top: 195px; left: 680px; width: 255px; height: 110px; background: url(../images/btn-link-2.png) no-repeat 0 0;}
+.btn_link_2:hover{ background-position: 0 -111px;}
+
+
+.middle_4{ height: 690px; background: url(../images/middle-4.jpg) no-repeat 50% 0;}
+.middle_4 .tips{ padding-top: 65px; padding-left: 117px; height: 30px; margin-bottom: 50px;}
+.middle_4 .gifts{ height: 340px; background: url(../images/gifts-lucky.png) no-repeat 188px 0;}
+.middle_4 .exBtn{ padding-left: 345px;}
+.btn_exchange2{ width: 173px; height: 85px; background: url(../images/btn-exchange2.png) no-repeat 0 0;}
+.btn_exchange2:hover{ background-position: 0 -86px;}
+
+
+.middle_5{ height: 294px; background: url(../images/middle-5.jpg) no-repeat 50% 0;}
+.QRcode{ float: left; padding-left: 6px; padding-top: 60px; margin-right: 25px;}
+.rule{ padding-top: 53px; color: #efcb74; font-size: 15px; line-height: 30px; font-family: "SimSun";}
+.rule h3{ font-size: 24px; line-height: 36px; font-weight: normal;}

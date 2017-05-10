@@ -1,0 +1,184 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, ol, div, h1, h2, h3, h4, p,li {margin: 0;padding: 0;border: 0 none;cursor:default;}
+a{cursor:pointer;outline: none;}
+a:hover{
+	text-decoration: none;
+}
+html, body{
+	height: auto;
+	min-width: 1000px;
+}
+.clear{ display: block; clear: both; height: 0; line-height: 0; font-size: 0; overflow: hidden; visibility: hidden;}
+.btn{ display: inline-block; font-size: 0; line-height: 0; overflow: hidden;}
+.red{ color: #a80000;}
+
+/*顶部底部*/
+body{ padding-top: 45px;background: #000;}
+#logo-btn{margin-top: 4px;display: inline-block;*display: inline;zoom: 1;width: 133px;height: 38px;background: url(../img/header/logo.png) 0 0 no-repeat;}
+#tq{display: inline-block;*display: inline;zoom: 1;width: 253px;height: 37px;margin-left: 15px;background: url(../img/header/tq.png) 0 0 no-repeat;}
+#header-qb{position:absolute;right:0;display: inline-block;*display: inline;zoom: 1;width: 105px;height: 31px;vertical-align: top;margin-top: 6px;background: url(../img/header/download.png) 0 0 no-repeat;}
+.mod_gst{background: #424041;width: 100%;position: fixed; top: 0; z-index: 100;min-width: 800px;}
+.mod_gst_main{min-width: 800px;max-width: 1002px;width: auto;}
+.mod_gst_main .mod_gst_userinfo{font-size:14px;color:#FFFFFF;line-height: 20px;top: 13px;}
+.mod_gst_main .mod_gst_userinfo .user_nick{width:160px;color: #ffffff;}
+.mod_gst a{color:#48adff;}
+.mod_copyright2{padding-bottom: 70px; padding-top: 50px; background-color: #000; text-align: center;}
+.mod_copyright2 p {color: #fff;line-height: 20px;}
+.mod_copyright2 p a {color: #fff;}
+
+/*邀请好友弹窗*/
+.mod_pop_mask{z-index: 10001;}
+.friend_pop{display: none; width:935px; height:560px; z-index: 10002;  position: fixed; _position: absolute;  left:50%; margin-left:-410px; top:50%;margin-top: -280px; zoom: 1; _top: expression(eval(document.documentElement.scrollTop)+120);}
+.friend_info{ width:900px;  height:100%; overflow:hidden; position:relative;}
+.friend_in{ width:900px; height:100%; background:#efefef; color:#656565; }
+.friend_close {width: 35px; height: 35px; position: absolute; top: 0; right: 0; background: url(../img/close.jpg) no-repeat;}
+
+/*弹出框样式*/
+.popBg{background: #000\9; opacity: 0.7\9; filter: alpha(opacity=70)\9; background-color: rgba(0,0,0,0.7); position: fixed;top:0;left:0;z-index: 10000 ;width: 100%;height: 100%;}
+.popMsg{display: block;position:fixed;top:50%;left:50%;z-index:10000;margin-top:-125px;margin-left:-302px;width: 605px;height: 325px;overflow: hidden;background: url(../images/popWrap.png) repeat-y center top;font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;}
+.popTop{height: 0; overflow: hidden;}
+.popWrap{padding: 50px 30px 30px 230px;}
+.popBottom{height: 0; overflow: hidden;}
+.popClose{display: block;position: absolute;right: 22px;top: 22px;z-index: 10;width: 30px;height: 30px;font-size: 0;line-height: 0;overflow: hidden;cursor:pointer;background: url(../images/pop-close.png) no-repeat 0 0;transition: transform 1s ease-out;}
+.popClose:hover{transform: rotate(270deg);}
+.popContainer{font-size: 17px;color: #251414; height: 100%;text-align: center;}
+.popList{ background-image: url(../images/popWrap2.png);}
+.popList .popWrap{padding: 83px 39px 22px 47px; height: 220px; position: relative;}
+.popList .popContainer{ text-align: left;}
+.noGifts{ position: absolute; top: 11px; left: 11px; width: 583px; height: 219px; font-size: 28px; text-align: center; padding-top: 85px; background: url(../images/opacity.png);}
+.giftsList{ height: 150px;}
+.giftsList li{ height: 30px; line-height: 30px;}
+.giftsList li span{ display: inline-block; text-align: center; line-height: 30px;}
+.giftsList li .time{ width: 130px;}
+.giftsList li .info{width: 240px;}
+.giftsList li .way{ width: 145px;}
+.giftsList li .way a{ display: inline-block; width: 102px; height: 20px; line-height: 20px; background: #820000; border-bottom: 2px solid #000; color: #fff; font-size: 12px;}
+
+/*随屏滚动二维码*/
+#mod-fixLeft{ position: absolute; top: 1000px; left: 50%; z-index: 1; margin-left: -715px; display: block; width: 185px; height: 230px; background: url(../images/fixLift.png) no-repeat 0 0;}
+
+.P-btns{text-align: center; padding-top: 25px;}
+.btn-ensure{ width: 132px; height: 55px; background: url(../images/btn_ensure.png) no-repeat 0 0;}
+.btn-ensure2{ width: 132px; height: 55px; background: url(../images/btn_ensure2.png) no-repeat 0 0;}
+.btn-downloadQB{ width: 245px; height: 55px; background: url(../images/btn_downloadQB.png) no-repeat 0 0;}
+.btn-shareQZ{ width: 150px; height: 55px; background: url(../images/btn_shareQZ.png) no-repeat 0 0;}
+.btn-shareQQ{ width: 150px; height: 55px; background: url(../images/btn_shareQQ.png) no-repeat 0 0;}
+
+/*主体*/
+.container{ font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif; width: 1000px; margin: 0 auto; position: relative; height: 100%;}
+
+.middle_1{ height: 810px; background: url(../images/middle_1.jpg) no-repeat center top;}
+
+
+.middle_2{ height: 1394px; background: url(../images/middle_2.jpg) no-repeat center top;}
+.middle_left{ float: left; width: 715px; padding-left: 10px;}
+
+.wrapper_1{ padding-top: 43px; height: 440px;}
+#videoBox{ float: left; width: 560px; height: 315px; background-color: #000;}
+#videoBox video,#videoBox object,#videoBox embed{display:block;width:100%;height:100%;}
+.v_btns{ float: right; width: 147px; position: relative;}
+.v_btns .btn{ display: block; width: 147px; height: 78px;}
+.v_btns .btn:hover{ background-position: 0 -80px;}
+.btn_topGame{ background: url(../images/btn_topGame.png) no-repeat 0 0;}
+.btn_topQB{ background: url(../images/btn_topQB.png) no-repeat 0 0;}
+.btn_topGuanwang{ background: url(../images/btn_topGuanwang.png) no-repeat 0 0;}
+.btn_topShare{ background: url(../images/btn_topShare.png) no-repeat 0 0;}
+.share_box{ position: relative;}
+.share_list{ position: absolute; top: 65px; left: 7px; height: 34px; width: 122px; padding-top: 18px; padding-left: 10px; background: url(../images/share_bg.png) repeat-x 0 0; display: none;}
+.share_list a{ float: left; width: 24px; height: 24px; margin-right: 5px; background: url(../images/share.png) no-repeat 0 0;}
+.share_list .qq{ background-position: 0 0;}
+.share_list .qzone{ background-position: 0 -25px;}
+.share_list .tencent{ background-position: 0 -50px;}
+.share_list .sina{ background-position: 0 -75px;}
+
+.wrapper_2{ position: relative; padding-left: 40px; height: 354px;}
+#gifts{ position: absolute; top: 0; left: 40px; width: 631px; height: 354px; background: url(../images/gifts.png) no-repeat 0 0;}
+#lucky-box-container{ position: absolute; top: 0; left: 40px; width: 631px; height: 354px;}
+.lucky-box{ display: inline-block; position: absolute; width: 215px; height: 123px; background: none;}
+#lucky-box-0{ left: 0; top: 0;}
+#lucky-box-1{ left: 208px; top: 0;}
+#lucky-box-2{ right: 0; top: 0;}
+#lucky-box-3{ right: 0; top: 115px;}
+#lucky-box-4{ right: 0; bottom: 0;}
+#lucky-box-5{ left: 208px; bottom: 0;}
+#lucky-box-6{ left: 0; bottom: 0;}
+#lucky-box-7{ left: 0; top: 115px;}
+#lucky-box-container .active{ background: url(../images/lucky_active.png) no-repeat 0 0;}
+
+.wrapper_3{ margin-top: 50px; padding-left: 75px; padding-right: 45px; height: 30px;}
+.notice{ width: 100%; height: 30px; line-height: 30px; font-size: 14px; color: #ae5d23; overflow: hidden; position: relative;}
+.notice li{ float: left; padding-right: 25px;}
+#noticeBox{ width: 400%; position: relative; left: 0;}
+#noticeList{ width: 200%; height: 30px; float: left;}
+#noticeList2{ width: 200%; height: 30px; float: left;}
+
+.wrapper_4{ margin-top: 80px; padding-left: 77px;}
+.rule{ font-size: 14px; color: #685b24; padding-right: 50px;}
+.rule p{ padding-left: 22px; line-height: 30px;}
+.rule em{ display: inline-block; width: 15px; height: 15px; text-align: center; line-height: 14px; font-size: 12px; font-style: normal; padding-right: 7px; margin-left: -22px; background: url(../images/dot.png) no-repeat 0 0;}
+.rule a{ text-decoration: underline; color: #ff0000;}
+.rule a:hover{ color: #ff0000;}
+.links{ padding-top: 25px; font-size: 14px; color: #786e48; width: 818px; line-height: 28px;}
+.links dl{ overflow: hidden;}
+.links dl dt{ float: left; padding-left: 20px; width: 70px;}
+.links dl dd{ float: left; width: 728px;}
+.links dl dd a{ margin-right: 10px; color: #786e48;}
+.links dl dd a:hover{ text-decoration: underline;color: #ff0000;}
+
+.start{ position: absolute; top: 122px; left: 255px; width: 201px; height: 108px; background: url(../images/btn_start.png) no-repeat 0 0;}
+.start:hover{ background-position: 0 -110px;}
+
+.middle_right{ float: right; width: 217px; padding-right: 30px; padding-top: 80px;}
+.wrapper_5{ text-align: center;}
+.btn_record, .btn_favorite, .btn_signin{ display: block; width: 152px; height: 50px; margin: 0 auto 10px;}
+.btn_record{ background: url(../images/btn_record.png) no-repeat 0 0;}
+.btn_favorite{ background: url(../images/btn_favorite.png) no-repeat 0 0;}
+.btn_signin{ background: url(../images/btn_signin.png) no-repeat 0 0;}
+.btn_record:hover, .btn_favorite:hover, .btn_signin:hover{ background-position: 0 -50px;}
+
+.L_tips{ margin: 55px -10px 35px; height: 30px; line-height: 30px; font-size: 18px; text-align: center; color: #4d4214;}
+
+.wrapper_6{ height: 240px;}
+.calendar{ width: 215px; height: 240px; position: relative; overflow: hidden;}
+.cal-prev, .cal-next{ display: block; width: 11px; height: 11px; overflow: hidden; position: absolute; top: 10px; cursor: pointer;}
+.cal-prev{ left: 70px; background: url(../images/d_prev.png) no-repeat 0 0;}
+.cal-prev.end{ background-position: 0 -11px; cursor: default;}
+.cal-next{ right: 70px; background: url(../images/d_next.png) no-repeat 0 0;}
+.cal-next.end{ background-position: 0 -11px; cursor: default;}
+.cal-month{ height: 30px; line-height: 30px; font-size: 18px; color: #f29139; text-align: center;}
+.cal-container{ width: 430px; overflow: hidden; position: absolute; top: 30px; left: 0;}
+.cal-wrapper{ float: left; width: 215px; text-align: center;}
+.cal-box{ width: 208px; height: 210px; padding-left: 3px; padding-right: 4px; font-size: 12px; background: url(../images/d_bg.png) no-repeat center 0;}
+.cal-box th{ height: 23px; line-height: 23px; color: #fff;}
+.cal-box td{ height: 30px; line-height: 30px; color: #454545;}
+.cal-box .disabled{ color: #aeaeae;}
+.cal-box .sunday{ color: #c50f11;}
+.cal-box .success span{ display: block;width: 100%; height: 100%; background: url(../images/d_success.png) no-repeat right 0;}
+.cal-box .today{ background-color: #d9873c; color: #fff;}
+.cal-box .today span{ background-position: right -30px;}
+
+
+
+
+.signin{ margin-top: 10px; height: 70px; overflow: hidden;}
+.signinEnd{ font-size: 16px; color: #4d4214; text-align: center; height: 50px; line-height: 50px;}
+.number{ font-size: 13px; color: #2c170f; line-height: 22px; padding-left: 25px;}
+.number span{ color: #de2c2c;}
+.S_tips{ width: 160px; padding-left: 42px; padding-top: 18px; line-height: 18px; font-size: 13px; color: #2c170f;}
+.S_tips p{ padding-bottom: 20px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

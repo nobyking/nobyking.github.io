@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="Copyright" content="Tencent" />
+    <meta name="Description" content="" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0 minimum-scale=1.0 maximum-scale=1.0 user-scalable=no" />
+    <title>ipad登录测试</title>
+</head>
+<body>
+<div id="a"></div>
+<div id="b"></div>
+<script>
+    (function () {
+        var version = window.navigator.userAgent.match(/MQQBrowser\/([^\s]+)\s/);
+        var isIpad = (window.navigator.platform.toLowerCase().indexOf("ipad") > -1);
+
+        if (!version && !isIpad) {
+            alert('非IPAD，前去下载');
+            window.open('https://itunes.apple.com/cn/app/id426097375');
+            window.isCanRun = 0;
+        }
+        else if (!version && isIpad) {
+            alert('版本过低，下载最新版');
+            window.location.href = 'https://itunes.apple.com/cn/app/id426097375'
+        }
+        else if (version[1] < '4.7.1') {
+            window.isCanRun = 1;
+        }
+        else {
+            window.isCanRun = 2;
+        }
+        document.getElementById('b').innerHTML = version +' -> '+ version[1];
+    })();
+</script>
+
+<script src="http://imgcache.gtimg.cn/c/=/club/mobile_web/zepto.min.js,/club/common/lib/zero/zero.m.min-4.6.1.js,/club/common/lib/zero/widgets/autofixed/AutoFixed.js?max_age=86400000"></script>
+<script src="http://3gimg.qq.com/cube/QQBrowserApi/v1/browser_interface_push.js" type="text/javascript"></script>
+
+
+<script>
+
+    page = new qv.zero.Page({
+        jsonid: 35384,
+        game: "cf",
+        mqqEnv: true,
+        onlyMobile: "true",
+        redirectUrl: "",
+        preloads: [],
+        afterInit: function () {
+
+            $('body').on('click', 'a[href="#"]', function (e) {
+                e.preventDefault();
+            });
+
+        }
+    });
+
+    function delCookie(name) {
+        var date = new Date();
+        date.setTime(date.getTime() - 10000);
+        document.cookie = name + "=; expire=" + date.toGMTString() + "; path=/;domain=.qq.com";
+    }
+
+    // 检测登录
+    function checkLogin(cb){
+        delCookie('uin');
+        delCookie('skey');
+        x5.exec(function(data){
+            if(typeof data === 'object'){
+                if(data.uin && data.sid){
+                    cb(true, data.sid, data.uin);
+                }
+                else{
+                    cb(false);
+                }
+            }
+        }, function(err){
+            cb(false);
+        }, "login", "getSidAndUin",[]);
+    }
+
+    //测试登录
+    checkLogin(function(sign, sid, uin){
+        if(sign){
+            var html='',nickname='';
+            zHttp.send({actid:39847,sid:sid},function(res){
+                if(res.ret == 0){
+                    nickname = res.data.op;
+                    html += 'sid：' + sid + '<br>';
+                    html += 'uin：' + uin + '<br>';
+                    html += '昵称：' + nickname + '<br>';
+                    html += '头像：' + '<img src="http://q4.qlogo.cn/g?b=qq&nk=' + uin + '&s=40"' + '<br>';
+                    document.getElementById('a').innerHTML = html;
+                }
+            });
+        }
+        else{
+            zMsg.show("请重新登录！");
+        }
+    });
+
+</script>
+</body>
+</html>
+
+

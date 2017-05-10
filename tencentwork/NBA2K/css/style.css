@@ -1,0 +1,88 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, ol, div, h1, h2, h3, h4, p,li {margin: 0;padding: 0;border: 0 none;cursor:default;}
+a{cursor:pointer;outline: none;}
+a:hover{
+	text-decoration: none;
+}
+html, body{
+	height: auto;
+	min-width: 1000px;
+}
+body{ padding-top: 45px; background-color: #04090f; min-width: 1070px;}
+
+.btn{ display: inline-block; font-size: 0; line-height: 0; overflow: hidden;}
+
+
+/*查询CDKEY*/
+.giftsLists{ text-align: center;}
+.noGifts{ line-height: 50px;}
+.giftsLists td,.giftsLists th{ border: 1px solid #ccc;}
+.giftsLists th{ background: #ddd; color: #333; line-height: 30px;}
+.giftsLists td{ padding: 5px 10px;}
+.giftsLists td a:hover{ color: #ea0000;}
+
+.page{ padding-top: 15px; text-align: center;}
+.page a,.page span{ padding: 0 10px;}
+.page a:hover{ text-decoration: underline;}
+
+/*主体*/
+.container{ font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif; width: 1070px; height: 100%; margin: 0 auto; position: relative;}
+
+.middle_1{ height: 664px; background: url(../images/middle_1.jpg) no-repeat center top;}
+.btn_link{ position: absolute; top: 244px; left: 407px; width: 195px; height: 51px; background: url(../images/btn_link.png) no-repeat 0 0;}
+.btn_link:hover{ background-position: 0 -52px;}
+.banner_btn{ position: absolute; top: 525px; left: 0; z-index: 1; width: 100%;}
+.cdkey_query,.cdkey_exchange{ position: absolute; top: 90px; left: 80px; color: #fff478; font-size: 22px; line-height: 26px;}
+.cdkey_exchange{ left: 330px;}
+.cdkey_query:hover,.cdkey_exchange:hover{ color: #fff;}
+.banner_btn .btn{ width: 253px; height: 68px; background-position: 0 0; background-repeat: no-repeat;}
+.banner_btn .btn:hover{ background-position: 0 -69px;}
+.banner_btn .btn_topGame{ background-image: url(../images/btn_downloadGame.png); margin-right: 54px;}
+.banner_btn .btn_topQB{ background-image: url(../images/btn_downloadQB.png);}
+
+.tips{ font-size: 14px; color: #fff; line-height: 22px; text-shadow: 3px 3px 3px #000;}
+.gifts_btn{ overflow: hidden;}
+.btn_exchange{ width: 205px; height: 55px; background: url(../images/btn_exchange.png) no-repeat 0 0;}
+.btn_exchange:hover{ background-position: 0 -56px;}
+.btn_exchange2{ width: 230px; height: 46px; background: url(../images/btn_exchange2.png) no-repeat 0 0;}
+.btn_exchange2:hover{ background-position: 0 -47px;}
+.btn_exchange3{ width: 795px; height: 60px; background: url(../images/btn_exchange3.png) no-repeat 0 0;}
+.btn_exchange3:hover{ background-position: 0 -61px;}
+
+
+.middle_2{ height: 414px; background: url(../images/middle_2.jpg) no-repeat center top;}
+.middle_2 .tips{ height: 45px; padding-top: 103px; padding-left: 95px;}
+.middle_2 .gifts_btn{ padding-top: 85px; padding-left: 475px;}
+
+
+.middle_3{ height: 518px; background: url(../images/middle_3.jpg) no-repeat center top;}
+.middle_3 .tips{ height: 45px; padding-top: 103px; padding-left: 95px;}
+.gift_hg_list{ padding-top: 25px; height: 300px;}
+.gift_hg_list .gift{ float: left; width: 303px; height: 292px; margin-right: 80px; background-position: 0 0; background-repeat: no-repeat;}
+.gift_hg_list .last{ margin-right: 0;}
+.gift_hg_list .gift_1{ background-image: url(../images/gifts_hg_1.png);}
+.gift_hg_list .gift_2{ background-image: url(../images/gifts_hg_2.png);}
+.gift_hg_list .gift_3{ background-image: url(../images/gifts_hg_3.png);}
+.gift_hg_list .gifts_btn{ padding-top: 218px; text-align: center;}
+
+.middle_4{ height: 853px; background: url(../images/middle_4.jpg) no-repeat center top;}
+.middle_4 .tips{ height: 55px; padding-top: 100px; padding-left: 95px;}
+.gift_day{ position: relative; width: 100%; height: 530px;}
+.gift_day .gift{ position: absolute; width: 258px; height: 296px; background-position: 0 0; background-repeat: no-repeat; cursor: pointer;}
+.gift_day .gift:hover{ background-position: 0 -300px; z-index: 1;}
+.gift_day .gift.select{ background-position: 0 -600px;}
+.gift_day .gift.disabled{ background-position: 0 -900px; cursor: default;}
+#gift_day_1{ top: 0; left: 0; background-image: url(../images/gifts_1.png);}
+#gift_day_2{ top: 0; left: 271px; background-image: url(../images/gifts_2.png);}
+#gift_day_3{ top: 0; left: 542px; background-image: url(../images/gifts_3.png);}
+#gift_day_4{ top: 0; left: 813px; background-image: url(../images/gifts_4.png);}
+#gift_day_5{ top: 233px; left: 135px; background-image: url(../images/gifts_5.png);}
+#gift_day_6{ top: 233px; left: 406px; background-image: url(../images/gifts_6.png);}
+#gift_day_7{ top: 233px; left: 677px; background-image: url(../images/gifts_7.png);}
+
+
+.middle_4 .gifts_btn{ text-align: center; padding-top: 40px;}
+
+.middle_5{ height: 339px; background: url(../images/middle_5.jpg) no-repeat center top;}
+.rule{ font-size: 14px; line-height: 26px; color: #6d9dff; padding-top: 115px;}

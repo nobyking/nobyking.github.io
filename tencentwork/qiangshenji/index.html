@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+    <meta charset="UTF-8">
+    <meta name="Copyright" content="Tencent" />
+    <meta name="keywords" content="枪神纪,礼包,QQ浏览器,会员,QQ会员">
+    <meta name="description" content="">
+    <title>QQ浏览器-枪神纪</title>
+    <!-- 公共模块样式 -->
+    <link rel="stylesheet" href="http://imgcache.gtimg.cn/vipstyle/game/public/v3/css/global.css" type="text/css" media="screen" />
+    <!-- 页面样式 -->
+    <!-- 头尾组件依赖脚本 -->
+    <script type="text/javascript" src="http://imgcache.gtimg.cn/c/=/club/qv/pkg/qv_1.x.x.js,/clubact/premin/jquery.webStorage.min.js,/clubact/common/oz.js,/clubact/common/aid.js,/clubact/common/mustache.js,/clubact/common/nav/nav.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://stdl.qq.com/stdl/game/qsj/js/header.js" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="http://stdl.qq.com/stdl/game/qsj/css/style.css"/>
+</head>
+<body>
+<!-- 头部，由脚本输出html -->
+<script type="text/javascript">write_global_nav()</script>
+<div id="contentx">
+    <div id="wrapper">
+        <div id="topDiv">
+            <div class="topBox">
+                <div id="videoBox"></div>
+                <div id="btnBox">
+                    <a class="btn" id="guanwangBtn" href="http://tps.qq.com/?ADTAG=qqexplore" target="_blank" onclick="report('BROWSER.ACTIVITY.QSJ.GUANWANGCLICK');"></a>
+                    <a class="btn" id="downloadBtn" href="http://tps.qq.com/web201406/download.shtml?ADTAG=qqexplore" onclick="report('BROWSER.ACTIVITY.QSJ.GAMEDOWNLOADCLICK');" target="_blank"></a>
+                </div>
+            </div>
+            <div class="cdkey">
+                <a id="checkCDkey" href="http://vip.qq.com/my/gift.html" target="_blank" onclick="report('BROWSER.ACTIVITY.QSJ.CDKEYCHECKCLICK');">【CDKey查询】</a>
+                <a id="changeCDkey" href="http://tps.qq.com/web201406/cdkey.shtml" target="_blank" onclick="report('BROWSER.ACTIVITY.QSJ.CDKEYCHANGECLICK');">【CDKey兑换】</a>
+
+            </div>
+            <div class="giftBox" id="giftBox1">
+                <a name="newGift" class="nav"></a>
+                <p class="giftDesc"><span class="fyellow">6月5日后新注册的用户</span>，使用QQ浏览器打开本页面可免费领取新手礼包，单个QQ限领一次。</p>
+                <div class="gift" id="gift1_1"></div>
+                <div class="gift" id="gift1_2"></div>
+                <div class="gift" id="gift1_3"></div>
+                <a class="btn" id="getBtn1" href="javascript:void(0);" data-do="page.exchange,0"></a>
+            </div>
+        </div>
+        <div id="bottomDiv">
+            <div class="giftBox" id="giftBox2">
+                <a name="levelUpGift" class="nav"></a>
+                <p class="giftDesc"><span class="fyellow">6月5日后新注册的用户</span>，游戏升级到以下等级，可免费领取等级专享礼包，单个QQ限领一次。</p>
+                <div class="gift" id="gift2_1">
+                    <p>5级礼包</p>
+                    <div class="giftImg"></div>
+                    <a class="btn" id="getBtn2_1" href="javascript:void(0);" data-do="page.exchange,1"></a>
+                </div>
+                <div class="gift" id="gift2_2">
+                    <p>10级礼包</p>
+                    <div class="giftImg"></div>
+                    <a class="btn" id="getBtn2_2" href="javascript:void(0);" data-do="page.exchange,2"></a>
+                </div>
+                <div class="gift" id="gift2_3">
+                    <p>15级礼包</p>
+                    <div class="giftImg"></div>
+                    <a class="btn" id="getBtn2_3" href="javascript:void(0);" data-do="page.exchange,3"></a>
+                </div>
+            </div>
+            <div class="giftBox" id="giftBox3">
+                <p class="giftDesc"><span class="fyellow">每日登入枪神纪玩30分钟以上</span>可领取活跃礼包，单个QQ每日限领一次。</p>
+                <a name="dailyGift" class="nav"></a>
+                <div class="gift" id="gift3_1"></div>
+                <div class="gift" id="gift3_2"></div>
+                <a class="btn" id="getBtn3" href="javascript:void(0);" data-params="do=page.exchange,4"></a>
+            </div>
+            <div id="rule">
+                <p><span class="icon">1</span><strong class="fyellow">活动时间：</strong>此为长期运营专区，将定期更换礼包，本期礼包时限为<span class="fyellow">6月5日至7月20日</span>。</p>
+                <p><span  class="icon">2</span><strong class="fyellow">活动对象：</strong>QQ浏览器用户、枪神纪玩家。</p>
+                <p><span  class="icon">3</span><strong class="fyellow">奖品发放：</strong>游戏礼包将通过CDkey发放，请到官网<a href="http://tps.qq.com/web201406/cdkey.shtml" target="_blank">兑换CDkey</a>。</p>
+                <p><span  class="icon">4</span>活动最终解释权归属腾讯公司。</p>
+            </div>
+        </div>
+
+        <!-- 随屏滚动 -->
+        <div id="aside" class="aside">
+            <a href="http://tq.qq.com/qbrcenter/index.html?adtag=qsj" onclick="report('BROWSER.ACTIVITY.QSJ.MOREACTIVITY');" target="_blank"></a>
+            <a href="#newGift"></a>
+            <a href="#levelUpGift"></a>
+            <a href="#dailyGift"></a>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- 底部，由脚本输出html -->
+<div class="mod_copyright2"><script type="text/javascript">write_global_footer()</script></div>
+
+
+
+
+<script type="text/javascript" src="http://imgcache.gtimg.cn/ac/club/qqvip/v2.0/qqviplib_2.0.0.js" charset="gbk"></script>
+<script type="text/javascript" src="http://imgcache.gtimg.cn/ACT/vip_act/common/vip.act.biz.lisa.js" charset="gb2312"></script>
+<script type="text/javascript" src="http://youxi.vip.qq.com/common/js/lib/zero.min-5.0.1.js"></script>
+<script type="text/javascript" src="http://pingjs.qq.com/tcss.ping.js"></script>
+<script type="text/javascript" src="http://imgcache.gtimg.cn/tencentvideo_v1/tvp/js/tvp.player_v2_jq.js"></script>
+<script type="text/javascript" src="http://stdl.qq.com/stdl/game/qsj/js/index.js"></script>
+
+<script src="http://3gimg.qq.com/mig-web/2014/market/qbtequan/js/app/yxj-redbag.js"></script>
+</body>
+</html>

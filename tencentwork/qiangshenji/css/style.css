@@ -1,0 +1,184 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, ol, div, h1, h2, h3, h4, p,li {margin: 0;padding: 0;border: 0 none;cursor:default;}
+a{cursor:pointer;outline: none;}
+a:hover{
+    text-decoration: none;
+}
+body{
+    background: #000000;
+}
+/*顶部底部*/
+body{ padding-top: 45px;}
+#logo-btn{margin-top: 4px;display: inline-block;*display: inline;zoom: 1;width: 133px;height: 38px;background: url(../img/header/logo.png) 0 0 no-repeat;}
+#tq{display: inline-block;*display: inline;zoom: 1;width: 253px;height: 37px;margin-left: 15px;background: url(../img/header/tq.png) 0 0 no-repeat;}
+#header-qb{position:absolute;right:0;display: inline-block;*display: inline;zoom: 1;width: 105px;height: 31px;vertical-align: top;margin-top: 6px;background: url(../img/header/download.png) 0 0 no-repeat;}
+.mod_gst{background: #424041;width: 100%;position: fixed; top: 0; z-index: 100;min-width: 800px;}
+.mod_gst_main{min-width: 800px;max-width: 1002px;width: auto;}
+.mod_gst_main .mod_gst_userinfo{font-size:14px;color:#FFFFFF;line-height: 20px;top: 13px;}
+.mod_gst_main .mod_gst_userinfo .user_nick{width:160px;color: #ffffff;}
+.mod_gst a{color:#48adff;}
+.mod_copyright2{padding-bottom: 70px; padding-top: 50px; background-color: #000; text-align: center;}
+.mod_copyright2 p {color: #fff;line-height: 20px;}
+.mod_copyright2 p a {color: #fff;}
+
+#contentx{
+    font-family: "微软雅黑","Microsoft YaHei","宋体",SimSun,"黑体",SimHei;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    background:url(../img/bg_1920.png) center no-repeat;
+    min-width: 1280px;
+}
+#wrapper{
+    margin:0 auto;
+    width: 1280px;
+}
+.btn{
+    /*display: inline-block;
+    *display:inline;
+    *zoom:1;*/
+    display: block;
+    position: relative;
+}
+.btn span{
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.fyellow{
+    color:#feae00;
+}
+
+.giftBox{
+    width: 764px;
+    height: 387px;
+    position: absolute;
+    margin-left: 285px;
+}
+.giftDesc{color:#ffffff;font-size: 16px;position: absolute;top:95px;left: 50px }
+/***********top****************/
+#topDiv{
+    position: relative;
+    margin:0 auto;
+    background:url(../img/top_1280.png) center no-repeat;
+    width:1280px;
+    height:1133px;
+}
+
+.topBox{
+    position: absolute;
+    top: 426px;
+    left: 447px;
+    height: 216px;
+    width: auto;
+
+}
+#videoBox{
+    float: left;
+    width: 355px;
+    height: 217px;
+    margin-right: 10px;
+    border:none;
+}
+#btnBox{
+    float: left;
+}
+#guanwangBtn{  width: 227px;height: 120px;background: url(../img/btn.png) 0 0;  }
+#guanwangBtn:hover {  background-position:231px 0;  }
+
+#downloadBtn{width: 227px;  height: 95px;background: url(../img/btn.png) 0 95px;}
+#downloadBtn:hover{  background-position: 231px 95px;  }
+
+.cdkey{position: absolute;top: 705px;left: 300px;}
+.cdkey a{color:#F4DDE4;font-size: 14px;margin-right: 5px;}
+.cdkey a:hover{text-decoration: underline;}
+
+#giftBox1{
+    top: 730px;padding: 0 37px;
+}
+#giftBox1 .gift{float: left;width:201px;height: 137px;margin:15px;margin-top:140px  }
+#gift1_1{background: url(../img/gift1.png) 0 0}
+#gift1_2{background: url(../img/gift1.png) 201px 0}
+#gift1_3{background: url(../img/gift1.png) 402px 0}
+
+#getBtn1{width: 151px;height: 69px;position: absolute;bottom:16px;left: 315px;background: url(../img/getBtn.png) 0 0; }
+#getBtn1:hover{background-position: 0 69px}
+
+#bottomDiv{
+    position: relative;
+    margin:0 auto;
+    background:url(../img/bottom_1280.png) center no-repeat;
+    width:1280px;
+    height:1287px;
+}
+
+#giftBox2{top: 10px}
+#giftBox2 .gift{position:relative;text-align: center; float: left;width:254px;height: 230px;margin-top:130px  }
+#giftBox2 .gift p{font-size: 18px;margin:12px auto;color: #99140b; }
+#giftBox2 .gift .giftImg{position: absolute;top:51px;left:0;height: 133px;width:254px;}
+#gift2_1 .giftImg{background: url(../img/gift2.png) 0 0}
+#gift2_2 .giftImg{background: url(../img/gift2.png) -254px 0}
+#gift2_3 .giftImg{background: url(../img/gift2.png) 254px 0}
+
+#giftBox2 .gift .btn{width: 96px;height: 88px;position: absolute;bottom:0;left: 83px ;background: url(../img/getBtn2.png) 0 0;}
+#giftBox2 .gift .btn:hover{background-position: 0 88px}
+
+#giftBox3{top:425px;padding-left: 340px;width: 424px;}
+#giftBox3 .gift{float: left;width:157px;height: 108px;margin:11px;margin-top:150px  }
+#gift3_1{background: url(../img/gift3.png) 0 0}
+#gift3_2{background: url(../img/gift3.png) 157px 0}
+
+#getBtn3{width: 151px;height: 69px;position: absolute;bottom:16px;left: 445px;background: url(../img/getBtn.png) 0 0; }
+#getBtn3:hover{background-position: 0 69px}
+
+#rule{
+    left: 350px;
+    top: 970px;
+    position: absolute;
+    color: #ffffff;
+}
+#rule p{
+    line-height: 22px;
+    margin-bottom: 10px;
+    color: #c5d8e9;
+}
+#rule p span.icon{
+    display: block;
+    float: left;
+    text-align: center;
+    background: url(../img/icon.png) no-repeat;
+    width: 19px;
+    height: 22px;
+    margin-right: 15px;
+}
+#rule p a{
+    color: #feae00;
+}
+#rule p a:hover{
+    text-decoration: underline;
+}
+
+.aside{
+    background: url(../img/aside.png);
+    position: fixed;
+    width: 117px;
+    height: 373px;
+    right: 0px;
+    top: 550px;
+    display: none;
+}
+.aside a{
+    display: block;
+    width: 100%;
+    height: 92px;
+    background: url(about:blank);
+}
+
+.nav{position: absolute;top: -50%;}
+

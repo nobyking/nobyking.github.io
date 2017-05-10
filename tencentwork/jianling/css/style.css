@@ -1,0 +1,157 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, ol, div, h1, h2, h3, h4, p,li { margin: 0; padding: 0; border: 0 none; cursor:default;}
+a{ cursor:pointer; outline: none;}
+a:hover{ text-decoration: none;}
+html, body{ height: auto; min-width: 1100px;}
+.clear{ display: block; clear: both; height: 0; line-height: 0; font-size: 0; overflow: hidden; visibility: hidden;}
+.btn,.btn a{ display: inline-block; font-size: 0; line-height: 0; overflow: hidden;}
+.fl{ float: left;}
+.fr{ float: right;}
+.yellow{ color: #fff;}
+
+body{ font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif; padding-top: 45px; background: #fef7e9; min-width: 1000px;}
+
+/*弹出框样式*/
+.popBg{ background: #000\9; opacity: 0.6\9; filter: alpha(opacity=60)\9; background-color: rgba(0,0,0,0.6); position: fixed; top:0; left:0; z-index: 1001; width: 100%; height: 100%;}
+.popMsg{ display: block; position:fixed; top:50%; left:50%; z-index:1002; margin-top:-110px; margin-left:-300px; width: 600px; min-height: 220px; font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;}
+.popTop, .popBottom, .popContent{ position: absolute; top: 0; left: 0; height: 0; width: 100%; overflow: hidden;}
+.popTop{ height: 20px; background: url(../images/pop_bg.png) no-repeat 0 0;}
+.popBottom{ top: auto; bottom: 0; height: 20px; background: url(../images/pop_bg.png) no-repeat 0 -21px;}
+.popContent{ top: 20px; bottom: 20px; background-color: #fff; height: auto;}
+.popWrap{padding: 45px 15px 30px; position: relative;}
+.popClose{ display: block; position: absolute;right: -34px;top: 23px; z-index: 10;width: 24px;height: 24px; font-size: 0; line-height: 0; overflow: hidden; cursor:pointer; background: url(../images/pop_close.png) no-repeat 50% 50%; transition: transform 1s ease-out;}
+.popClose:hover{ transform: rotate(270deg);}
+.popContTit{ position: absolute; top: 15px; left: 0; z-index: 9; width: 100%; height: 38px; line-height: 38px; font-size: 26px; text-align: center; color: #00c4db;}
+.popContainer{ font-size: 16px; color: #333; height: 100%; text-align: center;}
+.txtCenter{ line-height: 30px; font-size: 18px;}
+
+
+  /*获奖记录*/
+.popTit{ font-size: 30px; line-height: 40px; color: #00c4db; font-weight: normal; margin-top: -15px; margin-bottom: 10px; background: url(../images/pop_tit.png) no-repeat 50% 50%;}
+.popRecord .popWrap{ padding-left: 0; padding-right: 0;}
+.giftsLists{ text-align: center;}
+.noGifts{ line-height: 50px;}
+.giftsLists td,.giftsLists th{ border: 0;}
+.giftsLists th{ background: #00c4db; color: #fff; font-size: 14px; line-height: 30px;}
+.giftsLists th.first{ border-right: 1px solid #fff;}
+.giftsLists td{ padding: 5px 10px; background: url(../images/dashed.png) repeat-x 0 100%;}
+.giftsLists td a{ color: #333; text-decoration: underline;}
+.giftsLists td a:hover{ color: #00c4db;}
+.page{ padding-top: 15px; text-align: center; font-size: 14px;}
+.page a,.page span{ padding: 0 10px; color: #000;}
+.page a{ color: #000;}
+.page a:hover{ text-decoration: underline;}
+.page .prev_page,.page .next_page{ color: #fff; background-color: #00c4db; padding: 3px 16px; border-radius: 5px;}
+.page .prev_page:hover,.page .next_page:hover{ text-decoration: none;}
+
+  /*弹框按钮*/
+.P_btns{ text-align: center; padding-top: 20px;}
+.btn_pop{ display: inline-block; width: 100px; height: 40px; text-align: center; line-height: 40px; font-size: 16px; color: #fff; background: url(../images/pop_btn.png) no-repeat 0 0;}
+.btn_downloadQB2{ width: 180px; background: url(../images/pop_btn2.png) no-repeat 0 0;}
+
+
+/*分享空间弹窗*/
+.mod_pop_mask{ z-index: 2000;}
+.friend_pop{ display: none; width:935px; height:600px; z-index: 2001; position: fixed; _position: absolute; left:50%; margin-left:-440px; top:50%; margin-top: -280px; zoom: 1; _top: expression(eval(document.documentElement.scrollTop)+120);}
+.friend_info{ width:900px; height:100%; overflow:hidden; position:relative;}
+.friend_in{ width:900px; height:100%; background:#efefef; color:#656565;}
+.friend_close { width: 35px; height: 35px; position: absolute; top: 0; right: 0; background: url(../images/close.jpg) no-repeat;}
+
+
+
+/*主体*/
+.container{ width: 1000px; margin: 0 auto; position: relative; height: 100%;}
+
+.middle_1{ height: 453px; background: url(../images/middle_1.jpg) no-repeat 50% 0;}
+.activityTime{ position: absolute; bottom: 40px; left: 50%; margin-left: -150px; width: 300px; text-align: center; line-height: 30px; font-size: 22px; color: #fff; text-shadow: 0 8px 8px rgba(0,0,0,.4);}
+
+
+.tips{ font-size: 14px; color: #333; line-height: 24px; text-align: center;}
+
+.middle_2{ height: 317px; background: url(../images/middle_2.jpg) no-repeat 50% 0;}
+.middle_title{ font-size: 30px; line-height: 50px; color: #333; text-align: center;}
+.middle_2 .middle_title{ padding-top: 70px;}
+.middle_2 .box{ padding-top: 15px; height: 150px; width: 875px; margin: 0 auto;}
+.middle_2 .gifts{ float: left; width: 650px; height: 140px; background: url(../images/gifts_tq.png) no-repeat 0 0;}
+.middle_2 .btns{ float: right; width: 190px;}
+.btn_downloadQB, .btn_exchange{ display: block; width: 190px; height: 64px; background-position: 0 0; background-repeat: no-repeat;}
+.btn_downloadQB{ margin-top: 3px; margin-bottom: 6px; background-image: url(../images/btn_downloadQB.png);}
+.btn_exchange{ background-image: url(../images/btn_exchange.png);}
+
+
+.middle_3{ height: 780px; background: url(../images/middle_3.jpg) no-repeat 50% 0;}
+.middle_3 .tips{ padding-top: 20px; height: 60px;}
+.tab{ width: 1121px; height: 182px; margin-left: -61px;}
+.tab_title{ position: relative; z-index: 1; height: 151px; padding-top: 31px; background: url(../images/tab_title.png) no-repeat 50% 0;}
+.tab_title span{ display: inline-block; position: relative; top: 0; z-index: 1; vertical-align: top; background: url(../images/tab_title.png) no-repeat -1000px -1000px;}
+.tab_title span strong{ display: block; width: 100%; height: 120px; cursor: pointer; font-size: 0; line-height: 0; overflow: hidden;}
+.tab_title .tab_title_1{ width: 434px; height: 151px; background-position: -1000px -1000px; margin-right: 13px;}
+.tab_title .tab_title_1.active{ z-index: 2; background-position: 0 -185px;}
+.tab_title .tab_title_2{ width: 424px; height: 120px; margin-left: -75px;}
+.tab_title .tab_title_2.active{ z-index: 2; background-position: -440px -185px;}
+.btn_downloadGame{ position: absolute; top: 54px; right: 85px; z-index: 1; width: 265px; height: 74px; background: url(../images/btn_downloadGame.png) no-repeat 0 0;}
+.btn_downloadGame:hover{ z-index: 2; background-position: 0 -75px;}
+.tab_container{ position: relative; z-index: 2; width: 872px; margin: -31px auto 0;}
+.tab_container .wrap{ position: relative; text-align:center; }
+.tab_container .box{ overflow: hidden;}
+.tab_container .fl{ width: 301px; padding-left: 109px; padding-top: 36px; background: url(../images/title_1.png) no-repeat 0 0;}
+.tab_container .fr{ width: 301px; padding-left: 109px; padding-top: 36px; background: url(../images/title_2.png) no-repeat 0 0;}
+.tab_container .tit{ height: 72px; background-position: 0 0; background-repeat: no-repeat; margin-bottom: 20px;}
+.tab_container .gifts{ width: 294px; height: 290px; background-position: 0 0; background-repeat: no-repeat;}
+.exBtn{ padding-top: 20px; text-align: left;}
+.btn_exchange2{ width: 294px; height: 69px; background: url(../images/btn_exchange2.png) no-repeat 0 0;}
+.btn_exchange3{ width: 294px; height: 69px; background: url(../images/btn_exchange3.png) no-repeat 0 0;}
+.tit_xs{ background-image: url(../images/title_xs.png);}
+.tit_xs_tq{ background-image: url(../images/title_xs_tq.png);}
+.tit_hg{ background-image: url(../images/title_hg.png);}
+.tit_hg_tq{ background-image: url(../images/title_hg_tq.png);}
+.gifts_xs{ background-image: url(../images/gifts_xs.png);}
+.gifts_xs_tq{ background-image: url(../images/gifts_xs_tq.png);}
+.gifts_hg{ background-image: url(../images/gifts_hg.png);}
+.gifts_hg_tq{ background-image: url(../images/gifts_hg_tq.png);}
+
+
+.middle_4{ height: 1269px; background: url(../images/middle_4.jpg) no-repeat 50% 0;}
+.middle_4 .middle_title{ padding-top: 100px;}
+.lucky_num{ text-align: center; font-size: 14px; color: #333; line-height: 35px; padding-top: 3px; padding-bottom: 10px;}
+.lucky_num span{ color: #ff6c24; margin-right: 15px;}
+.lucky_num span em{ font-style: normal;}
+.btn_record{ width: 100px; height: 32px; background: url(../images/btn_record.png) no-repeat 0 0; vertical-align: top;}
+.middle_4 .tips p span{ display: inline-block; width: 20px; height: 20px; text-align: center; line-height: 20px; margin-right: 5px; color: #fff; background: url(../images/icon_round.png) no-repeat 0 0; vertical-align: top; margin-top: 2px;}
+.egg_box{ position: relative; width: 950px; height: 430px; margin-left: 35px; margin-top: 20px;}
+.egg{ float: left; width: 170px; height: 200px; margin-right: 20px; margin-bottom: 15px; background: url(../images/egg.png) no-repeat 0 0; cursor: url(http://stdl.qq.com/stdl/game/jianling/images/cursor.cur), pointer;}
+.egg_1{ background-position: -170px 0;}
+.egg_2{ background-position: -340px 0;}
+.egg_3{ background-position: 0 -200px;}
+.egg_4{ background-position: -170px -200px;}
+.egg_5{ background-position: -340px -200px;}
+.egg_6{ background-position: 0 -400px;}
+.egg_7{ background-position: -170px -400px;}
+.egg_8{ background-position: -340px -400px;}
+.egg_9{ background-position: -170px -600px;}
+.egg_10{ background-position: 0 -600px;}
+.middle_4 .exBtn{ text-align: center; padding-top: 30px;}
+.shareQZ{ width: 185px; height: 64px; background: url(../images/btn_shareQZ.png) no-repeat 0 0; margin-right: 42px;}
+.addTicket{ width: 185px; height: 64px; background: url(../images/btn_addTicket.png) no-repeat 0 0;}
+.egg_gifts{ margin-top: 53px;}
+.egg_gifts .middle_title{ padding-top: 0; margin-bottom: 20px;}
+.egg_gifts .gifts{ height: 300px; background: url(../images/gifts_lucky.png) no-repeat 50% 0;}
+
+
+.middle_5{ height: 584px; background: url(../images/middle_5.jpg) no-repeat 50% 0;}
+.middle_5 .middle_title{ padding-top: 100px; text-align: center; color: #fff; text-shadow: 0 2px 2px rgba(0,0,0,.3); margin-bottom: 35px;}
+.hot_line{ position: relative; width: 382px; height: 14px; padding-top: 5px; padding-left: 3px; margin: 0 auto; background: url(../images/hot_bg.png) no-repeat 0 0;}
+.hot_bar{ height: 12px; padding-left: 5px; padding-right: 7px;}
+.hot_bar span{ display: inline-block; float: left; height: 12px; vertical-align: middle; overflow: hidden;}
+.hot_bar_l,.hot_bar_r{ width: 5px; background: url(../images/hot_bar_icon.png) no-repeat 0 0; margin-left: -5px;}
+.hot_bar_r{ background-position: -10px 0; margin-left: 0; margin-right: -5px;}
+.hot_bar_m{ width: 00%; min-width: 10%; max-width: 370px;}
+.hot_tit{ position: absolute; top: -29px; left: -30px; width: 300px; height: 33px;}
+.hot_tit span{ position: absolute; left: 100%; top: 0; display: block; width: 106px; height: 33px; color: #333; text-align: center; line-height: 27px; background: url(../images/hot_tit.png) no-repeat 0 0;}
+.zj{ width: 604px; height: 145px; margin: 50px auto 25px; position: relative;}
+.zj .gifts{ position: absolute; top: 0; left: 0; width: 494px; height: 141px; background: url(../images/gifts_zj.png) no-repeat 0 0;}
+.btn_getLucky{ position: absolute; right: 0; top: 0; width: 160px; height: 142px; background: url(../images/btn_getLucky.png) no-repeat 0 0;}
+.middle_5 .tips{ width: 870px; margin: 0 auto; color: #fff;}
+
+

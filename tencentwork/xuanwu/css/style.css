@@ -1,0 +1,136 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, ol, div, h1, h2, h3, h4, p,li {margin: 0;padding: 0;border: 0 none;cursor:default;}
+a{cursor:pointer;outline: none;}
+a:hover{
+	text-decoration: none;
+}
+html, body{
+	height: auto;
+	min-width: 1000px;
+}
+
+.btn{ display: inline-block; font-size: 0; line-height: 0; overflow: hidden;}
+
+/*顶部底部*/
+body{ padding-top: 45px;background: #000;}
+#logo-btn{margin-top: 4px;display: inline-block;*display: inline;zoom: 1;width: 133px;height: 38px;background: url(../img/header/logo.png) 0 0 no-repeat;}
+#tq{display: inline-block;*display: inline;zoom: 1;width: 253px;height: 37px;margin-left: 15px;background: url(../img/header/tq.png) 0 0 no-repeat;}
+#header-qb{position:absolute;right:0;display: inline-block;*display: inline;zoom: 1;width: 105px;height: 31px;vertical-align: top;margin-top: 6px;background: url(../img/header/download.png) 0 0 no-repeat;}
+.mod_gst{background: #424041;width: 100%;position: fixed; top: 0; z-index: 100;min-width: 800px;}
+.mod_gst_main{min-width: 800px;max-width: 1002px;width: auto;}
+.mod_gst_main .mod_gst_userinfo{font-size:14px;color:#FFFFFF;line-height: 20px;top: 13px;}
+.mod_gst_main .mod_gst_userinfo .user_nick{width:160px;color: #ffffff;}
+.mod_gst a{color:#48adff;}
+.mod_copyright{padding-bottom: 70px; padding-top: 50px; background-color: #000;}
+.mod_copyright p {color: #fff;line-height: 20px;}
+.mod_copyright p a {color: #fff;}
+
+/*邀请好友弹窗*/
+.mod_pop_mask{z-index: 2000;}
+.friend_pop{display: none; width:935px; height:560px; z-index: 2001;  position: fixed; _position: absolute;  left:50%; margin-left:-410px; top:50%;margin-top: -280px; zoom: 1; _top: expression(eval(document.documentElement.scrollTop)+120);}
+.friend_info{ width:900px;  height:100%; overflow:hidden; position:relative;}
+.friend_in{ width:900px; height:100%; background:#efefef; color:#656565; }
+.friend_close {width: 35px; height: 35px; position: absolute; top: 0; right: 0; background: url(../img/close.jpg) no-repeat;}
+
+
+/*主体*/
+.container{ font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif; width: 1000px; margin: 0 auto; position: relative;}
+
+.middle_1{ height: 639px; background: url(../images/middle_1.png) no-repeat center top;}
+.middle_1 .container{ height: 639px; background: url(../images/middle_1_c.jpg) no-repeat center top;}
+.banner_btn{ position: absolute; bottom: 55px; left: 24px; z-index: 10;}
+.banner_btn .btn{ width: 245px; height: 71px;}
+.banner_btn .btn_topGame{ background: url(../images/btn_topGame.png) no-repeat 0 0;}
+.banner_btn .btn_topQB{ background: url(../images/btn_topQB.png) no-repeat 0 0;}
+.banner_btn .btn_topFuli{ background: url(../images/btn_topFuli.png) no-repeat 0 0;}
+.banner_btn .btn:hover{ background-position: 0 -80px;}
+.cdkey{ position: absolute; bottom: 10px; left: 24px; z-index: 11;}
+.cdkey a{ color: #fff; font-size: 16px;}
+.cdkey a:hover{ text-decoration: underline;}
+
+.middle_2{ height: 434px; background: url(../images/middle_2.png) no-repeat center top;}
+.middle_2 .container{ height: 434px;}
+.tabTit{ padding-left: 72px; position: absolute; top: 0; left: 0; z-index: 10;}
+.tabTit span{ display: inline-block; width: 216px; height: 45px; font-size: 0; line-height: 0; overflow: hidden; cursor: pointer; margin-right: 7px;}
+.tabTit .t1{ background: url(../images/tab_1.png) no-repeat 0 0;}
+.tabTit .t2{ background: url(../images/tab_2.png) no-repeat 0 0;}
+.tabTit .t3{ background: url(../images/tab_3.png) no-repeat 0 0;}
+.tabTit .active{ background-position: 0 -45px;}
+.tabTit .adorn{ display: inline-block; width: 34px; height: 29px; position: absolute; top: 6px; left: 276px; background: url(../images/tab_adorn.png) no-repeat 0 0;}
+.tabTit .adorn2{ left: 499px;}
+.tabContent{ position: relative; z-index: 1;}
+.tabContent .wrap{ display: none; width: 1000px; height: 434px; background: url(../images/middle_2_gifts.jpg) no-repeat; position: relative;}
+.tabContent .wrap_1{ background-position: 0 0;}
+.tabContent .wrap_2{ background-position: 0 -434px;}
+.tabContent .wrap_3{ background-position: 0 -868px;}
+.tips{ padding-top: 60px; padding-left: 72px; font-size: 16px; color: #fff;}
+.tips span{ color: #ffde00;}
+.exchange{ position: absolute; left: 302px; bottom: 53px; width: 230px; height: 49px; background: url(../images/btn_exchange.png) no-repeat 0 0;}
+.exchange:hover{ background-position: 0 -50px;}
+.wrap_3 .exchange{ background: url(../images/btn_exchange4.png) no-repeat 0 0;}
+.wrap_3 .exchange:hover{ background-position: 0 -50px;}
+
+.middle_3{ height: 535px; background: url(../images/middle_3.jpg) no-repeat center top;}
+.middle_3 .container{ height: 535px;}
+.middle_3 .tips{ padding-top: 43px; padding-left: 72px; line-height: 20px; width: 685px;}
+.star{ position: absolute; top: 116px; left: 122px; width: 335px; height: 320px;}
+.star a{ display: inline-block; position: absolute;}
+.star_0{ width: 120px; height: 110px; left: 58px; top: 0; background: url(../images/star_0.png) no-repeat 0 0;}
+.star_0:hover, .star .star_0.active{ background-position: 0 -110px;}
+.star_1{ width: 95px; height: 95px; right: 26px; top: 43px; background: url(../images/star_1.png) no-repeat 0 0;}
+.star_1:hover, .star .star_1.active{ background-position: 0 -95px;}
+.star_2{ width: 150px; height: 150px; left: 105px; top: 98px; background: url(../images/star_2.png) no-repeat 0 0;}
+.star_2:hover, .star .star_2.active{ background-position: 0 -150px;}
+.star_3{ width: 120px; height: 120px; left: 0; bottom: 0; background: url(../images/star_3.png) no-repeat 0 0;}
+.star_3:hover, .star .star_3.active{ background-position: 0 -120px;}
+.star_4{ width: 80px; height: 80px; right: 0; bottom: 39px; background: url(../images/star_4.png) no-repeat 0 0;}
+.star_4:hover, .star .star_4.active{ background-position: 0 -80px;}
+.middle_3 .box{ position: absolute; top: 83px; right: 160px; width: 300px; height: 300px; background: url(../images/middle_3_box.png) no-repeat 0 0;}
+.middle_3 .box .gifts{ position: absolute; top: -15px; left: -20px; display: none; width: 342px; height: 290px; background: url(../images/middle_3_gifts.png) no-repeat 0 0;}
+.middle_3 .box:hover .gifts{ display: block;}
+.middle_3 .exchange{ left: auto; right: 180px; bottom: 86px; background: url(../images/btn_exchange3.png) no-repeat 0 0;}
+.middle_3 .exchange:hover{ background-position: 0 -50px;}
+
+.middle_4{ height: 662px; background: url(../images/middle_4.jpg) no-repeat center top;}
+.middle_4 .container{ height: 662px;}
+.middle_4 .tips{ padding-top: 60px; padding-left: 62px;}
+.m4_send{ padding-top: 13px; padding-left: 330px;}
+.invite{ display: inline-block; width: 315px; height: 49px; background: url(../images/btn_invite.png) no-repeat 0 0;}
+.invite:hover{ background-position: 0 -50px;}
+.m4_send p{ width: 315px; text-align: center; font-size: 14px; color: #fff;}
+.m4_send p span{ color: #fff600;padding: 0 3px;}
+.m4_btn{ height: 390px; position: relative;}
+.m4_btn a{ position: absolute; bottom: 0; display: inline-block; width: 159px; height: 48px; background: url(../images/btn_exchange2.png) no-repeat 0 0;}
+.m4_btn a:hover{ background-position: 0 -50px;}
+.friend_1{ left: 95px;}
+.friend_3{ left: 385px;}
+.friend_5{ left: 688px;}
+
+.middle_5{ height: 275px; background: url(../images/middle_5.jpg) no-repeat center top;}
+.middle_5 .container{ height: 275px;}
+.middle_5 .rule{ font-size: 16px; color: #fff; padding-left: 68px; padding-top: 60px;}
+.middle_5 em{ display: inline-block; width: 17px; height: 17px; text-align: center; line-height: 16px; font-style: normal; margin-right: 5px; background: url(../images/dot.png) no-repeat 0 0;}
+.middle_5 a{ text-decoration: underline; color: #fc11ff;}
+.middle_5 a:hover{ color: #fc11ff;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,209 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, ol, div, h1, h2, h3, h4, p,li { margin: 0; padding: 0; border: 0 none; cursor:default;}
+body, input, button, select, textarea, table{ font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;}
+a{ cursor:pointer; outline: none;}
+a:hover{ text-decoration: none;}
+html, body{ height: auto; min-width: 1280px;}
+.clear{ display: block; clear: both; height: 0; line-height: 0; font-size: 0; overflow: hidden; visibility: hidden;}
+.btn,.btn a{ display: inline-block; font-size: 0; line-height: 0; overflow: hidden;}
+body{ padding-top: 45px; background: #0b0520;}
+
+/*弹出框样式*/
+.popBg{background: #000\9; opacity: 0.9\9; filter: alpha(opacity=90)\9; background-color: rgba(0,0,0,0.9); position: fixed;top:0;left:0;z-index: 1000 ;width: 100%;height: 100%;}
+.popMsg{display: block;position:fixed;top:50%;left:50%;z-index:1000;margin-top:-250px;margin-left:-350px;width: 700px;height: 500px; background: url(../images/pop_bg.png) no-repeat 0 0; font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;}
+.popTop{height: 0; overflow: hidden;}
+.popWrap{ padding: 150px 90px 30px; height: 320px; position: relative;}
+.popBottom{height: 0; overflow: hidden;}
+.popClose{display: block;position: absolute;right: 15px;top: 15px;z-index: 10;width: 30px;height: 30px;font-size: 0;line-height: 0;overflow: hidden;cursor:pointer;background: url(../images/pop_close.png) no-repeat 0 0;transition: transform 1s ease-out;}
+.popClose:hover{transform: rotate(270deg);}
+.popContainer{font-size: 16px;color: #ff2981; height: 100%;text-align: center; position: relative;}
+.popContainer a{ color: #fff000; text-decoration: underline;}
+
+/*分享*/
+.share{ position: absolute; bottom: 0; left: 129px; width: 260px; height: 46px; color: #fff; padding-top: 8px; line-height: 39px;}
+.share a{ display: inline-block; width: 39px; height: 39px; font-size: 0; line-height: 0; overflow: hidden; vertical-align: top; margin-left: 8px; background-image: url(../images/btn_share.png); background-repeat: no-repeat;}
+.btn_shareQQ{ background-position: 0 0;}
+.btn_shareQQ:hover{ background-position: 0 -40px;}
+.btn_shareQzone{ background-position: -40px 0;}
+.btn_shareQzone:hover{ background-position: -40px -40px;}
+.btn_shareSina{ background-position: -80px 0;}
+.btn_shareSina:hover{ background-position: -80px -40px;}
+
+/*按钮*/
+.P_btns{ text-align: center;}
+.popContainer .btn_submit{ width: 216px; height: 60px; box-shadow: 0 0 40px rgba(203,242,4,0.6); background: url(../images/btn_submit.png) no-repeat 0 0;}
+.popContainer .btn_again{ width: 260px; height: 120px; background: url(../images/btn_again.png) no-repeat 0 0;}
+
+/*联系方式*/
+.popUserInfo{ height: 630px; margin-top: -315px; background-image: url(../images/pop_bg2.png);}
+.popUserInfo .popClose{ top: 70px; right: 5px;}
+.popUserInfo .popWrap{ height: 450px;}
+.userInfo{ padding-top: 35px; width: 460px; margin: 0 auto;}
+.userInfo p{ padding-bottom: 25px;}
+.userInfo label{ display: inline-block; width: 90px; height: 36px; line-height: 36px; text-align: left; font-size: 16px; color: #ff2981; vertical-align: middle; cursor: default;}
+.userInfo input{ width: 335px; height: 36px; line-height: 36px; padding-left: 15px; padding-right: 15px; font-size: 16px; color: #ff2981; background-color: #fff; vertical-align: middle; border: 0;}
+
+/*获奖记录*/
+.titRecord{ position: absolute; top: -70px; left: 50%; width: 130px; height: 40px; margin-left: -65px; background: url(../images/title_record.png) no-repeat 50% 0;}
+.giftsListCount{ padding-top: 15px;}
+.giftsList{ display: inline-block; position: relative; font-size: 16px; text-align: left; width: 500px; max-height: 105px; overflow-y: auto; vertical-align: middle;}
+.giftsList li{ line-height: 35px; padding-left: 185px;}
+.giftsList .noGifts{ padding-left: 0; font-size: 20px; text-align: center;}
+.giftsList .btn_write{ position: absolute; top: 50%; left: 360px; margin-top: -17.5px; padding-left: 0;}
+.vertical{ display: inline-block; width: 0; height: 105px; overflow: hidden; vertical-align: middle;}
+.hasKind li{ padding-left: 100px;}
+.tipsText{ font-size: 13px; text-align: left; padding-top: 15px;}
+
+/*抽奖弹框*/
+.showGifts{ position: absolute; top: -200px; left: 0; width: 100%;}
+.giftsPic{ padding-bottom: 50px; background: url(../images/icon_gifts.png) no-repeat 50% 100%;}
+.giftsName{ height: 100px;}
+.giftsName h2{ font-size: 32px; line-height: 40px; color: #3cd6ba;}
+.addressTips{ font-size: 16px; line-height: 40px;}
+.addressTips a{ color: #ffe05e; text-decoration: underline;}
+.addressTips a:hover{ color: #fff;}
+.white{ padding-top: 30px; line-height: 24px;}
+
+/*再来一次*/
+.tryAgain{ position: relative; top: -70px; padding-top: 190px; height: 120px; background: url(../images/icon_tm.png) no-repeat 50% 0;}
+
+/*主体*/
+
+.container{ width: 1280px; margin: 0 auto; position: relative; z-index: 2; height: 100%;}
+
+.middle_1{ height: 1236px; background: url(../images/middle_1.jpg) no-repeat 50% 0; position: relative;}
+#todayDate{ display: block; width: 120px; height: 45px; position: absolute; top: 725px; left: 589px; background-image: url(../images/date.png); background-repeat: no-repeat;}
+.date_1{ background-position: 0 0;}
+.date_2{ background-position: 0 -52px;}
+.date_3{ background-position: 0 -104px;}
+.date_4{ background-position: 0 -156px;}
+.date_5{ background-position: 0 -208px;}
+.date_6{ background-position: 0 -260px;}
+.date_7{ background-position: 0 -312px;}
+.date_8{ background-position: 0 -364px;}
+.date_9{ background-position: 0 -416px;}
+.date_10{ background-position: 0 -468px;}
+.btn_exchange{ position: absolute; top: 760px; left: 50%; width: 336px; height: 130px; margin-left: -168px; background: url(../images/btn_exchange.png) no-repeat 0 0;}
+.btn_exchange:hover{ background-position: 0 -131px;}
+.packetHref{ display: none;}
+.gifContent{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; min-width: 1280px; overflow: hidden;}
+.sound_1{ width: 276px; height: 363px; position: absolute; top: -1px; left: 50%; margin-left: -961px; background: url(../images/sound_1.gif) no-repeat 0 0;}
+.sound_2{ width: 280px; height: 363px; position: absolute; top: 0; left: 50%; margin-left: 679px; background: url(../images/sound_2.gif) no-repeat 0 0;}
+.drop_1{ width: 297px; height: 415px; position: absolute; top: 66px; left: 50%; margin-left: -564px; background: url(../images/drop_1.gif) no-repeat 0 0;}
+.drop_2{ width: 125px; height: 218px; position: absolute; top: 280px; left: 50%; margin-left: 438px; background: url(../images/drop_2.gif) no-repeat 0 0;}
+.light{ width: 36px; height: 24px; position: absolute; top: 73px; left: 50%; margin-left: -198px; background: url(../images/light.gif) no-repeat 0 0;}
+.shot{ width: 55px; height: 51px; position: absolute; top: 170px; left: 50%; margin-left: -38px; background: url(../images/shot.gif) no-repeat 0 0;}
+.word_h{ width: 78px; height: 90px; position: absolute; top: 578px; left: 50%; margin-left: -389px; background: url(../images/word_h.gif) no-repeat 0 0;}
+.word_b{ width: 78px; height: 90px; position: absolute; top: 578px; left: 50%; margin-left: 311px; background: url(../images/word_b.gif) no-repeat 0 0;}
+.redPacket{ width: 638px; height: 284px; position: absolute; top: 679px; left: 50%; margin-left: -319px; background: url(../images/redPacket.gif) no-repeat 0 0;}
+.arm_1{ width: 495px; height: 287px; position: absolute; top: 645px; left: 50%; margin-left: -960px; background: url(../images/arm_1.gif) no-repeat 0 0;}
+.arm_2{ width: 477px; height: 311px; position: absolute; top: 619px; left: 50%; margin-left: 482px; background: url(../images/arm_2.gif) no-repeat 0 0;}
+.tm_l{ width: 250px; height: 300px; position: absolute; top: 950px; left: 50%; margin-left: -530px; background: url(../images/tm_l.png) no-repeat 0 0;}
+.tm_r{ width: 250px; height: 300px; position: absolute; top: 950px; left: 50%; margin-left: 280px; background: url(../images/tm_r.png) no-repeat 0 0;}
+
+
+
+.middle_2{ height: 650px; background: url(../images/middle_2.jpg) no-repeat 50% 0; position: relative;}
+.middle_2 .container{ width: 1000px;}
+.sound_3{ width: 276px; height: 363px; position: absolute; top: -1px; left: 50%; margin-left: -961px; background: url(../images/sound_1.gif) no-repeat 0 0;}
+.sound_4{ width: 280px; height: 363px; position: absolute; top: 0; left: 50%; margin-left: 679px; background: url(../images/sound_2.gif) no-repeat 0 0;}
+
+.gifts_lucky{ position: absolute; top: -74px; left: 0; height: 190px; width: 100%; background: url(../images/gifts.png) no-repeat 50% 0;}
+.iphone{ width: 61px; height: 112px; position: absolute; top: 25px; left: 505px; background: url(../images/iPhone.gif) no-repeat 0 0;}
+.signin{ padding-left: 17px; padding-top: 210px; height: 278px;}
+.signin li{ float: left; width: 184px; height: 86px; padding-top: 15px; margin-right: 12px; margin-bottom: 37px; background: url(../images/script.png) no-repeat 0 0;}
+.date{ height: 35px; width: 130px; background-image: url(../images/script.png); background-repeat: no-repeat; margin: 0 auto 7px;}
+.day_1 .date{ background-position: -325px 0;}
+.day_2 .date{ background-position: -325px -36px;}
+.day_3 .date{ background-position: -325px -72px;}
+.day_4 .date{ background-position: -325px -108px;}
+.day_5 .date{ background-position: -325px -144px;}
+.day_6 .date{ background-position: -325px -180px;}
+.day_7 .date{ background-position: -325px -216px;}
+.day_8 .date{ background-position: -325px -251px;}
+.day_9 .date{ background-position: -325px -287px;}
+.day_10 .date{ background-position: -325px -323px;}
+.type{ height: 35px; width: 130px; margin: 0 auto; background: url(../images/script.png) no-repeat -190px -72px;}
+.lucky{ background-position: -190px -108px;}
+.num{ display: inline-block; width: 30px; height: 35px; background: url(../images/script.png) no-repeat -190px 0; margin-left: 85px;}
+.num_1{ background-position: -190px 0;}
+.num_3{ background-position: -220px 0;}
+.num_9{ background-position: -250px 0;}
+
+.signin .active{ background-position: 0 -102px;}
+.active .lucky{ background-position: -190px -180px;}
+.active .lucky .num{ margin-left: 95px;}
+.active .num_1{ background-position: -190px -36px;}
+.active .num_3{ background-position: -220px -36px;}
+.active .num_9{ background-position: -250px -36px;}
+.signin .noReach.active{ background-position: 0 0;}
+.signin .noReach.day_1 .date{ background-position: -325px 0;}
+.signin .noReach.day_2 .date{ background-position: -325px -36px;}
+.signin .noReach.day_3 .date{ background-position: -325px -72px;}
+.signin .noReach.day_4 .date{ background-position: -325px -108px;}
+.signin .noReach.day_5 .date{ background-position: -325px -144px;}
+.signin .noReach.day_6 .date{ background-position: -325px -180px;}
+.signin .noReach.day_7 .date{ background-position: -325px -216px;}
+.signin .noReach.day_8 .date{ background-position: -325px -251px;}
+.signin .noReach.day_9 .date{ background-position: -325px -287px;}
+.signin .noReach.day_10 .date{ background-position: -325px -323px;}
+
+.signin .finish{ background-position: 0 -102px;}
+.signin .finish.day_1 .date, .active.day_1 .date{ background-position: -465px 0;}
+.signin .finish.day_2 .date, .active.day_2 .date{ background-position: -465px -36px;}
+.signin .finish.day_3 .date, .active.day_3 .date{ background-position: -465px -72px;}
+.signin .finish.day_4 .date, .active.day_4 .date{ background-position: -465px -108px;}
+.signin .finish.day_5 .date, .active.day_5 .date{ background-position: -465px -144px;}
+.signin .finish.day_6 .date, .active.day_6 .date{ background-position: -465px -180px;}
+.signin .finish.day_7 .date, .active.day_7 .date{ background-position: -465px -216px;}
+.signin .finish.day_8 .date, .active.day_8 .date{ background-position: -465px -251px;}
+.signin .finish.day_9 .date, .active.day_9 .date{ background-position: -465px -287px;}
+.signin .finish.day_10 .date, .active.day_10 .date{ background-position: -465px -323px;}
+.finish .type{ background-position: -190px -144px;}
+.finish .type .num{ display: none;}
+
+.signin .expired{ background-position: 0 -204px;}
+.expired.day_1 .date{ background-position: -605px 0;}
+.expired.day_2 .date{ background-position: -605px -36px;}
+.expired.day_3 .date{ background-position: -605px -72px;}
+.expired.day_4 .date{ background-position: -605px -108px;}
+.expired.day_5 .date{ background-position: -605px -144px;}
+.expired.day_6 .date{ background-position: -605px -180px;}
+.expired.day_7 .date{ background-position: -605px -216px;}
+.expired.day_8 .date{ background-position: -605px -251px;}
+.expired.day_9 .date{ background-position: -605px -287px;}
+.expired.day_10 .date{ background-position: -605px -323px;}
+.expired .type{ background-position: -190px -216px;}
+.expired .type .num{ display: none;}
+
+
+
+
+
+.btnLucky{ text-align: center; position: relative;}
+.btn_lucky, .btn_notLucky{ width: 336px; height: 136px; line-height: 136px; font-size: 40px; font-weight:bold ; background-image: url(../images/btn_lucky.png); background-repeat: no-repeat;}
+.btn_lucky{ color: #ff2981; text-indent: 215px; background-position: 0 0; text-align: center;}
+.btn_lucky:hover{ background-position: 0 -137px;}
+.btn_notLucky{ color: #6e26b7; text-indent: 120px; background-position: 0 -274px; cursor: default; text-align: left; display: none;}
+.btn_record{ position: absolute; top: 50px; right: 33px; width: 140px; height: 30px; background: url(../images/btn_record.png) no-repeat 0 0;}
+.btn_record:hover{ background-position: 0 -31px;}
+
+
+.middle_3{ height: 290px;}
+.rule_title{ height: 60px; font-size: 0; line-height: 0; overflow: hidden; background: url(../images/rule_title.png) no-repeat 50% 0; margin-bottom: 17px;}
+.rule_text{ height: 190px; background: url(../images/rule_text.png) no-repeat 50% 0;}
+
+
+.middle_4{ height: 240px; background: url(../images/middle_4.jpg) no-repeat 50% 0; position: relative;}
+.btn_download{ position: absolute; top: 145px; left: 50%; width: 197px; height: 52px; margin-left: -98px; background: url(../images/btn_download.png) no-repeat 0 0;}
+.btn_download:hover{ background-position: 0 -53px;}
+.sound_5{ width: 147px; height: 181px; position: absolute; top: 0; left: 50%; margin-left: -548px; background: url(../images/sound_3.gif) no-repeat 0 0;}
+.sound_6{ width: 147px; height: 181px; position: absolute; top: 0; left: 50%; margin-left: 405px; background: url(../images/sound_4.gif) no-repeat 0 0;}
+
+
+.middle_5{ height: 1038px; background: url(../images/middle_5.jpg) no-repeat 50% 0;}
+.know_text{ height: 850px; background: url(../images/know_text.png) no-repeat 50% 0;}
+
+
+

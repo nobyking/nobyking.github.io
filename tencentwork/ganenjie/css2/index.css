@@ -1,0 +1,342 @@
+html,body {
+    width:100%;
+    height:100%;
+    color:#333;
+    min-width:1244px;
+    font-family: '微软雅黑';
+}
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td {
+    margin:0;
+    padding:0;
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+fieldset,img {
+    border:0;
+}
+address,caption,cite,code,dfn,th,var,i,s {
+    font-style:normal;
+    font-weight:normal;
+}
+li {
+    list-style:none;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-size:100%;
+    font-weight:normal;
+}
+input[type=checkbox] {
+    vertical-align:middle;
+    margin-top:-1px;
+}
+body,button,select,textarea,input {
+    font-size:12px;
+    line-height:1.5;
+}
+button {
+    white-space:nowrap;
+    overflow:visible;
+}
+a {
+    text-decoration:none;
+    outline:0;
+}
+a:hover {
+    text-decoration:none;
+}
+a:active {
+    outline:0;
+}
+a:focus {
+    -moz-outline-style:none;
+}
+em {
+    font-style:normal;
+}
+.clearfix:before,.clearfix:after {
+    content:'.';
+    display:block;
+    overflow:hidden;
+    visibility:hidden;
+    font-size:0;
+    line-height:0;
+    width:0;
+    height:0;
+}
+.clearfix:after {
+    clear:both;
+}
+.w1200 {
+    width:1200px;
+    margin:0 auto;
+}
+
+.mpage {
+    width:100%;
+    overflow:hidden;
+    margin:0 auto;
+    position:relative;
+    background:#fff url(img/banBg.jpg) repeat-x 0 0;
+}
+.mpage .topBg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    height: 86px;
+    width: 100%;
+    background: url(img/bantop.png) repeat-x center top;
+
+}
+.banners {
+    position:absolute;
+    top: 0;
+    left: 50%;
+    width:1400px;
+    height: 1000px;
+    margin-left: -700px;
+}
+.fshow {
+    position:relative;
+    z-index:50;
+    height:1000px;
+    width: 1200px;
+    margin: 0 auto;
+}
+.qpack {
+    position:absolute;
+    top:172px;
+    right:-25px;
+    z-index:100;
+    height:90px;
+    overflow: hidden;
+}
+.qpack a.banbtn {
+    display: inline-block;
+    width:231px;
+    height:90px;
+    overflow:hidden;
+    font-size:0;
+    line-height:0;
+    margin-left: 25px;
+}
+.qpack a.forTcss{
+    background:url(img/banbtn1.png) no-repeat 0 0;
+}
+.qpack a.forDown{
+    background:url(img/banbtn2.png) no-repeat 0 0;
+}
+.qpack a.banbtn:hover {
+    background-position:0 -90px;
+}
+.qpack a.banbtn:active {
+    background-position:0 -180px;
+}
+.pointips {
+    position:absolute;
+    left:50%;
+    bottom:40px;
+    width:72px;
+    height:72px;
+    margin-left:-40px;
+    z-index:400;
+}
+.pointips a {
+    display:block;
+    width:71px;
+    height:71px;
+}
+.pointips a:link,.pointips a:visited {
+    background:transparent url(img/d_normal.png) no-repeat 0 0;
+}
+.pointips a:hover {
+    background-position: 0 -70px;
+}
+
+.modInner {
+    position:relative;
+    width:1200px;
+    height:720px;
+    margin:0 auto;
+}
+
+.sharePop{
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    right: 5px;
+    width: 90px;
+    height: 200px;
+    margin-top: -100px;
+    background: url(img/shareBg.png) no-repeat;
+}
+.sharePop .tit{
+    padding-top:16px;
+    height:24px;overflow: hidden;
+    font-size: 18px;line-height:24px;
+    text-align:center;
+}
+.sharePop .mainBox{
+    padding: 13px 32px 0 33px;
+}
+.sharePop .mainBox a{display: block;width:25px;height: 25px;font-size: 0;line-height: 0;background-repeat: no-repeat;margin-bottom: 10px;}
+.mainBox a#qzone{background-image: url(img/qzone.png);}
+.mainBox a#tencent{background-image: url(img/qq.png);}
+.mainBox a#renren{background-image: url(img/renren.png);}
+.mainBox a#sina{background-image: url(img/weibo.png);}
+
+
+
+.ipage {
+    width:100%;
+    height:720px;
+    margin:0 auto;
+    overflow:hidden;
+}
+.repbg {
+    width:100%;
+    min-width:1244px;
+    height:720px;
+}
+.imgwrap {display:none;position:absolute;}
+.modInner .showbg,.modInner .show {
+    display:block;
+}
+.ipage .textWrap{position: absolute; z-index: 10; display: block; font-size: 0; line-height: 0; width: 104px; height: 17px; background-position: 0 0; background-repeat: no-repeat;}
+
+.intro_1{background:transparent url(../img2/fig_1_bg.png) no-repeat center top;}
+.fig_1_1{left: 81px; bottom: 155px; width: 385px; height: 420px; background:transparent url(../img2/fig_1_1.png) no-repeat 0 0;}
+.fig_1_2{left: 368px; bottom: 155px; width: 295px; height: 420px; background:transparent url(../img2/fig_1_2.png) no-repeat 0 0;}
+.intro_1 .textWrap{top: 532px;left: 890px; background-image: url(../img2/tiyan_green.png);}
+
+.intro_2 {background:transparent url(../img2/fig_2_bg.png) no-repeat center top;}
+.fig_2_1{right: 0px; bottom: 129px; width: 655px; height: 435px; background:transparent url(../img2/fig_2_1.png) no-repeat 0 0;}
+.fig_2_2{right: 413px; bottom: 129px; width: 200px; height: 435px; background:transparent url(../img2/fig_2_2.png) no-repeat 0 0;}
+.intro_2 .textWrap{top: 525px;left: 230px; width: 0; height: 0; overflow: hidden;}
+.intro_2 .btn_downloadQB{ left: 165px; width: 202px; height: 50px; background: url(../img2/btn_downloadQB.png) no-repeat 0 0;}
+.intro_2 .btn_downloadQB:hover{ background-position: 0 -51px;}
+.intro_2 .btn_downloadQB:active{ background-position: 0 -102px;}
+.intro_2 .btn_plug{ left: 175px; width: 162px; height: 50px; background: url(../img2/btn_plug.png) no-repeat 0 0;}
+.intro_2 .btn_plug:hover{ background-position: 0 -51px;}
+.intro_2 .btn_plug:active{ background-position: 0 -102px;}
+.intro_2 .btn_plug.after{ background-position: 0 0;}
+.intro_2 .textWrap.disabled{ left: 175px; width: 162px; height: 50px; background: url(../img2/btn_plug.png) no-repeat 0 -153px; cursor: default;}
+#pluginBar{ display: block; height: 50px; width: 0; overflow: hidden; background: url(../img2/btn_plug.png) no-repeat 0 -102px;}
+.textWrap.disabled #pluginBar{ display: none;}
+
+.intro_3 {background:transparent url(../img2/fig_3_bg.png) no-repeat center top;}
+.fig_3_1 {left:0;bottom:108px;width:590px;height:530px;background:transparent url(../img2/fig_3_1.png) no-repeat 0 0;}
+.fig_3_2 {left:469px;bottom:108px;width:230px;height:530px;background:transparent url(../img2/fig_3_2.png) no-repeat 0 0;}
+.intro_3 .textWrap{top: 564px;left: 890px; background-image: url(../img2/tiyan_red.png);}
+
+.intro_4 {background:transparent url(../img2/fig_4_bg.png) no-repeat center top;}
+.fig_4_1 {left:133px;bottom:0;width:460px;height:495px;background:transparent url(../img2/fig_4_1.png) no-repeat 0 0; z-index: 2;}
+.fig_4_2 {left:133px;bottom:0;width:410px;height:495px;background:transparent url(../img2/fig_4_2.png) no-repeat 0 0; z-index: 1;}
+
+.intro_5{ background:transparent url(../img2/fig_5_bg.png) no-repeat center top;}
+.fig_5_1 {right:350px;bottom:140px;width:340px;height:445px;background:transparent url(../img2/fig_5_1.png) no-repeat 0 0;z-index: 3;}
+.fig_5_2 {right:135px;bottom:140px;width:335px;height:445px;background:transparent url(../img2/fig_5_2.png) no-repeat 0 0;z-index: 2;}
+.fig_5_3 {right:10px;bottom:140px;width:230px;height:445px;background:transparent url(../img2/fig_5_3.png) no-repeat 0 0;z-index: 1;}
+
+.intro_6{ background:transparent url(../img2/fig_6_bg.png) no-repeat center top;}
+.fig_6_1 {left:617px;bottom:105px;width:255px;height:451px;background:transparent url(../img2/fig_6_1.png) no-repeat 0 0;z-index: 1;}
+.fig_6_2 {left:713px;bottom:105px;width:244px;height:403px;background:transparent url(../img2/fig_6_2.png) no-repeat 0 0;z-index: 2;}
+.fig_6_3 {left:872px;bottom:105px;width:214px;height:372px;background:transparent url(../img2/fig_6_3.png) no-repeat 0 0;z-index: 1;}
+.intro_6 .textWrap{top: 540px;left: 260px; background-image: url(../img2/tiyan_blue.png);}
+
+
+.bottomBtn{position: relative;}
+.bottomBtn .qpack{position: static;width: auto;text-align: center;}
+.foot {
+    width:100%;
+    padding-top:85px;
+    padding-bottom: 73px;
+    background-color:#fff;
+    text-align:center;
+}
+.foot p {
+    line-height:22px;
+    color:#666;
+}
+.foot p a{
+    color:#666;
+}
+.foot p a:hover{
+    text-decoration: underline;
+}
+.fadeIn {
+    -webkit-animation:easeIn 1s ease;
+    -moz-animation:easeIn 1s ease;
+    -o-animation:easeIn 1s ease;
+    animation:easeIn 1s ease;
+    -webkit-animation-fill-mode:backwards;
+    -moz-animation-fill-mode:backwards;
+    -o-animation-fill-mode:backwards;
+    animation-fill-mode:backwards;
+}
+.fadeOut {
+    -webkit-animation:easeOut 1s ease;
+    -moz-animation:easeOut 1s ease;
+    -o-animation:easeOut 1s ease;
+    animation:easeOut 1s ease;
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    -o-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+}
+.IE .fadeOut{
+    display: none!important;
+}
+.topIn {
+    -webkit-animation:t_b 1s ease 1s;
+    -moz-animation:t_b 1s ease 1s;
+    -o-animation:t_b 1s ease 1s;
+    animation:t_b 1s ease 1s;
+    -webkit-animation-fill-mode:backwards;
+    -moz-animation-fill-mode:backwards;
+    -o-animation-fill-mode:backwards;
+    animation-fill-mode:backwards;
+}
+.leftIn {
+    -webkit-animation:l_r 1s ease;
+    -moz-animation:l_r 1s ease;
+    -o-animation:l_r 1s ease;
+    animation:l_r 1s ease;
+    -webkit-animation-fill-mode:backwards;
+    -moz-animation-fill-mode:backwards;
+    -o-animation-fill-mode:backwards;
+    animation-fill-mode:backwards;
+}
+.rightIn {
+    -webkit-animation:r_l 1s ease;
+    -moz-animation:r_l 1s ease;
+    -o-animation:r_l 1s ease;
+    animation:r_l 1s ease;
+    -webkit-animation-fill-mode:backwards;
+    -moz-animation-fill-mode:backwards;
+    -o-animation-fill-mode:backwards;
+    animation-fill-mode:backwards;
+}
+.shake {
+    -webkit-animation:shake .8s ease 1s;
+    -moz-animation:shake .8s ease 1s;
+    -o-animation:shake .8s ease 1s;
+    animation:shake .8s ease 1s;
+    -webkit-animation-fill-mode:backwards;
+    -moz-animation-fill-mode:backwards;
+    -o-animation-fill-mode:backwards;
+    animation-fill-mode:backwards;
+}
+.scale {
+    -webkit-animation:scale_r .6s ease 1s;
+    -moz-animation:scale_r .6s ease 1s;
+    -o-animation:scale_r .6s ease 1s;
+    animation:scale_r .6s ease 1s;
+    -webkit-animation-fill-mode:backwards;
+    -moz-animation-fill-mode:backwards;
+    -o-animation-fill-mode:backwards;
+    animation-fill-mode:backwards;
+}
+

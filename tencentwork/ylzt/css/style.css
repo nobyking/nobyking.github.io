@@ -1,0 +1,127 @@
+/* reset */
+body, h1, h2, h3, h4, h5, h6, hr, p, pre, dl, dt, dd, ul, ol, li, th, td, form, fieldset, legend, button, input, textarea { margin:0; padding:0;}
+h1, h2, h3, h4, h5, h6 { font-size:100%;}
+ul, ol { list-style-type:none;}
+a { text-decoration:none; outline: hidden;}
+a:hover { text-decoration:none;}
+fieldset, img { border:0;}
+input,select,form,img {vertical-align:middle;}
+button{ cursor:pointer; outline: hidden;}
+body{padding-top: 45px; background: #000; -webkit-text-size-adjust: none;}
+.btn{ display: inline-block; font-size: 0; line-height: 0; overflow: hidden;}
+/*top*/
+.mod_gst{min-width: 800px;}
+.mod_gst_main{min-width: 800px;max-width: 1002px;width: auto;}
+#logo-btn{margin-top: 4px;display: inline-block;*display: inline;zoom: 1;width: 133px;height: 38px;background: url(../img/header/logo.png) 0 0 no-repeat;}
+#tq{display: inline-block;*display: inline;zoom: 1;width: 253px;height: 37px;margin-left: 15px;background: url(../img/header/tq.png) 0 0 no-repeat;}
+#header-qb{position:absolute;right:0px;display: inline-block;*display: inline;zoom: 1;width: 105px;height: 31px;vertical-align: top;margin-top: 6px;background: url(../img/header/download.png) 0 0 no-repeat;}
+.mod_gst{background: #424041;width: 100%;position: fixed;top:0;z-index: 100;}
+.mod_gst_main .mod_gst_userinfo{top:11px;font-size:14px;color:#FFFFFF;height: auto;}
+.mod_gst_main .mod_gst_userinfo .user_nick{width:160px;color: #ffffff;}
+.mod_gst a{color:#48adff;}
+/*footer*/
+.mod_copyright{padding-top:70px;padding-bottom: 70px;background-color: #000;}
+.mod_copyright p {color: #fff;line-height: 20px;}
+.mod_copyright p a {color: #fff;}
+.mod_gst .mod_gst_userinfo .user_nick,.mod_gst .mod_gst_userinfo .mod_st_logout{vertical-align: middle;}
+
+/*主体*/
+.container{ width: 1000px; margin: 0 auto; font-family: "Microsoft yahei", Arial;}
+
+.middle_1{ background: url(../images/middle_1_1.png) no-repeat center top;}
+.middle_1_c{ height: 638px; background: url(../images/middle_1_2.png) no-repeat center top; position: relative;}
+.banner_btn{ position: absolute; top: 300px; left: 95px; width: 190px;}
+.banner_btn a{ display: block; width: 190px; height: 70px; overflow: hidden; font-size: 0; line-height: 0; margin-bottom: 21px;}
+#downloadYLBtn{background: url(../images/btn_downloadGame.png) no-repeat 0 0;}
+#downloadYLBtn:hover{ background-position: 0 -70px;}
+#downloadQQBrowserBtn{background: url(../images/btn_downloadQB.png) no-repeat 0 0;}
+#downloadQQBrowserBtn:hover{ background-position: 0 -70px;}
+#guanwangBtn{background: url(../images/btn_guanwang.png) no-repeat 0 0;}
+#guanwangBtn:hover{ background-position: 0 -70px;}
+.banner_video{ position: absolute; top: 300px; left: 300px; width: 362px; height: 250px;}
+#videoBox{ width: 362px; height: 197px; background-color: #000;}
+.video_text{ width: 328px; height: 48px; line-height: 20px; color: #fff3e3; padding: 5px 14px 0 20px; background: url(../images/video_text.jpg) no-repeat 0 0;}
+.cdkey{position: absolute; bottom: 10px; left: 0;}
+.cdkey a{ font-size: 18px; color: #fff; margin-right: 10px;}
+.cdkey a:hover{text-decoration: underline;}
+
+
+.middle_2{ background: url(../images/middle_2_1.png) no-repeat center top;}
+.middle_2_c{ height: 798px; background: url(../images/middle_2_2.png) no-repeat center top; position: relative;}
+.tab-title{ padding-left: 53px; padding-top: 96px;}
+.tab-title a{ display: inline-block; height: 75px; background: url(../images/tab_title.png) no-repeat 0 0; font-size: 0; line-height: 0; overflow: hidden;}
+.tab-title .tab_title_1{ width: 299px; background-position: 0 0;}
+.tab-title .tab_title_1:hover,
+.tab-title .tab_title_1.active{ background-position: -300px 0;}
+.tab-title .tab_title_2{ width: 300px; background-position: 0 -75px;}
+.tab-title .tab_title_2:hover,
+.tab-title .tab_title_2.active{ background-position: -300px -75px;}
+.tab-title .tab_title_3{ width: 299px; background-position: 0 -150px;}
+.tab-title .tab_title_3:hover,
+.tab-title .tab_title_3.active{ background-position: -300px -150px;}
+.tab-content{ padding-top: 28px; width: 894px; margin: 0 auto;}
+.tab-content .wrap{ display: none; position: relative; height: 590px; text-align: center;}
+.tab-content .wrap .gift{ position: relative; z-index: 1;}
+.tab-content .wrap .btn{ position: absolute; bottom: 30px; left: 50%; margin-left: -86px; width: 175px; height: 70px; background: url(../images/btn_exchange.png) no-repeat 0 0;}
+.tab-content .wrap .btn:hover{ background-position: 0 -70px;}
+.tab-content .wrap .btn_3{ margin-left: 37px;}
+
+
+.middle_3{ background: url(../images/middle_3_1.png) no-repeat center top;}
+.middle_3_c{ height: 1236px; background: url(../images/middle_3_2.png) no-repeat center top; position: relative;}
+.middle_3_c .tips{ padding-left: 140px; padding-top: 105px;}
+.lucky{ position: absolute; top: 222px; left: 111px; width: 768px; height: 473px;}
+.lucky a{display: inline-block; font-size: 0; line-height: 0; overflow: hidden;}
+.luckyBtn_1{ width: 195px; height: 170px; position: absolute; left: 0; top: 51px; background: url(../images/lucky_1.png) no-repeat 0 0;}
+.luckyBtn_1:hover{ background-position: 0 -170px;}
+.luckyBtn_1:active{ background-position: 0 -340px;}
+.luckyBtn_2{ width: 170px; height: 210px; position: absolute; left: 242px; top: 51px; background: url(../images/lucky_2.png) no-repeat 0 0;}
+.luckyBtn_2:hover{ background-position: 0 -210px;}
+.luckyBtn_2:active{ background-position: 0 -420px;}
+.luckyBtn_3{ width: 200px; height: 170px; position: absolute; right: 138px; top: 0; background: url(../images/lucky_3.png) no-repeat 0 0;}
+.luckyBtn_3:hover{ background-position: 0 -170px;}
+.luckyBtn_3:active{ background-position: 0 -340px;}
+.luckyBtn_4{ width: 175px; height: 150px; position: absolute; right: 0; top: 135px; background: url(../images/lucky_4.png) no-repeat 0 0;}
+.luckyBtn_4:hover{ background-position: 0 -150px;}
+.luckyBtn_4:active{ background-position: 0 -300px;}
+.luckyBtn_5{ width: 205px; height: 200px; position: absolute; right: 192px; bottom: 0; background: url(../images/lucky_5.png) no-repeat 0 0;}
+.luckyBtn_5:hover{ background-position: 0 -200px;}
+.luckyBtn_5:active{ background-position: 0 -400px;}
+.luckyBtn_6{ width: 215px; height: 200px; position: absolute; left: 30px; bottom: 8px; background: url(../images/lucky_6.png) no-repeat 0 0;}
+.luckyBtn_6:hover{ background-position: 0 -200px;}
+.luckyBtn_6:active{ background-position: 0 -400px;}
+
+.pro_show{ height: 170px; position: absolute; top: 822px; left: 0; padding-left: 110px; padding-right: 110px;}
+.show_wrap{ width: 780px; height: 170px; overflow: hidden; position: relative;}
+#showSlide{width: 1248px; height: 170px; position: relative;}
+#showSlide li{ float: left; width: 137px; margin-right: 19px;}
+#showSlide li img{ display: block; width: 137px; height: 137px;}
+#showSlide li span{ display: block; text-align: center; line-height: 24px; font-size: 14px; padding-top: 3px; color: #ffdfbc;}
+#show_l, #show_r{ display: inline-block; width: 30px; height: 55px; position: absolute; top: 42px; background: url(../images/arrows.png) no-repeat 0 0;}
+#show_l{ left: 55px; background-position: 0 0;}
+#show_l:hover{ background-position: -30px 0;}
+#show_r{ right: 60px; background-position: 0 -55px;}
+#show_r:hover{ background-position: -30px -55px;}
+
+.middle3_btn{position: absolute; bottom: 95px; left: 0; width: 100%; text-align: center;}
+.middle3_btn .btn{ width: 230px; height: 70px; margin: 0 45px;}
+.middle3_btn .btn_shareQZ{ background: url(../images/btn_shareQZ.png) no-repeat 0 0;}
+.middle3_btn .btn_sendQQ{ background: url(../images/btn_sendQQ.png) no-repeat 0 0;}
+.middle3_btn .btn:hover{ width: 230px; height: 70px; background-position: 0 -70px;}
+
+
+.middle_4{ background: url(../images/middle_4_1.png) no-repeat center top;}
+.middle_4_c{ height: 373px; background: url(../images/middle_4_2.png) no-repeat center top; position: relative;}
+.middle_4_c .tips{ padding-top: 98px; padding-left: 120px;}
+.middle_4_c .changeCDkey{ position: absolute; top: 148px; left: 495px; font-size: 16px; color: #ffcc3d;}
+.middle_4_c .changeCDkey:hover{ text-decoration: underline;}
+
+/*邀请好友弹窗*/
+.mod_pop_mask{z-index: 2000;}
+.friend_pop{display: none; width:935px; height:560px; z-index: 2001;  position: fixed; _position: absolute;  left:50%; margin-left:-410px; top:50%;margin-top: -280px; zoom: 1; _top: expression(eval(document.documentElement.scrollTop)+120);}
+.friend_info{ width:900px;  height:100%; overflow:hidden; position:relative;}
+.friend_in{ width:900px; height:100%; background:#efefef; color:#656565; }
+.friend_close {width: 35px; height: 35px; position: absolute; top: 0; right: 0; background: url(../img/close.jpg) no-repeat;}
+
+
+

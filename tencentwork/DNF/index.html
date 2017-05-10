@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xml:lang="zh_CN" lang="zh_CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<title>QQ浏览器DNF专题</title>
+	<!-- 公共模块样式 -->
+	<link href="http://imgcache.gtimg.cn/vipstyle/game/public/v3/css/global.css" rel="stylesheet" type="text/css" media="screen" />
+	<!-- 页面样式 -->
+	<link href="http://stdl.qq.com/stdl/game/dnf/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+	<!-- 头尾组件依赖脚本 -->
+	<script type="text/javascript" src="http://imgcache.gtimg.cn/c/=/club/qv/pkg/qv_1.x.x.js,/clubact/premin/jquery.webStorage.min.js,/clubact/common/oz.js,/clubact/common/aid.js,/clubact/common/mustache.js,/clubact/common/nav/nav.js" charset="utf-8"></script>
+	<script type="text/javascript" src="http://stdl.qq.com/stdl/game/dnf/js/header.js" charset="utf-8"></script>
+</head>
+<body>
+<!-- 头部，由脚本输出html -->
+<script type="text/javascript">write_global_nav()</script>
+<!--top end-->
+<div class="middle_1">
+	<div class="container">
+		<div class="banner_btn">
+			<div id="videoBox" class="videoBox"></div>
+			<a class="btn btn_topGame" href="http://dnf.qq.com/web2015/down.shtml" onclick="report('BROWSER.ACTIVITY.DNF.DOWNLOADGAMECLICK');" target="_blank">下载游戏</a>
+			<a id="downloadQBBtn" class="btn btn_topQB" href="http://dldir1.qq.com/invc/tt/QQBrowser_Setup_DNF.exe#?ADTAG=SNO=" onclick="report('BROWSER.ACTIVITY.DNF.QBDOWNLOADCLICK2');">下载QQ浏览器</a>
+			<a class="btn btn_topFuli" href="http://dnf.qq.com/cp/a20150611znkh/index.html?e_code=82905&ADTAG=cop.innercop.browser.qq.com" onclick="report('BROWSER.ACTIVITY.DNF.FULICLICK');" target="_blank">领取海量福利</a>
+			<a class="queryCDkey" href="http://vip.qq.com/my/gift.html" target="_blank">【CDkey查询】</a>
+			<a class="exchangeCDkey" href="http://dnf.qq.com/web2013/cdkey.shtml" target="_blank">【CDkey兑换】</a>
+		</div>
+	</div>
+</div>
+
+<div class="middle_2">
+	<div class="container">
+		<h2 class="middle_title">每日签到礼包</h2>
+		<div class="tips">活动期间，积累登录签到的用户可以获得登录宝箱，单个QQ限领1次<br>提示：退出游戏之后才能成功签到</div>
+		<div class="baoxiang baoxiang_1">
+			<div class="gifts">
+				<a href="javascript:;" class="btn btn_exchange" data-params="do=page.exchange,0">领取礼品</a>
+			</div>
+		</div>
+		<div class="baoxiang baoxiang_2">
+			<div class="gifts">
+				<a href="javascript:;" class="btn btn_exchange" data-params="do=page.exchange,1">领取礼品</a>
+			</div>
+		</div>
+		<div class="baoxiang baoxiang_3">
+			<div class="gifts">
+				<a href="javascript:;" class="btn btn_exchange" data-params="do=page.exchange,2">领取礼品</a>
+			</div>
+		</div>
+		<a href="javascript:;" class="signIn" data-params="do=page.signIn">已累积签到<span id="money">0</span>天</a>
+	</div>
+</div>
+
+<div class="middle_3">
+	<div class="container">
+		<div class="tabTit" id="tabTit"><span class="tit tit_0 active">新人礼包</span><span class="tit tit_1">回归礼包</span><span class="tit tit_2">浏览器专属礼包</span></div>
+		<div class="tabCont" id="tabCont">
+			<div class="wrap wrap_0" style="display: block;">
+				<div class="tips">
+					<h2 class="middle_title">新人礼包</h2>
+					<div class="tips">2015年6月15日之后首次注册DNF的用户打开本页面可领取新手礼包，单个QQ限领1次</div>
+				</div>
+				<div class="xinshou_gifts">
+					<div class="gifts"></div>
+					<div class="tabBtn">
+						<a href="#" class="btn btn_exchange2" data-params="do=page.exchange2,0,false">立即领取</a>
+					</div>
+				</div>
+				<div class="baoxiang baoxiang_4">
+					<div class="gifts">
+						<a href="javascript:;" class="btn btn_yuyue" data-params="do=page.appoint">预约下月礼品</a>
+						<a href="javascript:;" class="btn btn_exchange" data-params="do=page.exchange,3">预约下月礼品</a>
+					</div>
+				</div>
+			</div>
+			<div class="wrap wrap_1">
+				<div class="tips">
+					<h2 class="middle_title">回归礼包</h2>
+					<div class="tips">最后一次登录时间在2015年5月5日之前的玩家可领取回流礼包，单个QQ限领1次。</div>
+				</div>
+				<div class="gift"></div>
+				<div class="tabBtn">
+					<a href="#" class="btn btn_exchange2" data-params="do=page.exchange2,1,false">立即领取</a>
+				</div>
+			</div>
+			<div class="wrap wrap_2">
+				<div class="tips">
+					<h2 class="middle_title">浏览器专属礼包</h2>
+					<div class="tips">下载DNF定制版浏览器，并使用QQ浏览器打开页面可领取专属礼包，单个QQ限领1次，先到先得。</div>
+				</div>
+				<div class="gift"></div>
+				<div class="tabBtn">
+					<a href="#" class="btn btn_exchange2" data-params="do=page.exchange2,2,true">立即领取</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="middle_4">
+	<div class="container">
+		<h2 class="middle_title">浴火重生活跃礼</h2>
+		<div class="tips">
+			<p>1.每日登录游戏玩30分钟之后退出游戏来到本页面可以获得一次抽奖机会，单个QQ号每日限抽1次。</p>
+			<p>2.成功邀请好友来到本页面领取新手礼包的玩家可以额外获得一次抽奖机会，单Q限领一次。</p>
+		</div>
+		<div id="lucky_box_container">
+			<span id="lucky_box_0" class="lucky_box"></span>
+			<span id="lucky_box_1" class="lucky_box"></span>
+			<span id="lucky_box_2" class="lucky_box"></span>
+			<span id="lucky_box_3" class="lucky_box"></span>
+			<span id="lucky_box_4" class="lucky_box"></span>
+		</div>
+		<div id="lucky_gifts"></div>
+		<a class="btn btn_getLucky" href="javascript:void(0);" data-params="do=page.getLucky"></a>
+		<div id="namelistDiv">
+			<ul id="namelist"></ul>
+			<ul id="namelist2"></ul>
+		</div>
+		<a href="javascript:void(0);" class="btn btn_invite" data-params="do=page.invite">邀请好友</a>
+	</div>
+</div>
+
+<div class="middle_5">
+	<div class="container">
+		<h2 class="middle_title">版本内容</h2>
+		<div class="version">
+			<a href="http://dnf.qq.com/cp/a20150611znkh/index.html?e_code=82905&ADTAG=cop.innercop.browser.qq.com" target="_blank"><img src="http://stdl.qq.com/stdl/game/dnf/images/version_1.png"></a>
+			<a class="center" href="http://dnf.qq.com/cp/a20150611znkh/index.html?e_code=82905&ADTAG=cop.innercop.browser.qq.com" target="_blank"><img src="http://stdl.qq.com/stdl/game/dnf/images/version_2.png"></a>
+			<a href="http://dnf.qq.com/cp/a20150611znkh/index.html?e_code=82905&ADTAG=cop.innercop.browser.qq.com" target="_blank"><img src="http://stdl.qq.com/stdl/game/dnf/images/version_3.png"></a>
+		</div>
+		<a href=" http://dnf.qq.com/web2015/down.shtml" target="_blank" class="btn btn_download">立即下载游戏</a>
+	</div>
+</div>
+
+<div class="middle_6">
+	<div class="container">
+		<h2 class="middle_title">活动规则</h2>
+		<div class="rule">
+			<p>1.活动时间：6月18日至7月30日。</p>
+			<p>2.互动对象：QQ浏览器用户、DNF玩家。</p>
+			<p>3.奖品发放：游戏礼包将通过CDKey的形式发放，请到官网<a href="http://dnf.qq.com/web2013/cdkey.shtml" target="_blank">兑换CDKey</a>。</p>
+			<p>4.奖品每日数量有限，领完即止，每天0：00刷新。</p>
+			<p>5.活动最终解释权归腾讯公司。</p>
+		</div>
+	</div>
+</div>
+<!--content end-->
+
+<!-- 底部，由脚本输出html -->
+<div class="mod_copyright2"><script type="text/javascript">write_global_footer()</script></div>
+
+
+<!--邀请好友弹窗-->
+<!-- 遮罩层 -->
+<div class="mod_pop_mask" style="display:none"></div>
+<div class="friend_pop" style="display: none; ">
+	<div class="friend_info">
+		<div class="friend_in">
+			<iframe id="txifr" src="" width="100%" height="100%" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
+		</div>
+	</div>
+	<a class="friend_close" id="friend_close" href="javascript:void(0);"></a>
+</div>
+
+<script type="text/javascript" src="http://imgcache.gtimg.cn/ac/club/qqvip/v2.0/qqviplib_2.0.0.js" charset="gbk"></script>
+<script type="text/javascript" src="http://imgcache.gtimg.cn/ACT/vip_act/common/vip.act.biz.lisa.js" charset="gb2312"></script>
+<script type="text/javascript" src="http://youxi.vip.qq.com/common/js/lib/zero.min-5.0.1.js"></script>
+<script type="text/javascript" src="http://pingjs.qq.com/tcss.ping.js"></script>
+<script type="text/javascript" src="http://imgcache.gtimg.cn/tencentvideo_v1/tvp/js/tvp.player_v2_jq.js"></script>
+<script type="text/javascript" src="http://stdl.qq.com/stdl/game/dnf/js/index.js"></script>
+<script src="http://3gimg.qq.com/mig-web/2014/market/qbtequan/js/app/yxj-redbag.js"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="Copyright" content="Tencent" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<title>魔兽电影--QQ浏览器专属活动</title>
+	<script type="text/javascript" src="http://imgcache.gtimg.cn/c/=/club/qv/pkg/qv_1.x.x.js,/clubact/premin/jquery.webStorage.min.js,/clubact/common/oz.js,/clubact/common/aid.js,/clubact/common/mustache.js,/clubact/common/nav/nav.js" charset="utf-8"></script>
+	<script type="text/javascript" src="http://stdl.qq.com/stdl/activity/warcraft/js/header.js"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://imgcache.gtimg.cn/vipstyle/game/public/v3/css/global.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="http://stdl.qq.com/stdl/activity/warcraft/css/jquery.mCustomScrollbar.min.css"/>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://stdl.qq.com/stdl/activity/warcraft/css/style.css" />
+</head>
+<body>
+<!-- 头部，由脚本输出html -->
+<script type="text/javascript">write_global_nav()</script>
+<!--top end-->
+
+<div class="middle_1" style="display: none;">
+	<div class="container">
+		<!--皮肤-->
+		<div class="skin_content">
+			<div class="skin_choose">
+				<div class="skin_bl" onclick="page.vote(this,1)"></div>
+				<div class="skin_lm" onclick="page.vote(this,2)"></div>
+			</div>
+			<div class="skin_vs">
+				<div class="vs_content">
+					<div id="vsBl" class="vs_bl">
+						<div class="vs_line"></div>
+						<span id="vsBlNum" class="vs_num">支持：0</span>
+						<em class="vs_icon"></em>
+					</div>
+					<div id="vsLm" class="vs_lm">
+						<div class="vs_line"></div>
+						<span id="vsLmNum" class="vs_num">支持：0</span>
+						<em class="vs_icon"></em>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="msg_content">
+			<div class="buluo">
+				<div class="msg-send msg-send-bl">
+					<span class="icon-flag"></span>
+					<div class="msg-text">
+						<input type="text" class="msg-text-input" id="msg-text-bl" maxlength="60" value="说说你的想法" />
+						<span class="text-count" id="text-count-bl">0/60</span>
+					</div>
+					<a href="javascript:;" class="btn btn_sendMsg" id="sendMsgBl">发表</a>
+				</div>
+				<div id="msg-list-buluo">
+					<ul id="buluo-list" class="msg-list"></ul>
+				</div>
+			</div>
+			<div class="lianmeng">
+				<div class="msg-send msg-send-lm">
+					<span class="icon-flag"></span>
+					<div class="msg-text">
+						<input type="text" class="msg-text-input" id="msg-text-lm" maxlength="60" value="说说你的想法" />
+						<span class="text-count" id="text-count-lm">0/60</span>
+					</div>
+					<a href="javascript:;" class="btn btn_sendMsg" id="sendMsgLm">发表</a>
+				</div>
+				<div id="msg-list-lianmeng">
+					<ul id="lianmeng-list" class="msg-list"></ul>
+				</div>
+			</div>
+		</div>
+		<div class="time_block">
+			<div class="time">
+				<p>活动时间：6月3日－6月17日</p>
+			</div>
+			<div class="btns"><a href="javascript:void(0);" id="btn_rob" data-do="page.getLucky"></a></div>
+			<div class="links">
+				<a class="btn_share sina" onclick="shareFunc();"></a>
+				<a class="btn btn_queryGift" href="javascript:void(0);" data-do="page.queryGift">查询中奖</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="middle_1_ipad" style="display: block;">
+	<div class="container">
+		<div class="time_block_ipad">
+			<div class="btns">
+				<a class="btn_getLucky" href="javascript:void(0);" data-do="page.getLucky"></a>
+				<div class="links">
+					<a class="btn_queryGift_ipad" href="javascript:void(0);" data-do="page.queryGift">查询中奖</a>
+					<a class="btn_share_friend" href="javascript:;" onclick="dialog.alert(tips['3']());">分享给好友</a>
+				</div>
+			</div>
+			<div class="time">
+				<p>活动时间：6月3日－6月17日</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="middle_2">
+	<div class="container">
+		<div id="videoBox"></div>
+		<div class="info">
+			<p>电影《魔兽》改编自暴雪娱乐的经典游戏《魔兽世界》，讲述了艾泽拉斯的和平被打破，遭到失去了家园、寻求生存之地的兽人的侵略，连接两个世界的黑暗之门打开，斗士们将为各自的人民和家园奋起而战……</p>
+		</div>
+		<div class="code">
+			<img src="http://stdl.qq.com/stdl/activity/warcraft/images/code.png" width="163" height="197">
+			<a href="http://warcraftmovie.qq.com/" target="_blank">魔兽电影官网</a>
+		</div>
+	</div>
+</div>
+
+<div class="middle_3">
+	<div class="container">
+		<div class="gallery_box">
+			<span class="gallery01"><img src="http://stdl.qq.com/stdl/activity/warcraft/images/gallery01.jpg" alt="" title=""></span>
+			<span class="gallery02"><img src="http://stdl.qq.com/stdl/activity/warcraft/images/gallery02.jpg" alt="" title=""></span>
+			<span class="gallery03"><img src="http://stdl.qq.com/stdl/activity/warcraft/images/gallery03.jpg" alt="" title=""></span>
+			<span class="gallery04"><img src="http://stdl.qq.com/stdl/activity/warcraft/images/gallery04.jpg" alt="" title=""></span>
+			<span class="gallery05"><img src="http://stdl.qq.com/stdl/activity/warcraft/images/gallery05.jpg" alt="" title=""></span>
+			<span class="gallery06"><img src="http://stdl.qq.com/stdl/activity/warcraft/images/gallery06.jpg" alt="" title=""></span>
+			<span class="gallery07"><img src="http://stdl.qq.com/stdl/activity/warcraft/images/gallery07.jpg" alt="" title=""></span>
+			<span class="gallery08"><img src="http://stdl.qq.com/stdl/activity/warcraft/images/gallery08.jpg" alt="" title=""></span>
+		</div>
+	</div>
+</div>
+
+<div class="middle_4">
+	<div class="container">
+		<div class="rule">
+			<p>1. 活动时间：2016年6月3日—2016年6月17日</p>
+			<p>2. 电影票电子兑换码、电影红包请在有效期内使用</p>
+			<p>3. 活动期间参与用户如有作弊行为，将被取消获奖资格</p>
+		</div>
+	</div>
+</div>
+
+
+<!-- 剧照 弹层-->
+<div class="pop-layer" id="photogallery">
+	<div class="kvfull">
+		<div class="kvblock">
+	        <ul class="kvlist">
+	        	<li><img src="http://stdl.qq.com/stdl/activity/warcraft/images/gallery_big01.jpg" alt=""></li>
+	        	<li><img src="http://stdl.qq.com/stdl/activity/warcraft/images/gallery_big02.jpg" alt=""></li>
+	        	<li><img src="http://stdl.qq.com/stdl/activity/warcraft/images/gallery_big03.jpg" alt=""></li>
+	        	<li><img src="http://stdl.qq.com/stdl/activity/warcraft/images/gallery_big04.jpg" alt=""></li>
+	        	<li><img src="http://stdl.qq.com/stdl/activity/warcraft/images/gallery_big05.jpg" alt=""></li>
+	        	<li><img src="http://stdl.qq.com/stdl/activity/warcraft/images/gallery_big06.jpg" alt=""></li>
+	        	<li><img src="http://stdl.qq.com/stdl/activity/warcraft/images/gallery_big07.jpg" alt=""></li>
+	        	<li><img src="http://stdl.qq.com/stdl/activity/warcraft/images/gallery_big08.jpg" alt=""></li>
+			</ul>
+		</div>
+		<div class="kvbtn">
+            <div class="prev_area"><a href="#" class="prev">prev</a></div>
+            <div class="next_area"><a href="#" class="next">next</a></div>		    
+		</div>		
+	</div>	
+</div>
+<div class="masklayer" style="display:none;"></div>
+
+<!-- 底部，由脚本输出html -->
+<div class="mod_copyright2"><script type="text/javascript">write_global_footer()</script></div>
+
+
+<script type="text/javascript" src="http://imgcache.gtimg.cn/ac/club/qqvip/v2.0/qqviplib_2.0.0.js" charset="gbk"></script>
+<script type="text/javascript" src="http://imgcache.gtimg.cn/ACT/vip_act/common/vip.act.biz.lisa.js" charset="gb2312"></script>
+<script type="text/javascript" src="http://youxi.vip.qq.com/common/js/lib/zero.min-5.0.1.js"></script>
+<script type="text/javascript" src="http://imgcache.gtimg.cn/tencentvideo_v1/tvp/js/tvp.player_v2_jq.js"></script>
+<script type="text/javascript" src="http://pingjs.qq.com/tcss.ping.js"></script>
+<script type="text/javascript" src="http://stdl.qq.com/stdl/activity/warcraft/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="http://stdl.qq.com/stdl/activity/warcraft/js/slide.js"></script>
+<script type="text/javascript" src="http://stdl.qq.com/stdl/activity/warcraft/js/index.js"></script>
+</body>
+</html>

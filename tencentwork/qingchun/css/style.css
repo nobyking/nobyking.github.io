@@ -1,0 +1,138 @@
+@charset "utf-8";
+body,div,h1,h2,h3,h4,html,ol,p,ul{margin:0;padding:0;border:0 none;cursor:default}
+html{background:#fff}
+ol,ul{list-style:none}
+a{cursor: pointer;*blr:expression(this.onFocus=this.blur());}
+a,a:after{outline:0}
+table{border-collapse:collapse;border-spacing:0}
+body{padding:0;height: auto;font:12px Helvetica,Arial,"Microsoft Yahei",SimSun,sans-serif;color: #333;background: #80786A;min-width: 1200px;line-height: 24px;}
+img,input{border:0 none}
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both}
+* html .clearfix,:first-child+html .clearfix{zoom:1;}
+em{ font-style: normal;}
+
+.btn{ display: inline-block; font-size: 0; line-height: 0; overflow: hidden;}
+
+/*顶部底部*/
+body{ padding-top: 45px;background: #FFF1D7;}
+#logo-btn{margin-top: 4px;display: inline-block;*display: inline;zoom: 1;width: 133px;height: 38px;background: url(http://stdl.qq.com/stdl/activity/qingchun/img/header/logo.png) 0 0 no-repeat;}
+#tq{display: inline-block;*display: inline;zoom: 1;width: 253px;height: 37px;margin-left: 15px;background: url(http://stdl.qq.com/stdl/activity/qingchun/img/header/tq.png) 0 0 no-repeat;}
+#header-qb{position:absolute;right:0;display: inline-block;*display: inline;zoom: 1;width: 105px;height: 31px;vertical-align: top;margin-top: 6px;background: url(http://stdl.qq.com/stdl/activity/qingchun/img/header/download.png) 0 0 no-repeat;}
+.mod_gst{background: #424041;width: 100%;position: fixed; top: 0; z-index: 100;min-width: 800px;}
+.mod_gst_main{min-width: 800px;max-width: 1002px;width: auto;}
+.mod_gst_main .mod_gst_userinfo{font-size:14px;color:#FFFFFF;line-height: 20px;top: 13px;}
+.mod_gst_main .mod_gst_userinfo .user_nick{width:160px;color: #ffffff;}
+.user_nick em{ font-style: normal;}
+.mod_gst a{ color:#48adff; }
+.mod_copyright2{ padding-bottom: 70px; padding-top: 50px; background-color: #000; text-align: center; }
+.mod_copyright2 p { color: #fff; line-height: 20px; }
+.mod_copyright2 p a { color: #fff; }
+
+/*弹出框样式*/
+.popBg{background: #000\9; opacity: 0.7\9; filter: alpha(opacity=70)\9; background-color: rgba(0,0,0,0.7); position: fixed;top:0;left:0;z-index: 10000 ;width: 100%;height: 100%;}
+.popMsg{display: block;position:fixed;top:50%;left:50%;z-index:10000;margin-top:-140px;margin-left:-198px;width: 500px;min-height: 200px; background-color:#fff; border: 1px solid #797979; font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;}
+.popTop{height: 0; overflow: hidden;}
+.popWrap{padding: 58px 20px 25px;}
+.popBottom{height: 0; overflow: hidden;}
+.popClose{display: block;position: absolute;right: 10px;top: 10px;z-index: 10;width: 16px;height: 15px;font-size: 0;line-height: 0;overflow: hidden;cursor:pointer;background: url(http://stdl.qq.com/stdl/activity/qingchun/images/pop_close.png) no-repeat 0 0;transition: transform 1s ease-out;}
+.popClose:hover{transform: rotate(270deg);}
+.popContTit{ position: absolute; top: 0; left: 0; z-index: 9; width: 100%; height: 38px; line-height: 38px; font-size: 16px; text-indent: 20px; text-align: left; background-color:#bb6e2b;color: #fff;}
+.popContainer{font-size: 16px;color: #333; height: 100%;text-align: center;}
+.popWarn .contentBox{ text-align: left; padding-top: 40px; padding-left: 110px; min-height: 80px;}
+.contentGifts{ width: 100%; margin: 0 auto; text-align: left;}
+.gifts_title{ position: relative; height: 65px;font-size: 24px;color: #bb6e2b; line-height:35px}
+.gifts_title p.tit{ text-indent:-10px;}
+.giftsExplain{ margin-top:20px;}
+.giftsCode{ float:left; width:104px; text-align:center;font-size: 12px;}
+.giftsCode img{ margin-bottom:5px;}
+.giftsCdkey{
+  padding-top: 5px;
+  padding-bottom: 18px;
+  font-size: 16px;
+  border-bottom: 1px solid #C7C7C7;
+  margin-bottom: 18px;
+}
+.giftsTips{ font-size: 12px; color: #333; line-height: 20px;}
+.giftsTips_half{ font-size: 12px; color: #333; line-height: 20px;margin-left: 126px;}
+.popList{ }
+.popWarn .contentBox.timeTips{ background: url(http://stdl.qq.com/stdl/activity/qingchun/images/clock.png) no-repeat 40px 12px;padding-top: 22px; padding-left: 150px; font-size: 16px;}
+.popWarn .txtCenter{ padding-left: 0; text-align: center;}
+.timeTips .msg{ color:#bb6e2b; font-size: 24px;margin-bottom: 16px;}
+.noGifts{ padding-top:30px; text-align: center; }
+.giftsList li{list-style: none; line-height: 35px;}
+.giftsList li .giftsTime{ display: inline-block; width: 100px;}
+.giftsList li a{ color: #ff8400; font-size: 14px;}
+.giftsList li a:hover{ text-decoration: underline;}
+.giftsList .cdkey{ margin-left: 10px;}
+.P_btns{ padding-top: 20px; margin-top: 20px;border-top: 1px solid #292a2b; border-top: 1px solid rgba(255,255,255,0.15);}
+.P_btns .btn{ height: 35px;}
+.P_btns .btn:hover{ background-position: 0 -36px;}
+.btn_downloadQB{ width: 141px; background: url(http://stdl.qq.com/stdl/activity/qingchun/images/btn_downloadQB.png) no-repeat 0 0;}
+.btn_downloadQB2{ width: 170px; background: url(http://stdl.qq.com/stdl/activity/qingchun/images/btn_downloadQB2.png) no-repeat 0 0;}
+.btn_pop{ width: 100px; background: url(http://stdl.qq.com/stdl/activity/qingchun/images/btn_pop.png) no-repeat 0 0;}
+
+/*主体*/
+.container{ font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif; width: 1200px; height: 100%; margin: 0 auto; position: relative;}
+
+.middle_1{ height: 600px; background: url(http://stdl.qq.com/stdl/activity/qingchun/images/middle_1.jpg) no-repeat center top;}
+.time{ position: absolute; top: 278px; left: 498px; color: #bb6e2b;  font-size: 12px; text-align: center;line-height: 24px;}
+.countdown{ position: absolute; top: 370px; left: 449px; color: #bb6e2b;  font-size: 0; text-align: center;line-height: 62px; }
+.countdown span{ width: 60px; display:inline-block; margin-right: 35px; letter-spacing: 10px; padding-left: 5px; color:#45a0ff; font-size: 40px; }
+.middle_1 .btns{ position: absolute; bottom: 90px;  left: 50%; margin-left: -92px;z-index: 2; width: 184px; height: 51px; }
+#btn_rob{ display: block;  width: 184px; height: 51px;  color: #ff9090; background: url(http://stdl.qq.com/stdl/activity/qingchun/images/btn_getLucky.png) no-repeat 0 0; cursor:pointer;}
+#btn_rob:hover,#btn_rob:active{ background-position: 0 -55px; }
+#btn_rob.disabled{ background-position: 0 -110px; }
+a.btn_queryGift{ position: absolute; cursor:pointer; bottom: 48px;  left: 639px; color: #333333;  font-size: 14px; text-align: center; text-decoration: underline;line-height:24px;}
+a.btn_queryGift:hover{ color: #ffffff; }
+.btn_share{ position: absolute; bottom: 48px;  left: 519px; background: url(http://stdl.qq.com/stdl/activity/qingchun/images/btn_share.png) no-repeat center 0; width:99px; height:24px;}
+.btn_share:hover{ background-position:0 -28px;}
+
+
+.middle_2{ height: 528px; background: url(http://stdl.qq.com/stdl/activity/qingchun/images/middle_2.jpg) no-repeat center top;}
+.premiere{ position:absolute; top:280px;left:240px; font-size:14px; line-height:24px; color:#333333;}
+.premiere em{ color:#1576da;}
+.btn_register{ position:absolute; top:348px;left:226px; display:block; width:184px; height:51px;background: url(http://stdl.qq.com/stdl/activity/qingchun/images/btn_register.png) no-repeat center top; font-size:0;}
+.btn_register:hover{ background-position:0 -55px;}
+#videoBox{ position: absolute; top: 36px; left: 532px; z-index: 20; width: 600px; height: 340px; background-color: #000; }
+.middle_2 .info{ position: absolute; top: 432px; left: 532px; z-index: 20; width: 534px;  padding: 0 33px; color: #666666; line-height:22px; }
+
+
+.middle_3{ height: 453px; background: url(http://stdl.qq.com/stdl/activity/qingchun/images/middle_3.jpg) no-repeat center top;}
+.gallery_box{ position:absolute; left:95px; top:116px; width:1004px; height:280px; }
+.gallery_box span img{ cursor:pointer; -webkit-transition: transform .2s ease-out; -moz-transition: transform .2s ease-out; -ms-transition: transform .2s ease-out; -o-transition: transform .2s ease-out; transition: transform .2s ease-out}
+.gallery_box span:hover img{ -webkit-transform: scale(1.05); -moz-transform: scale(1.05); -ms-transform: scale(1.05); -o-transform: scale(1.05); transform: scale(1.05); }
+.gallery01{ position: absolute; left:0; top:0; width:281px; height:280px;overflow: hidden;}
+.gallery02{ position: absolute; left:286px; top:0; width:140px; height:137px;overflow: hidden;}
+.gallery03{ position: absolute; left:286px; top:143px; width:140px; height: 137px;overflow: hidden;}
+.gallery04{ position: absolute; left:432px; top:0; width:140px; height:137px;overflow: hidden;}
+.gallery05{ position: absolute; left:432px; top:143px; width:140px; height:137px;overflow: hidden;}
+.gallery06{ position: absolute; left:578px; top:0; width:280px; height:280px;overflow: hidden;}
+.gallery07{ position: absolute; left:864px; top:0; width:140px; height:137px;overflow: hidden;}
+.gallery08{ position: absolute; left:864px; top:143px; width:140px; height:137px;overflow: hidden;}
+#photogallery{ position:fixed; top:50%; left:50%; margin-left:-534px; margin-top:-254px; width:508px; height:1068px; z-index:100; display: none; }
+.kvfull{ position: relative; outline:none;height: 508px; width:1068px;}
+.kvfull .kvblock{ margin: 0 auto; height:100%; overflow: hidden; width: 762px;}
+.kvfull ul.kvlist{ white-space: nowrap; font-size: 0; height: 100%; }
+.kvfull ul.kvlist li{ text-align: center; display: inline-block; *display: inline; zoom:1; width:762px;}
+.kvfull ul.kvlist li .kvinfo{ display: none; }
+.kvbtn .prev_area{ position: absolute; width:50%; height:100%; left:0; top:0; cursor: pointer; outline: none;}
+.kvbtn .next_area{ position:absolute; width: 50%; height:100%; right:0; top:0;  cursor: pointer; outline:none; }
+.kvbtn a{ display: block;width: 52px; height: 52px;outline:none; font-size:0;}
+.kvbtn a.prev{  position: absolute; left: 0px; top:50%; margin-top:-20px; background: url(http://stdl.qq.com/stdl/activity/qingchun/images/prev.png) no-repeat 0 -55px;}
+.kvbtn a.next{  position: absolute; right: 0px; top:50%; margin-top:-20px; background: url(http://stdl.qq.com/stdl/activity/qingchun/images/next.png) no-repeat 0 -55px; }
+.kvbtn a.disabled{ background-position:center top; }
+.masklayer{ position:fixed; top:0; right:0; bottom:0;  left:0; background-color: #000; opacity: .75; filter:alpha(opacity=75); }
+
+.middle_4{ height: 496px; background: url(http://stdl.qq.com/stdl/activity/qingchun/images/middle_4.jpg) no-repeat center top;}
+.recommend_box{ position:absolute; top: 120px; left:93px; color:#333; font-size:14px;}
+.recommend_box a{ color:#333; text-decoration: none; display:block; background-color:#fff; width:186px; height: 283px; overflow: hidden;text-align:center; display:inline-block; margin-right:19px; border-radius: 2px; -webkit-border-radius: 2px;}
+.recommend_box img{ cursor:pointer;  width: 185px;height: 249px;  transition:transform .2s ease-out;-webkit-transition:transform .2s ease-out;-ms-transition:transform .2s ease-out;-o-transition:transform .2s ease-out;}
+.recommend_box a:hover img{ transform:scale(1.05);  -webkit-transform:scale(1.05); -ms-transform:scale(1.05); -o-transform:scale(1.05); }
+.recommend_box p{ height: 36px; line-height: 36px;}
+.recommend_box p.recommend_pic{ width: 185px;height: 249px; overflow: hidden;}
+.btn_more{ display: block; position: absolute; top: 430px; left:50%; margin-left:-58px;  background: url(http://stdl.qq.com/stdl/activity/qingchun/images/btn_more.png) no-repeat center top; width:115px; height:32px;}
+.btn_more:hover{ background-position: 0 -35px;}
+
+
+.middle_5{ height: 257px; background: url(http://stdl.qq.com/stdl/activity/qingchun/images/middle_5.jpg) no-repeat center top;}
+.rule{ position:absolute; top:100px; left:0; text-align:center; width:100%; font-size:14px; color:#666666; line-height:30px;}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="Copyright" content="Tencent" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<title>微软停止对IE11以下版本更新</title>
+	<link rel="icon" href="http://3gimg.qq.com/wspbbs/trom/images/qqbrowser/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="http://3gimg.qq.com/wspbbs/trom/images/qqbrowser/favicon.ico" type="image/x-icon" />
+	<style type="text/css">
+		html, body, ul, ol, div, h1, h2, h3, h4, p,li { margin: 0; padding: 0; border: 0 none; cursor:default; }
+		ul,li{ list-style: none;}
+		img,a img{ border: 0;}
+		a{ cursor:pointer; outline: none; }
+		a:hover{ text-decoration: none; }
+		html, body{ position: relative; top: 0; bottom: 0; min-width: 1234px; }
+
+		/*顶部底部*/
+		body{ font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif; background: #fff;}
+		.main{ position: relative; height: 100%;}
+		.middle_l{ position: absolute; top: 0; left: 0; width: 50%; height: 100%; background: #393d41 url(./images/middle_l.jpg) no-repeat 100% 0; min-height: 1310px;}
+		.middle_r{ position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: #fff url(./images/middle_r.jpg) no-repeat 0 0;}
+
+		.container{ position: relative; width: 1234px; margin: 0 auto;}
+		/* .countDown{ position: absolute; top: 138px; left: 50%; margin-left: -221px; width: 442px; height: 109px; background: url(./images/time_bg.png) no-repeat 0 0;}
+		.countDown .text{ height: 27px; line-height: 27px; font-size: 14px; color: #bbb; text-align: center;}
+		.countDown .time{ height: 70px; padding-top: 12px; padding-left: 3px;}
+		.countDown .time span{ float: left; display: inline-block; font-size: 54px; line-height: 60px; font-family: Arial; width: 95px; text-align: center; color: #fff;} 
+		#day{ padding-right: 11px;}
+		#hour{ padding-right: 14px;}
+		#minute{ padding-right: 18px;}*/
+		.tips{ position: absolute; top: 156px; left: 50%; width: 520px; height: 53px; margin-left: -260px; background: url(./images/tips.png) no-repeat 0 0;}
+
+		.btn_download{ position: absolute; top: 476px; right: 235px; display: block; width: 140px; height: 45px; font-size: 0; line-height: 0; background: url(./images/btn_download.png) no-repeat 0 0;}
+		.wrapList{ padding-left: 691px; padding-top: 591px;}
+		.wrapList li{ height: 115px; overflow: hidden; padding-bottom: 33px;}
+		.wrapList li a{ display: block; height: 115px;}
+		.wrapList li a:hover{ background-color: #f2f2f2;}
+
+		.footer{ position: relative; min-width: 1234px; text-align: center; padding-top: 50px; padding-bottom: 50px; line-height: 25px; color: #aaa;}
+	</style>
+</head>
+<body>
+<div class="main">
+	<div class="middle_l"></div>
+	<div class="middle_r"></div>
+	<div class="container">
+		<div class="tips"></div>
+		<!-- <div class="countDown">
+			<p class="text">距离2016年1月12日还有</p>
+			<div class="time" id="timeDown">
+				<span id="day">00</span>
+				<span id="hour">00</span>
+				<span id="minute">00</span>
+				<span id="second">00</span>
+			</div>
+		</div> -->
+		<a id="downloadQB" class="btn_download" href="http://dldir1.qq.com/invc/tt/QQBrowser_Setup_9.2.5584.400.exe"  onclick="report('BROWSER.ACTIVITY.GUANJIA.DOWNLOADQB')">立即下载</a>
+		<ul class="wrapList">
+			<li><a href="http://browser.qq.com/" target="blank" onclick="report('BROWSER.ACTIVITY.GUANJIA.JISU')"><img src="./images/img_1.png" /></a></li>
+			<li><a href="http://guanjia.qq.com/" target="blank" onclick="report('BROWSER.ACTIVITY.GUANJIA.GUANJIA')"><img src="./images/img_3.png" /></a></li>
+			<li><a href="http://browser.qq.com/new/wechat1.0.html?type=1" target="blank" onclick="report('BROWSER.ACTIVITY.GUANJIA.WEIXIN')"><img src="./images/img_2.png" /></a></li>
+			<li><a href="http://appcenter.browser.qq.com/index/detail?id=cfhdojbkjhnklbpkdaibdccddilifddb" target="blank" onclick="report('BROWSER.ACTIVITY.GUANJIA.GUANGGAO')"><img src="./images/img_4.png" /></a></li>
+			<li><a href="http://appcenter.browser.qq.com/search/detail?key=%E6%83%A0%E6%83%A0&id=ohjkicjidmohhfcjjlahfppkdblibkkb&title=%E6%83%A0%E6%83%A0%E8%B4%AD%E7%89%A9%E5%8A%A9%E6%89%8B" target="blank" onclick="report('BROWSER.ACTIVITY.GUANJIA.HUIHUI')"><img src="./images/img_5.png" /></a></li>
+		</ul>
+	</div>
+	<div class="footer">
+		<p>Copyright © 1998-<span id="copyTime">2016</span> Tencent. All Rights Reserved.</p>
+		<p>QQ浏览器 腾讯公司 版权所有</p>
+	</div>
+</div>
+<script type="text/javascript">
+	//倒计时
+/*
+	function FillNum(key){
+		if(key < 10){
+			key = '0' + key;
+		}
+		return key;
+	}
+	var EndTime= new Date('2016/01/12 00:00:00');
+	var NowTime = new Date();
+	var timer =EndTime.getTime() - NowTime.getTime();
+	var t_d, t_h, t_m, t_s, setTimerDown;
+	function countDown(){
+		timer-=1000;
+		if(timer > 0) {
+			t_d = Math.floor(timer / 1000 / 60 / 60 / 24);
+			t_h = Math.floor(timer / 1000 / 60 / 60 % 24);
+			t_m = Math.floor(timer / 1000 / 60 % 60);
+			t_s = Math.floor(timer / 1000 % 60);
+		} else {
+			t_d = 0;
+			t_h = 0;
+			t_m = 0;
+			t_s = 0;
+			clearInterval(setTimerDown);
+		}
+		document.getElementById("day").innerHTML = FillNum(t_d);
+		document.getElementById("hour").innerHTML = FillNum(t_h);
+		document.getElementById("minute").innerHTML = FillNum(t_m);
+		document.getElementById("second").innerHTML = FillNum(t_s);
+	}
+	setTimerDown = setInterval(countDown,1000);
+	*/
+</script>
+<script type="text/javascript" src="http://pingjs.qq.com/tcss.ping.js"></script>
+<script type="text/javascript">
+	function report(hottagValue) {
+		window.setTimeout(function () {
+			pgvSendClick({hottag: hottagValue});
+		}, 100);
+	}
+	if(typeof(pgvMain) == 'function') {
+		pgvMain("pathtrace", {pathStart: true, tagParamName: "ADTAG", useRefUrl: true, override: true, careSameDomainRef: false});
+	}
+	document.getElementById('copyTime').innerHTML = new Date().getFullYear();
+
+	function getQBVersion() {
+	    var version = 0;
+	    try{
+	        try{
+	            version = window.external.getVersion() || 1;
+	        }catch(e){
+	            version = window.external.getbrowserversion() || 1;
+	        }
+	    }catch(e){
+	        version = /QQBrowser/.test(navigator.userAgent) || "100.0.0.0";
+	    }
+	    return version;
+	}
+	function isQQBrowser() {
+	    var version = getQBVersion();
+	    var result = (version != "100.0.0.0") && (version != 0);
+	    isQQBrowser = function () {
+	        return result;
+	    };
+	    return result;
+	}
+
+	if(isQQBrowser()){
+		document.getElementById('downloadQB').style.display = "none";
+	}
+
+</script>
+</body>
+</html>

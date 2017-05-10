@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, ol, div, h1, h2, h3, h4, p,li {margin: 0;padding: 0;border: 0 none;cursor:default;}
+a{cursor:pointer;outline: none;}
+a:hover{
+    text-decoration: none;
+}
+html, body{
+    height: auto;
+    min-width: 1200px;
+    background-color: #f4f4f4;
+}
+body{ font-family: "Microsoft yahei", Arial;}
+.btn{ display: inline-block; font-size: 0; line-height: 0; overflow: hidden;}
+
+/*顶部底部*/
+.mod_gst{width: 100%;position: absolute; top: 32px; z-index: 100;min-width: 800px;height: 70px;background: none;}
+.mod_gst_main{max-width: 1200px; width: 1200px; height: 70px;}
+.mod_gst_main .logo{ float: left; padding-left: 60px; width: 620px; height: 70px; background: url(../images/logo_bg.png) no-repeat 272px 23px;}
+.mod_gst_main .logo a{ display: inline-block; font-size: 0; line-height: 0; overflow: hidden; height: 68px; margin-right: 28px;}
+.mod_gst_main .logo .logo_qb{ width: 205px; background: url(../images/logo_qb.png) no-repeat 0 0;}
+.mod_gst_main .logo .logo_lzzb{ width: 185px; background: url(../images/logo_lzzb.png) no-repeat 0 0;}
+.mod_gst_main .logo .logo_cqby{ width: 135px; background: url(../images/logo_cqby.png) no-repeat 0 0;}
+.mod_gst_main .mod_gst_userinfo{ width: auto; height: 40px; line-height: 40px; font-size: 14px; top: 15px; right: 0; color: #333; padding-right: 20px;}
+.mod_gst_main .mod_gst_userinfo .user_pic{ display: inline-block; width: 38px; height: 38px; border-radius: 50%; border: 1px solid #2a8cfa; overflow: hidden; vertical-align: top; margin-right: 15px;}
+.mod_gst_main .mod_gst_userinfo .user_nick{ width: auto; vertical-align: middle; color: #333; padding-right: 5px;}
+.mod_gst_main .mod_gst_userinfo a{ vertical-align: middle; color: #00a1e9;}
+.mod_gst_main .mod_gst_userinfo .ico_qq{ display: inline-block; width: 40px; height: 40px; background: url(../images/ico_qq.png) no-repeat 0 0; vertical-align: top; margin-right: 15px;}
+.mod_gst_main .mod_gst_userinfo .bt_login{ vertical-align: baseline;}
+.mod_gst_main .mod_gst_userinfo .mod_st_logout{}
+
+/*弹出框样式*/
+.popBg{background: #000\9; opacity: 0.5\9; filter: alpha(opacity=50)\9; background-color: rgba(0,0,0,0.5); position: fixed; top: 0; left: 0; z-index: 10000 ; width: 100%; height: 100%;}
+.popMsg{display: block; position: fixed; top: 50%; left: 50%; z-index: 10000; margin-top: -140px; margin-left: -308px; width: 616px; height: 281px; overflow: hidden; background: url(../images/pop_bg.png); font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;}
+.popWrap{ height: 616px; position: relative;}
+.popTop{height: 60px; overflow: hidden;}
+.popBottom{height: 60px; overflow: hidden;}
+.popClose{display: block; position: absolute; right: 16px; top: 16px; z-index: 10; width: 20px; height: 20px; font-size: 0; line-height: 0; overflow: hidden; cursor: pointer; background: url(../images/pop_close.png) no-repeat 50% 50%; transition: transform 1s ease-out;}
+.popClose:hover{transform: rotate(270deg);}
+.popContainer{font-size: 18px; color: #366f8b; height: 162px; text-align: center; position: relative;}
+
+.P_btns{ text-align: center; padding-top: 30px;}
+.btn_pop{ width: 113px; height: 53px; background: url(../images/btn_pop.png) no-repeat 0 0;}
+.btn_pop:hover{ background-position: 0 -53px;}
+.btn_pop:active{ background-position: 0 -106px;}
+.btn_downloadQB{ width: 157px; height: 53px; background: url(../images/btn_downloadQB.png) no-repeat 0 0;}
+.btn_downloadQB:hover{ background-position: 0 -53px;}
+.btn_downloadQB:active{ background-position: 0 -106px;}
+.btn_exchange2{ width: 113px; height: 53px; background: url(../images/btn_exchange2.png) no-repeat 0 0;}
+.btn_exchange2:hover{ background-position: 0 -53px;}
+.btn_exchange2:active{ background-position: 0 -106px;}
+.btn_cancel{ width: 113px; height: 53px; background: url(../images/btn_cancel.png) no-repeat 0 0;}
+.btn_cancel:hover{ background-position: 0 -53px;}
+.btn_cancel:active{ background-position: 0 -106px;}
+.btn_seeVideo{ width: 113px; height: 53px; background: url(../images/btn_seeVideo.png) no-repeat 0 0;}
+.btn_seeVideo:hover{ background-position: 0 -53px;}
+.btn_seeVideo:active{ background-position: 0 -106px;}
+
+
+/*主体*/
+.container{ font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif; width: 1200px; margin: 0 auto; position: relative; height: 100%;}
+
+.middle_1{ height: 1070px; background: #c0c9cf url(../images/middle_1.jpg) no-repeat 50% 0;}
+.middle_1 .btn{ position: absolute;}
+.btn_exchange1_1, .btn_exchange1_2{ bottom: 328px; right: 615px; width: 88px; height: 39px; background: url(../images/btn_exchange1_1.png) no-repeat 0 0;}
+.btn_exchange1_1:hover, .btn_exchange1_2:hover{ background-position: 0 -40px;}
+.btn_exchange1_1:active, .btn_exchange1_2:active{ background-position: 0 -80px;}
+.btn_exchange1_1.disabled, .btn_exchange1_2.disabled{ background-position: 0 -120px; cursor: default;}
+.btn_exchange1_1.isExchange, .btn_exchange1_2.isExchange{ background-position: 0 -160px; cursor: default;}
+.btn_exchange1_2{ bottom: 388px; right: 361px;}
+.btn_exchange1_3{ bottom: 135px; right: 452px; width: 102px; height: 46px; background: url(../images/btn_exchange1_3.png) no-repeat 0 0;}
+.btn_exchange1_3:hover{ background-position: 0 -46px;}
+.btn_exchange1_3:active{ background-position: 0 -92px;}
+.btn_exchange1_3.disabled{ background-position: 0 -138px; cursor: default;}
+.btn_exchange1_3.isExchange{ background-position: 0 -184px; cursor: default;}
+.btn_exchange1_4{ bottom: 197px; right: 128px; width: 127px; height: 55px; background: url(../images/btn_exchange1_4.png) no-repeat 0 0;}
+.btn_exchange1_4:hover{ background-position: 0 -55px;}
+.btn_exchange1_4:active{ background-position: 0 -110px;}
+.btn_exchange1_4.disabled{ background-position: 0 -165px; cursor: default;}
+.btn_exchange1_4.isExchange{ background-position: 0 -220px; cursor: default;}
+
+
+.middle2{ height: 1090px; background: #c0c9cf url(../images/middle_2.jpg) no-repeat 50% 0;}
+.giftsList{ padding-top: 310px; padding-left: 100px; height: 420px;}
+.giftsList .wrap{ float: left; width: 210px; margin-right: 53px; text-align: center;}
+.giftsList h3{ font-size: 18px; color: #5c9bba; line-height: 30px; font-weight: normal;}
+.giftsList p{ font-size: 14px; color: #84abbe; line-height: 20px; padding-bottom: 20px;}
+.gifts_tga{ padding-top: 45px;}
+.gifts_game{ padding-top: 22px; display: none;}
+
+.rule{ padding-left: 350px; padding-right: 100px; font-size: 18px; line-height: 30px; color: #80d1ff; background: url(../images/title_rule.png) no-repeat 170px 3px;}
+.rule a{ color: #fff}
+.rule a:hover{ text-decoration: underline;}
+
+
+.footer{ padding-top: 65px; height: 108px; font-size: 12px; color: #fff; text-align: center; background: #4e7092 url(../images/footer.jpg) no-repeat 50% 0;}
+
+.menu{ width: 100%; position: absolute; top: 0; right: 0;}
+.menuWrap{ width: 1200px; margin: 0 auto; position: relative;}
+#rightMenu{ position: absolute; top: 555px; right: 50%; margin-right: -700px; width: 87px; height: 167px; background: url(../images/menu.png) no-repeat 0 0;}

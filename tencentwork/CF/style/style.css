@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, ol, div, h1, h2, h3, h4, p,li {margin: 0;padding: 0;border: 0 none;cursor:default;}
+a{cursor:pointer;outline: none;}
+a:hover{
+	text-decoration: none;
+}
+html, body{
+	height: auto;
+}
+
+/*顶部*/
+.mod_gst{min-width: 800px;}
+.mod_gst_main{min-width: 800px;max-width: 1002px;width: auto;}
+#logo-btn{margin-top: 4px;display: inline-block;*display: inline;zoom: 1;width: 133px;height: 38px;background: url(../img/header/logo.png) 0 0 no-repeat;}
+#tq{display: inline-block;*display: inline;zoom: 1;width: 253px;height: 37px;margin-left: 15px;background: url(../img/header/tq.png) 0 0 no-repeat;}
+#header-qb{position:absolute;right:0px;display: inline-block;*display: inline;zoom: 1;width: 105px;height: 31px;vertical-align: top;margin-top: 6px;background: url(../img/header/download.png) 0 0 no-repeat;}
+.mod_gst{background: #424041;width: 100%;position: fixed;z-index: 100;}
+.mod_gst_main .mod_gst_userinfo{top:11px;font-size:14px;color:#FFFFFF;height: auto;}
+.mod_gst_main .mod_gst_userinfo .user_nick{width:160px;color: #ffffff;}
+.mod_gst a{color:#48adff;}
+.mod_copyright{padding-top:70px;padding-bottom: 70px;background-color: #000;}
+.mod_copyright p {color: #fff;line-height: 20px;}
+.mod_copyright p a {color: #fff;}
+.mod_gst .mod_gst_userinfo .user_nick,.mod_gst .mod_gst_userinfo .mod_st_logout{vertical-align: middle;}
+
+.noTxt{display: inline-block;font-size: 0;line-height: 0;overflow: hidden;}
+
+.container{
+	font-family: "微软雅黑","Microsoft YaHei","宋体",SimSun,"黑体",SimHei;
+	width: 1000px;
+	min-width: 1000px;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+.middle_1,.middle_2,.middle_3,.middle_4{
+	min-width: 1000px;
+}
+.middle_1{
+	height: 820px;
+	background: url(../images/middle_1.png) no-repeat center 45px;
+	padding-top: 45px;
+}
+.middle_1 a{position: absolute;bottom: 62px;}
+.middle_1  .downloadCF{width: 340px;height: 110px;left: 118px;z-index: 2;background: url(../images/btn-downloadCF.png) no-repeat 0 0;}
+.middle_1 .downloadCF:hover{background-position: 0 -110px;}
+.middle_1 .downloadCFQB{width: 277px;height: 208px;left: 359px;bottom: 52px;z-index: 1;background: url(../images/btn-downloadQB.png) no-repeat 0 0;}
+.middle_1 .downloadCFQB:hover{background-position: 0 -208px;}
+.middle_1 .guanwang{width: 349px;height: 110px;left: 526px;z-index: 2;background: url(../images/btn-guanwang.png) no-repeat 0 0;}
+.middle_1 .guanwang:hover{background-position: 0 -110px;}
+
+.middle_2{
+	height: 694px;
+	background: url(../images/middle_2.png) no-repeat center top;
+}
+.tips{;font-size: 16px;color: #fff;line-height: 22px;padding-top: 60px;padding-left: 27px;}
+.tips em{color: #ffc607; font-style: normal;}
+.order{position: absolute;bottom: 89px;left: 177px;width: 303px;height: 69px;background: url(../images/btn-order.png) no-repeat 0 0;}
+.order:hover{background-position: 0 -69px;}
+.getGift{position: absolute;bottom: 89px;left: 498px;width: 307px;height: 69px;background: url(../images/btn-getGift.png) no-repeat 0 0;}
+.getGift:hover{background-position: 0 -69px;}
+
+.middle_3{
+	height: 676px;
+	background: url(../images/middle_3.png) no-repeat center top;
+}
+.invite{width: 343px;height: 51px;position: absolute;left: 600px;top: 0;background: url(../images/btn-invite.png) no-repeat 0 0;}
+.invite:hover{background-position: 0 -51px;}
+.getLucky{width: 341px;height: 59px;position: absolute;left: 320px;bottom: 56px;background: url(../images/btn-getLucky.png) no-repeat 0 0;}
+.getLucky:hover{background-position: 0 -59px;}
+
+#lucky-box-container{width: 1000px;height: 425px;position: absolute;top: 135px;}
+.lucky-box{display: inline-block;position: absolute;background: url(../images/gifts.png) no-repeat 0 0;}
+#lucky-box-0{width: 159px;height: 181px;left: 29px;top: 63px;background-position: 0 0;}
+#lucky-box-0.active{background-position: -285px 0;}
+
+#lucky-box-1{width: 155px;height: 176px;left: 198px;top: 0;background-position: 0 -181px;}
+#lucky-box-1.active{background-position: -285px -181px;}
+
+#lucky-box-2{width: 192px;height: 220px;left: 714px;top: 4px;background-position: 0 -916px;}
+#lucky-box-2.active{background-position: -285px -916px;}
+
+#lucky-box-3{width: 160px;height: 183px;left: 811px;top: 234px;background-position: 0 -584px;}
+#lucky-box-3.active{background-position: -285px -584px;}
+
+#lucky-box-4{width: 131px;height: 149px;left: 660px;top: 230px;background-position: 0 -767px;}
+#lucky-box-4.active{background-position: -285px -767px;}
+
+#lucky-box-5{width: 285px;height: 328px;left: 363px;top: 30px;background-position: 0 -1136px;}
+#lucky-box-5.active{background-position: -285px -1136px;}
+
+#lucky-box-6{width: 198px;height: 227px;left: 145px;top: 196px;background-position: 0 -357px;}
+#lucky-box-6.active{background-position: -285px -357px;}
+
+.middle_4{
+	height: 454px;
+	background: url(../images/middle_4.png) no-repeat center top;
+}
+.rule{padding-top: 88px;padding-left: 40px;line-height: 32px;color: #fff;font-size: 18px;}
+.rule p em,.rule p span{color: #ffc607;font-style: normal;}
+
+/*邀请好友弹窗*/
+.mod_pop_mask{z-index: 2000;}
+.friend_pop{display: none; width:935px; height:560px; z-index: 2001;  position: fixed; _position: absolute;  left:50%; margin-left:-410px; top:50%;margin-top: -280px; zoom: 1; _top: expression(eval(document.documentElement.scrollTop)+120);}
+.friend_info{ width:900px;  height:100%; overflow:hidden; position:relative;}
+.friend_in{ width:900px; height:100%; background:#efefef; color:#656565; }
+.friend_close {width: 35px; height: 35px; position: absolute; top: 0; right: 0; background: url(../images/close.jpg) no-repeat;}

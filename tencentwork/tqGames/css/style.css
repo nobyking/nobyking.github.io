@@ -1,0 +1,139 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, ol, div, h1, h2, h3, h4, p,li { margin: 0; padding: 0; border: 0 none; cursor:default;}
+a{ cursor:pointer; outline: none;}
+a:hover{ text-decoration: none;}
+html, body{ height: auto; min-width: 1000px;}
+.clear{ display: block; clear: both; height: 0; line-height: 0; font-size: 0; overflow: hidden; visibility: hidden;}
+.btn,.btn a{ display: inline-block; font-size: 0; line-height: 0; overflow: hidden;}
+
+body{ font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif; padding-top: 45px; background: #2b1808; min-width: 1200px;}
+
+
+/*获奖记录*/
+.giftsLists{ text-align: center;}
+.noGifts{ line-height: 50px;}
+.giftsLists td,.giftsLists th{ border: 1px solid #ccc;}
+.giftsLists th{ background: #ddd; color: #333; line-height: 30px;}
+.giftsLists td{ padding: 5px 10px;}
+.giftsLists td a:hover{ color: #ea0000;}
+#pageContainer{ padding-top: 15px; text-align: center;}
+#pageContainer a, #pageContainer span{ padding: 0 10px;}
+#pageContainer a:hover{ text-decoration: underline;}
+
+/*填写联系方式*/
+.userInfo{}
+.userInfo p{ margin-bottom: 15px;}
+.userInfo label{ display: inline-block; width: 70px; padding-right: 10px; text-align: right; vertical-align: middle;}
+.userInfo input{ display: inline-block; width: 300px; height: 25px; line-height: 25px; padding: 0 5px;}
+
+/*右侧浮动导航*/
+#menu{ position: absolute; top: 750px; right: 50%; margin-right: -840px; width: 250px; z-index: 90; display: none;}
+.menu_first{ display: block; width: 250px; height:250px; background: url(../images/subMenu.gif) no-repeat 0 0;}
+
+/*视频弹框*/
+.video_masklayer{ position: fixed; top:0; left:0; right:0; bottom:0;z-index: 200; background-color: #000; opacity: 0.7; filter:alpha(opacity=70);}
+.video-close{ background: url(../images/close.png) no-repeat 50% 50%; opacity: 0.9; width:25px; height:25px; position: absolute; top: 8px;right: -35px;}
+.pop-layer{width: 644px;height: 486px; position: fixed;top: 50%; left:50%;margin: -243px 0 0 -322px; z-index:1000;}
+
+/*主体*/
+
+.container{ width: 1200px; margin: 0 auto; position: relative; height: 100%;}
+
+.middle_1{ height: 840px; background: url(../images/middle_1.jpg) no-repeat 50% 0; position: relative;}
+
+
+.activityTime{ position: absolute; top: 550px; left: 50%; width: 380px; margin-left: -190px; text-align: center; font-size: 16px; color: #987743; line-height: 24px;}
+.btn_downloadQB{ position:absolute; top: 612px; width: 261px; height: 95px; left: 50%; margin-left: -133px; background: url(../images/btn_downloadQB.png) no-repeat 0 0;}
+.btn_downloadQB:hover{ background-position: 0 -96px;}
+.btn_queryRecord{ position: absolute; top: 704px; left: 50%; margin-left: -33px; font-size: 15px; color: #987743; text-decoration: underline !important;}
+.btn_queryRecord:hover{ color: #edc46f;}
+
+.tips{ font-size: 14px; color: #987743; line-height: 24px; text-align: center;}
+
+.middle_2{ height: 700px; background: url(../images/middle_2.jpg) no-repeat 50% 0;}
+.giftsGame{ height: 260px; background-position: 50% 0; background-repeat: no-repeat; margin-bottom: 6px;}
+.giftsbtn{ position: relative; z-index: 1; height: 160px;}
+.giftsbtn .btn{ position: absolute; background-position: 0 0; background-repeat: no-repeat;}
+.btn_exchange{ top: 0; left: 50%; width: 155px; height: 43px; margin-left: -79px; background-image: url(../images/btn_exchange.png);}
+.btn_exchange:hover{ background-position: 0 -44px !important;}
+.btn_download{top: 79px; left: 1px; width: 201px; height: 73px;}
+.btn_guanwang{top: 79px; right: 3px; width: 201px; height: 73px;}
+.btn_download:hover,.btn_guanwang:hover{ background-position: 0 -74px !important;}
+.giftsTips{ position: absolute; z-index: 2; bottom: 0; left: 50%; width: 550px; margin-left: -275px;}
+
+.nz{ position: relative; width: 1000px; padding-top: 130px;}
+.nz .giftsGame{ background-image: url(../images/gifts_nz.png);}
+.nz .btn_download{ background-image: url(../images/btn_downloadNz.png);}
+.nz .btn_guanwang{ background-image: url(../images/btn_guanwangNz.png);}
+
+.middle_3{ height: 706px; background: url(../images/middle_3.jpg) no-repeat 50% 0;}
+.szhj{ position: relative; left: 200px; width: 1000px; padding-top: 130px;}
+.szhj .giftsGame{ background-image: url(../images/gifts_szhj.png);}
+.szhj .btn_download{ background-image: url(../images/btn_downloadSzhj.png);}
+.szhj .btn_guanwang{ background-image: url(../images/btn_guanwangSzhj.png);}
+
+.middle_4{ height: 692px; background: url(../images/middle_4.jpg) no-repeat 50% 0;}
+.smzh{ position: relative; width: 1000px; padding-top: 130px;}
+.smzh .giftsGame{ background-image: url(../images/gifts_smzh.png);}
+.smzh .btn_download{ background-image: url(../images/btn_downloadSmzh.png);}
+.smzh .btn_guanwang{ background-image: url(../images/btn_guanwangSmzh.png);}
+
+
+.middle_5{ height: 690px; background: url(../images/middle_5.jpg) no-repeat 50% 0;}
+.middle_5 .tips{ padding-top: 90px; height:30px; margin-bottom: 110px;}
+.giftsLolLists{ padding-left: 32px; height: 420px;}
+.giftsLolLists li{ position: relative; float: left; width: 201px; height: 175px; margin-right: 32px; margin-bottom: 53px;}
+.giftsLolLists .pic{ position: absolute; top: 0; left: 0; width: 201px; height: 175px; background-position: 0 0; background-repeat: no-repeat;}
+.giftsLolLists .border{ position: absolute; top: 0; left: 0; width: 201px; height: 175px; background: url(../images/gifts_lol_border.png) no-repeat 0 0; opacity: 0; transition: opacity 0.2s ease-in;}
+.giftsLolLists .btns{ position: absolute; bottom: 6px; left: 4px; width: 193px; height: 0; overflow: hidden; transition: height 0.2s ease-in;}
+.btn_exchange2{ width: 193px; height: 34px; background: url(../images/btn_exchange2.png) no-repeat 0 0;}
+.btn_exchange2:hover{ background-position: 0 -35px;}
+.giftsLolLists li:hover .border{ opacity: 1;}
+.giftsLolLists li:hover .btns{ height: 34px;}
+.pic_1{ background-image: url(../images/gifts_lol_1.png)}
+.pic_2{ background-image: url(../images/gifts_lol_2.png)}
+.pic_3{ background-image: url(../images/gifts_lol_3.png)}
+.pic_4{ background-image: url(../images/gifts_lol_4.png)}
+.pic_5{ background-image: url(../images/gifts_lol_5.png)}
+.pic_6{ background-image: url(../images/gifts_lol_6.png)}
+.pic_7{ background-image: url(../images/gifts_lol_7.png)}
+.pic_8{ background-image: url(../images/gifts_lol_8.png)}
+.pic_9{ background-image: url(../images/gifts_lol_9.png)}
+.pic_10{ background-image: url(../images/gifts_lol_10.png)}
+
+
+
+
+.middle_6{ height: 930px; background: url(../images/middle_6.jpg) no-repeat 50% 0;}
+.middle_6 .tips{ padding-top: 35px; height: 50px;}
+
+.lucky{ position: relative; left: 35px; top: 100px; width: 1131px; height: 652px;}
+.lucky .gifts{ position: absolute; top: 0; left: 0; z-index: 1; width: 1131px; height: 652px; background: url(../images/gifts_lucky.png) no-repeat 0 0; }
+#lucky-box-container{ position: absolute; top: 0; left: 0; z-index: 2; width: 1131px; height: 652px;}
+.lucky-box{ position: absolute; display: inline-block; width: 171px; height: 147px; background: url(../images/lucky_box.png) no-repeat 0 0; opacity: 0;}
+.lucky-box.active{ opacity: 1;}
+#lucky-box-0{ left: 0; top: 0; }
+#lucky-box-1{ left: 192px; top: 0;}
+#lucky-box-2{ left: 384px; top: 0;}
+#lucky-box-3{ left: 576px; top: 0;}
+#lucky-box-4{ left: 768px; top: 0;}
+#lucky-box-5{ left: 960px; top: 0;}
+#lucky-box-6{ left: 960px; top: 167px;}
+#lucky-box-7{ left: 960px; top: 335px;}
+#lucky-box-8{ left: 960px; top: 505px;}
+#lucky-box-9{ left: 768px; top: 505px;}
+#lucky-box-10{ left: 576px; top: 505px;}
+#lucky-box-11{ left: 384px; top: 505px;}
+#lucky-box-12{ left: 192px; top: 505px;}
+#lucky-box-13{ left: 0; top: 505px;}
+#lucky-box-14{ left: 0; top: 335px;}
+#lucky-box-15{ left: 0; top: 167px;}
+.btn_getLucky{ position: absolute; left: 295px; top: 240px; z-index: 3; display: block; width: 537px; height: 176px; background: url(../images/btn_getLucky.png) no-repeat 0 0;}
+.btn_getLucky:hover{ background-position: 0 -177px;}
+
+.middle_7{ height: 267px; background: url(../images/middle_7.jpg) no-repeat 50% 0;}
+.rule{ padding-top: 10px; color: #978052; font-size: 14px; line-height: 30px;}
+.rule h3{ font-size: 24px; line-height: 36px; font-weight: normal;}
+
+#footer{background: url(../images/middle_8.jpg) no-repeat 50% 0;}

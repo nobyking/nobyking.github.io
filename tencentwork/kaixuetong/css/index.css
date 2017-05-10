@@ -1,0 +1,38 @@
+body,div,h1,h2,h3,h4,html,ol,p,ul{margin:0;padding:0;border:0 none;}
+html{background:#fff}
+ol,ul{list-style:none}
+a{cursor: pointer;*blr:expression(this.onFocus=this.blur());}
+a,a:after{outline:0}
+table{border-collapse:collapse;border-spacing:0}
+body{font:14px Helvetica,Arial,"Microsoft Yahei",SimSun,sans-serif;color:#fff;min-width: 1200px; background-color: #002000;}
+img,input{border:0 none}
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both}
+* html .clearfix,:first-child+html .clearfix{zoom:1;}
+
+/*主体*/
+.container{ font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif; width: 1000px; height: 100%; margin: 0 auto;position: relative;}
+.middle_1{ height: 602px; background: url(../images/middle_1.jpg) no-repeat center top;}
+.middle_2{ height: 678px; background: url(../images/middle_2.jpg) no-repeat center top;}
+.inner{ padding:10px 80px 0;margin-right: -65px;}
+.app{ width:380px; height:542px;float: left;margin-right: 65px; padding-top: 25px;}
+.app h2{ text-align: center; height: 50px;line-height: 50px;}
+.app h2 img{ vertical-align: middle;}
+.app h3{ text-align: center; color: #fff; height: 30px; line-height: 30px; font-weight: 100;}
+.app a{ color:#fff; text-decoration: none;}
+.app .info{margin-top: 52px;  padding:0 55px; height:120px;}
+.app .info p{ line-height: 20px;}
+.applist{ margin: 5px 20px 0 33px; overflow: hidden; zoom:1;}
+.applist li{ float: left; width: 108px; text-align: center;}
+.applist li > img{ vertical-align: middle;margin-bottom: 16px;width: 76px;height: 76px;}
+.applist .name{ line-height: 32px; }
+.applist .desc{ font-size: 12px; color: #919194; padding: 0 10px; margin-top: 15px;}
+.middle_3{ height: 677px; background: url(../images/middle_3.jpg) no-repeat center top;}
+.middle_4{ height: 685px; background: url(../images/middle_4.jpg) no-repeat center top;}
+.middle_5{ height: 512px; background: url(../images/middle_5.jpg) no-repeat center top;}
+.copyright{ position: absolute; bottom:90px; left:0; width:100%; text-align: center; color: #7b7a7d;}
+/*弹层*/
+.pop_layer{ position:fixed; top:50%; left:50%; z-index:1000; margin-top:-212px; margin-left:-434px; display: none; width:869px; height:424px; padding-top: 62px; background-color:#fff; border-radius: 3px; -webkit-border-radius: 3px; -o-border-radius:3px; box-shadow:1px 1px 5px rgba(6,0,1,0.5); text-align: center;}
+.pop_layer .btn{ margin-top: 50px;}
+.pop_layer .tips{ margin-top: 40px;}
+.close{ position: absolute; top:15px; right:15px; }
+.masklayer{ display: none; position: fixed; top:0; right:0; left:0; bottom:0; background-color: #25252b; opacity: 0.6; filter:alpha(opacity = 60); z-index:800;}
